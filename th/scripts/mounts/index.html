@@ -12,7 +12,7 @@
         <meta name="author" content="AvalonStudiosScripts">
       
       
-        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/pt/scripts/mining/">
+        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/th/scripts/mounts/">
       
       
       
@@ -37,7 +37,7 @@
     
     
       
-        <title>avalon_mining - AvalonStudios Script Docs</title>
+        <title>avalon_mounts - AvalonStudios Script Docs</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#avalon_mining" class="md-skip">
+        <a href="#avalon_mounts" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              avalon_mining
+              avalon_mounts
             
           </span>
         </div>
@@ -732,10 +732,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuracao" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuração
+        ความต้องการ
       
     </span>
   </a>
@@ -743,13 +743,119 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exports-disponiveis" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exports Disponíveis
+        การตั้งค่า
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="การตั้งค่า">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ตัวเลือกทั่วไป
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ปุ่มคีย์
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ระบบการบิน
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        สัตว์ที่มีให้
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export ที่ใช้งานได้
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export ที่ใช้งานได้">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-client-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API — Client-Side
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API — Client-Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ฟังก์ชัน API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-item-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic Item Exports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -773,25 +879,231 @@
   
 
 
-<h1 id="avalon_mining">avalon_mining</h1>
-<p>Script para o <strong>trabalho de mineiro</strong> no FiveM. Mesma estrutura que <code>avalon_lumberjack</code> mas adaptada para minas.</p>
-<p><strong>Versão:</strong> 1.0 | <strong>Autor:</strong> Avalon</p>
+<h1 id="avalon_mounts">avalon_mounts</h1>
+<p>สคริปต์<strong>สัตว์ขี่</strong>ใน FiveM ผู้เล่นสามารถเรียก ขี่ และจัดการสิ่งมีชีวิตแฟนตาซี (มังกร กริฟฟิน เพกาซัส ม้า อัลปาก้า) ผ่านคำสั่งหรือไอเทม</p>
+<p><strong>เวอร์ชัน:</strong> 1.0 | <strong>ผู้พัฒนา:</strong> Mino</p>
 <hr />
-<h2 id="configuracao">Configuração</h2>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">Lang</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Português&quot;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">Config</span><span class="p">.</span><span class="py">Loot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;rock&quot;</span><span class="p">,</span><span class="w">   </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Rocha&quot;</span><span class="p">,</span><span class="w">  </span><span class="nv">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="nv">scoreGame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">max</span><span class="o">=</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;iron&quot;</span><span class="p">,</span><span class="w">   </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ferro&quot;</span><span class="p">,</span><span class="w">  </span><span class="nv">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">  </span><span class="nv">scoreGame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">max</span><span class="o">=</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;copper&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cobre&quot;</span><span class="p">,</span><span class="w">  </span><span class="nv">chance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">  </span><span class="nv">scoreGame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">max</span><span class="o">=</span><span class="mi">5</span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<h2 id="_1">ความต้องการ</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th style="text-align: center;">จำเป็น</th>
+<th>หมายเหตุ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ox_lib</td>
+<td style="text-align: center;">✅</td>
+<td>การแจ้งเตือนและเครื่องมือ</td>
+</tr>
+<tr>
+<td>ox_inventory</td>
+<td style="text-align: center;">❌</td>
+<td>เฉพาะเมื่อ <code>CONFIG.items = true</code></td>
+</tr>
+<tr>
+<td>ox_fuel</td>
+<td style="text-align: center;">❌</td>
+<td>รักษาเชื้อเพลิงอัตโนมัติ</td>
+</tr>
+<tr>
+<td>qbx_core</td>
+<td style="text-align: center;">❌</td>
+<td>การรวม QBox key</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_2">การตั้งค่า</h2>
+<h3 id="_3">ตัวเลือกทั่วไป</h3>
+<table>
+<thead>
+<tr>
+<th>ตัวเลือก</th>
+<th>ประเภท</th>
+<th>ค่าเริ่มต้น</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CONFIG.command</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>เปิดใช้คำสั่งเรียกสัตว์</td>
+</tr>
+<tr>
+<td><code>CONFIG.commandName</code></td>
+<td><code>string</code></td>
+<td><code>"mount"</code></td>
+<td>ชื่อคำสั่งเรียก (<code>/mount</code>)</td>
+</tr>
+<tr>
+<td><code>CONFIG.delCommand</code></td>
+<td><code>string</code></td>
+<td><code>"delMount"</code></td>
+<td>ชื่อคำสั่งไล่ออก (<code>/delMount</code>)</td>
+</tr>
+<tr>
+<td><code>CONFIG.items</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>ใช้ไอเทมจากกระเป๋าเพื่อเรียก</td>
+</tr>
+<tr>
+<td><code>CONFIG.invincible</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>ทำให้สัตว์ไม่แพ้ตาย</td>
+</tr>
+<tr>
+<td><code>CONFIG.maxrangedespawn</code></td>
+<td><code>number</code></td>
+<td><code>200.0</code></td>
+<td>ระยะทางก่อน auto-despawn</td>
+</tr>
+<tr>
+<td><code>CONFIG.timeForSpawnAfterDeaths</code></td>
+<td><code>number</code></td>
+<td><code>10000</code></td>
+<td>เวลารอ (ms) หลังเสียชีวิต</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">ปุ่มคีย์</h3>
+<table>
+<thead>
+<tr>
+<th>ตัวเลือก</th>
+<th style="text-align: center;">ปุ่ม</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CONFIG.keyMount</code></td>
+<td style="text-align: center;"><code>51</code> (E)</td>
+<td>ขึ้น / ลงจากสัตว์</td>
+</tr>
+<tr>
+<td><code>CONFIG.keyDelete</code></td>
+<td style="text-align: center;"><code>74</code> (H)</td>
+<td>ไล่สัตว์ออก</td>
+</tr>
+<tr>
+<td><code>CONFIG.keyFlymode</code></td>
+<td style="text-align: center;"><code>73</code> (X)</td>
+<td>เปิด/ปิดโหมดบิน</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">ระบบการบิน</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyWithTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">   </span><span class="c1">-- false = บินได้ไม่จำกัด</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyTimeMax</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="w">   </span><span class="c1">-- เวลาบิน (ms)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyCooldown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="w">   </span><span class="c1">-- เวลาฟื้นตัว (ms)</span>
 </span></code></pre></div>
 <hr />
-<h2 id="exports-disponiveis">Exports Disponíveis</h2>
-<div class="admonition info">
-<p class="admonition-title">Sem exports registados</p>
-<p><code>avalon_mining</code> não expõe exports públicos.</p>
-</div>
+<h2 id="_6">สัตว์ที่มีให้</h2>
+<table>
+<thead>
+<tr>
+<th>สัตว์</th>
+<th style="text-align: center;">จำนวนรูปแบบ</th>
+<th style="text-align: center;">บินได้</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>necrodragon</code> (มังกรมืด)</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>griffon</code> (กริฟฟิน)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>pegaso</code> (เพกาซัส)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>horse</code> (ม้า)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td><code>alpaca</code> (อัลปาก้า)</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="export">Export ที่ใช้งานได้</h2>
+<h3 id="api-client-side"><code>API</code> — Client-Side</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">API</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">-- เรียก necrodragon (รูปแบบที่ 1)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">spawn</span><span class="p">(</span><span class="s2">&quot;necrodragon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1">-- ตรวจสอบว่ามีสัตว์ที่เรียกอยู่</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kr">if</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">isSpawned</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ผู้เล่นมีสัตว์ขี่ที่ใช้งานอยู่&quot;</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kr">end</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">-- ไล่สัตว์ออก</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">despawn</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="api">ฟังก์ชัน API</h4>
+<table>
+<thead>
+<tr>
+<th>ฟังก์ชัน</th>
+<th>คำอธิบาย</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spawn(name, color)</code></td>
+<td>เรียกสัตว์</td>
+</tr>
+<tr>
+<td><code>despawn()</code></td>
+<td>ไล่สัตว์ที่ใช้งานออก</td>
+</tr>
+<tr>
+<td><code>isSpawned()</code></td>
+<td>มีสัตว์ที่เรียกอยู่หรือไม่?</td>
+</tr>
+<tr>
+<td><code>isOnMount()</code></td>
+<td>ผู้เล่นกำลังขี่อยู่หรือไม่?</td>
+</tr>
+<tr>
+<td><code>getVehicle()</code></td>
+<td>ได้รับ entity ของสัตว์ขี่</td>
+</tr>
+<tr>
+<td><code>getData(model)</code></td>
+<td>ข้อมูลสัตว์เฉพาะตัว</td>
+</tr>
+<tr>
+<td><code>syncInvisible(ent, bool)</code></td>
+<td>ซิงค์การมองเห็นทุก client</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynamic-item-exports">Dynamic Item Exports</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_1</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">griffon_1</span><span class="p">()</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">pegaso_1</span><span class="p">()</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">horse_1</span><span class="p">()</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">alpaca_1</span><span class="p">()</span>
+</span></code></pre></div>
 
 
 

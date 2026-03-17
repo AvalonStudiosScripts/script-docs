@@ -743,6 +743,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#basic-usage-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage (Commands)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage (Commands)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summon-a-creature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summon a creature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dismiss-the-creature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dismiss the creature
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-game-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Game Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-creatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Creatures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -759,17 +820,6 @@
     <span class="md-ellipsis">
       
         General Settings
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#keybinds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Keybinds
       
     </span>
   </a>
@@ -804,17 +854,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#available-creatures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Creatures
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#available-exports" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -839,10 +878,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#api-functions" class="md-nav__link">
+  <a href="#functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Functions
+        Functions
       
     </span>
   </a>
@@ -943,6 +982,121 @@
 </tbody>
 </table>
 <hr />
+<h2 id="basic-usage-commands">Basic Usage (Commands)</h2>
+<p>When <code>CONFIG.command = true</code>, players can summon and dismiss creatures directly from chat — no items or extra scripts needed.</p>
+<h3 id="summon-a-creature">Summon a creature</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/mount &lt;name&gt; &lt;variant&gt;
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Creature type (see table below)</td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>number</code></td>
+<td>Variant number (1, 2, 3...)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/mount necrodragon 1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>/mount griffon 2
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>/mount pegaso 1
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>/mount horse 3
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/mount alpaca 1
+</span></code></pre></div>
+<h3 id="dismiss-the-creature">Dismiss the creature</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/delMount
+</span></code></pre></div>
+<p>Removes the currently summoned creature from the world.</p>
+<hr />
+<h2 id="in-game-controls">In-Game Controls</h2>
+<p>Once a creature is summoned:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th style="text-align: center;">Default Key</th>
+<th>Config</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mount / Dismount</td>
+<td style="text-align: center;"><strong>E</strong></td>
+<td><code>CONFIG.keyMount = 51</code></td>
+</tr>
+<tr>
+<td>Dismiss creature</td>
+<td style="text-align: center;"><strong>H</strong></td>
+<td><code>CONFIG.keyDelete = 74</code></td>
+</tr>
+<tr>
+<td>Toggle fly mode</td>
+<td style="text-align: center;"><strong>X</strong></td>
+<td><code>CONFIG.keyFlymode = 73</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Changing keys</p>
+<p>Edit the numeric values in <code>config.lua</code>. Codes correspond to <a href="https://docs.fivem.net/docs/game-references/controls/">FiveM control codes</a>.</p>
+</div>
+<hr />
+<h2 id="available-creatures">Available Creatures</h2>
+<table>
+<thead>
+<tr>
+<th>Creature</th>
+<th>Command</th>
+<th style="text-align: center;">Variants</th>
+<th style="text-align: center;">Can Fly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Necrodragon</td>
+<td><code>/mount necrodragon</code></td>
+<td style="text-align: center;">5 (1–5)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Griffon</td>
+<td><code>/mount griffon</code></td>
+<td style="text-align: center;">3 (1–3)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Pegaso</td>
+<td><code>/mount pegaso</code></td>
+<td style="text-align: center;">3 (1–3)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>Horse</td>
+<td><code>/mount horse</code></td>
+<td style="text-align: center;">3 (1–3)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Alpaca</td>
+<td><code>/mount alpaca</code></td>
+<td style="text-align: center;">3 (1–3)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="configuration">Configuration</h2>
 <h3 id="general-settings">General Settings</h3>
 <table>
@@ -959,25 +1113,25 @@
 <td><code>CONFIG.command</code></td>
 <td><code>boolean</code></td>
 <td><code>true</code></td>
-<td>Enable commands to summon creatures</td>
+<td>Enable <code>/mount</code> and <code>/delMount</code> commands</td>
 </tr>
 <tr>
 <td><code>CONFIG.commandName</code></td>
 <td><code>string</code></td>
 <td><code>"mount"</code></td>
-<td>Summon command name (<code>/mount</code>)</td>
+<td>Summon command name</td>
 </tr>
 <tr>
 <td><code>CONFIG.delCommand</code></td>
 <td><code>string</code></td>
 <td><code>"delMount"</code></td>
-<td>Dismiss command name (<code>/delMount</code>)</td>
+<td>Dismiss command name</td>
 </tr>
 <tr>
 <td><code>CONFIG.items</code></td>
 <td><code>boolean</code></td>
 <td><code>true</code></td>
-<td>Use inventory items to summon (requires ox_inventory)</td>
+<td>Enable item-based spawning (requires ox_inventory)</td>
 </tr>
 <tr>
 <td><code>CONFIG.invincible</code></td>
@@ -999,92 +1153,28 @@
 </tr>
 </tbody>
 </table>
-<h3 id="keybinds">Keybinds</h3>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th style="text-align: center;">Default Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>CONFIG.keyMount</code></td>
-<td style="text-align: center;"><code>51</code> (E)</td>
-<td>Mount / Dismount</td>
-</tr>
-<tr>
-<td><code>CONFIG.keyDelete</code></td>
-<td style="text-align: center;"><code>74</code> (H)</td>
-<td>Dismiss creature</td>
-</tr>
-<tr>
-<td><code>CONFIG.keyFlymode</code></td>
-<td style="text-align: center;"><code>73</code> (X)</td>
-<td>Toggle fly mode</td>
-</tr>
-</tbody>
-</table>
 <h3 id="flight-system">Flight System</h3>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyWithTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">   </span><span class="c1">-- false = unlimited flight</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyTimeMax</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="w">   </span><span class="c1">-- ms of flight available (if flyWithTime = true)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyCooldown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="w">   </span><span class="c1">-- ms cooldown before flying again</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyWithTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w">   </span><span class="c1">-- false = unlimited flight</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyTimeMax</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="w">   </span><span class="c1">-- ms of flight (only if flyWithTime = true)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">flyCooldown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60000</span><span class="w">   </span><span class="c1">-- ms cooldown before flying again</span>
 </span></code></pre></div>
 <h3 id="max-speed">Max Speed</h3>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">MaxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;necrodragon&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;griffon&quot;</span><span class="p">]</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;pegaso&quot;</span><span class="p">]</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mf">70.0</span><span class="p">,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;alpaca&quot;</span><span class="p">]</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;horse&quot;</span><span class="p">]</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mf">70.0</span><span class="p">,</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+<p>Internal multiplier — test and calibrate on your server.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">CONFIG</span><span class="p">.</span><span class="py">MaxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;necrodragon&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;griffon&quot;</span><span class="p">]</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;pegaso&quot;</span><span class="p">]</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mf">70.0</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;alpaca&quot;</span><span class="p">]</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;horse&quot;</span><span class="p">]</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mf">70.0</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
 </span></code></pre></div>
-<hr />
-<h2 id="available-creatures">Available Creatures</h2>
-<table>
-<thead>
-<tr>
-<th>Creature</th>
-<th style="text-align: center;">Variants</th>
-<th style="text-align: center;">Can Fly</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>necrodragon</code></td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td><code>griffon</code></td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td><code>pegaso</code></td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td><code>horse</code></td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">❌</td>
-</tr>
-<tr>
-<td><code>alpaca</code></td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">❌</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h2 id="available-exports">Available Exports</h2>
 <h3 id="api-client-side"><code>API</code> — Client-Side</h3>
 <p>Returns the API object with all public functions.</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">API</span><span class="p">()</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">API</span><span class="p">()</span>
 </span></code></pre></div>
-<h4 id="api-functions">API Functions</h4>
+<h4 id="functions">Functions</h4>
 <table>
 <thead>
 <tr>
@@ -1094,20 +1184,8 @@
 </thead>
 <tbody>
 <tr>
-<td><code>MountsAPI.getData(model)</code></td>
-<td>Get configuration data for a specific creature</td>
-</tr>
-<tr>
-<td><code>MountsAPI.getAllData()</code></td>
-<td>Get data for all creatures</td>
-</tr>
-<tr>
-<td><code>MountsAPI.getBlacklist(vehicle)</code></td>
-<td>Check if a vehicle is blacklisted</td>
-</tr>
-<tr>
 <td><code>MountsAPI.spawn(name, color)</code></td>
-<td>Summon a creature (<code>name</code> = type, <code>color</code> = variant number)</td>
+<td>Summon a creature</td>
 </tr>
 <tr>
 <td><code>MountsAPI.despawn()</code></td>
@@ -1115,19 +1193,27 @@
 </tr>
 <tr>
 <td><code>MountsAPI.isSpawned()</code></td>
-<td>Returns <code>true</code> if a creature is summoned</td>
+<td><code>true</code> if a creature is summoned</td>
 </tr>
 <tr>
 <td><code>MountsAPI.isOnMount()</code></td>
-<td>Returns <code>true</code> if player is mounted</td>
+<td><code>true</code> if player is mounted</td>
 </tr>
 <tr>
 <td><code>MountsAPI.getVehicle()</code></td>
 <td>Returns the creature vehicle entity</td>
 </tr>
 <tr>
-<td><code>MountsAPI.sendInfo(data)</code></td>
-<td>Send creature status data</td>
+<td><code>MountsAPI.getData(model)</code></td>
+<td>Config data for a specific creature</td>
+</tr>
+<tr>
+<td><code>MountsAPI.getAllData()</code></td>
+<td>Data for all creatures</td>
+</tr>
+<tr>
+<td><code>MountsAPI.getBlacklist(vehicle)</code></td>
+<td>Check if a vehicle is blacklisted</td>
 </tr>
 <tr>
 <td><code>MountsAPI.deleteEnt(ent)</code></td>
@@ -1135,7 +1221,7 @@
 </tr>
 <tr>
 <td><code>MountsAPI.playAnimation(prop, anim, dict, loop)</code></td>
-<td>Play an animation on the creature</td>
+<td>Play animation on the creature</td>
 </tr>
 <tr>
 <td><code>MountsAPI.syncInvisible(ent, bool)</code></td>
@@ -1148,28 +1234,53 @@
 </tbody>
 </table>
 <h4 id="example">Example</h4>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">API</span><span class="p">()</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">-- Summon a necrodragon (variant 1)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">spawn</span><span class="p">(</span><span class="s2">&quot;necrodragon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">-- Check if a creature is active</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="kr">if</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">isSpawned</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player has an active mount&quot;</span><span class="p">)</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="kr">end</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">-- Dismiss</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">despawn</span><span class="p">()</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">API</span><span class="p">()</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">-- Summon griffon variant 2</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">spawn</span><span class="p">(</span><span class="s2">&quot;griffon&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1">-- Check if player is mounted</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kr">if</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">isOnMount</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is riding a creature&quot;</span><span class="p">)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="kr">end</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1">-- Get creature position</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="kd">local</span><span class="w"> </span><span class="nv">mount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">getVehicle</span><span class="p">()</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="kr">if</span><span class="w"> </span><span class="nv">mount</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">GetEntityCoords</span><span class="p">(</span><span class="nv">mount</span><span class="p">)</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="kr">end</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="c1">-- Dismiss</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nv">MountsAPI</span><span class="p">.</span><span class="nf">despawn</span><span class="p">()</span>
 </span></code></pre></div>
 <hr />
 <h3 id="dynamic-item-exports-client-side">Dynamic Item Exports — Client-Side</h3>
-<p>One export per creature variant, named <code>creatureName_variantNumber</code>.</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_1</span><span class="p">()</span><span class="w">   </span><span class="c1">-- summon necrodragon variant 1</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_2</span><span class="p">()</span><span class="w">   </span><span class="c1">-- variant 2</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">griffon_1</span><span class="p">()</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">pegaso_2</span><span class="p">()</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">horse_1</span><span class="p">()</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">alpaca_3</span><span class="p">()</span>
+<div class="admonition info">
+<p class="admonition-title">Requires <code>CONFIG.items = true</code></p>
+<p>One export per creature variant, auto-created at startup.</p>
+</div>
+<p>Format: <strong><code>creatureName_variantNumber</code></strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_1</span><span class="p">()</span><span class="w">   </span><span class="c1">-- variant 1</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_2</span><span class="p">()</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_3</span><span class="p">()</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_4</span><span class="p">()</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">necrodragon_5</span><span class="p">()</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">griffon_1</span><span class="p">()</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">griffon_2</span><span class="p">()</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">griffon_3</span><span class="p">()</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">pegaso_1</span><span class="p">()</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">pegaso_2</span><span class="p">()</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">pegaso_3</span><span class="p">()</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">horse_1</span><span class="p">()</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">horse_2</span><span class="p">()</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">horse_3</span><span class="p">()</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">alpaca_1</span><span class="p">()</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">alpaca_2</span><span class="p">()</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_mounts&#39;</span><span class="p">]:</span><span class="nf">alpaca_3</span><span class="p">()</span>
 </span></code></pre></div>
 
 

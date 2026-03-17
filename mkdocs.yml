@@ -1,7 +1,7 @@
 site_name: AvalonStudios Script Docs
 site_description: Documentazione ufficiale degli script FiveM di AvalonStudios
 site_author: AvalonStudiosScripts
-site_url: https://AvalonStudiosScripts.github.io/script-docs
+site_url: https://avalonstudiosscripts.github.io/script-docs
 
 theme:
   name: material

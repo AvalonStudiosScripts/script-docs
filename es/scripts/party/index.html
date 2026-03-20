@@ -12,7 +12,7 @@
         <meta name="author" content="AvalonStudiosScripts">
       
       
-        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/es/scripts/coltivation/">
+        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/es/scripts/party/">
       
       
       
@@ -37,7 +37,7 @@
     
     
       
-        <title>avalon_coltivation - AvalonStudios Script Docs</title>
+        <title>avalon_party - AvalonStudios Script Docs</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#avalon_coltivation" class="md-skip">
+        <a href="#avalon_party" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              avalon_coltivation
+              avalon_party
             
           </span>
         </div>
@@ -771,63 +771,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacion" class="md-nav__link">
+  <a href="#comandos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Instalación
+        Comandos
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuración
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuración">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#opciones-generales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Opciones Generales
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#plantas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plantas
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#herramientas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Herramientas
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -844,10 +794,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#seme_grano" class="md-nav__link">
+  <a href="#servidor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        seme_grano
+        Servidor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isinpartysource-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IsInParty(source) → boolean
       
     </span>
   </a>
@@ -855,10 +817,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#seme_canapa" class="md-nav__link">
+  <a href="#getpartymemberssource-table-nil" class="md-nav__link">
     <span class="md-ellipsis">
       
-        seme_canapa
+        GetPartyMembers(source) → table | nil
       
     </span>
   </a>
@@ -866,10 +828,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#seme_coca" class="md-nav__link">
+  <a href="#getpartyleadersource-number-nil" class="md-nav__link">
     <span class="md-ellipsis">
       
-        seme_coca
+        GetPartyLeader(source) → number | nil
       
     </span>
   </a>
@@ -877,10 +839,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#seme_fungo" class="md-nav__link">
+  <a href="#setmemberbarsource-barid-value-maxvalue-boolean" class="md-nav__link">
     <span class="md-ellipsis">
       
-        seme_fungo
+        SetMemberBar(source, barId, value, maxValue) → boolean
       
     </span>
   </a>
@@ -888,10 +850,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#seme_papavero" class="md-nav__link">
+  <a href="#setmemberstatussource-statusid-active-boolean" class="md-nav__link">
     <span class="md-ellipsis">
       
-        seme_papavero
+        SetMemberStatus(source, statusId, active) → boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpartybucketsource-bucket-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPartyBucket(source, bucket) → boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartybucketsource-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyBucket(source) → number
       
     </span>
   </a>
@@ -902,15 +886,59 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ejemplo-de-uso" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#cliente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ejemplo de Uso
+        Cliente
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Cliente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestmemberpickmode-callbackevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RequestMemberPick(mode, callbackEvent)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelmemberpick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CancelMemberPick()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartytarget-ped-netid-source-isplayer-nil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyTarget() → { ped, netId, source, isPlayer } | nil
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -934,9 +962,9 @@
   
 
 
-<h1 id="avalon_coltivation">avalon_coltivation</h1>
-<p>Script para el <strong>cultivo de plantas</strong> en FiveM. Permite a los jugadores plantar, regar, fertilizar y cosechar varios cultivos en terrenos válidos.</p>
-<p><strong>Versión:</strong> 1.0 | <strong>Autor:</strong> Mino | <strong>Base de datos:</strong> ✅ MySQL</p>
+<h1 id="avalon_party">avalon_party</h1>
+<p>Sistema de <strong>party estilo MMORPG</strong> para FiveM. Grupos con HUD en tiempo real, barras de vida personalizables, ready check, waypoint compartido, espectador automático y marcación de objetivos.</p>
+<p><strong>Versión:</strong> 1.0.0 | <strong>Autor:</strong> Avalon | <strong>Framework:</strong> ESX / QBCore / QBox / Standalone</p>
 <hr />
 <h2 id="dependencias">Dependencias</h2>
 <table>
@@ -952,178 +980,136 @@
 <td style="text-align: center;">✅</td>
 </tr>
 <tr>
-<td>oxmysql</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
 <td>ox_target</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>ox_inventory</td>
 <td style="text-align: center;">✅</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="instalacion">Instalación</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ensure avalon_coltivation
-</span></code></pre></div>
-<hr />
-<h2 id="configuracion">Configuración</h2>
-<h3 id="opciones-generales">Opciones Generales</h3>
+<h2 id="comandos">Comandos</h2>
 <table>
 <thead>
 <tr>
-<th>Opción</th>
-<th>Tipo</th>
-<th>Por defecto</th>
+<th>Comando</th>
+<th>Argumento</th>
 <th>Descripción</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>CONFIG.MIN_PLANT_DISTANCE</code></td>
-<td><code>number</code></td>
-<td><code>1.5</code></td>
-<td>Distancia mínima entre plantas</td>
+<td><code>/partyinvite</code></td>
+<td><code>[id jugador]</code></td>
+<td>Invitar a un jugador</td>
 </tr>
 <tr>
-<td><code>CONFIG.MIN_STAGE_TIME</code></td>
-<td><code>number</code></td>
-<td><code>300000</code></td>
-<td>Tiempo mínimo (ms) para avanzar de etapa</td>
+<td><code>/partyaccept</code></td>
+<td>—</td>
+<td>Aceptar invitación</td>
 </tr>
 <tr>
-<td><code>CONFIG.StressMax</code></td>
-<td><code>number</code></td>
-<td><code>1000000</code></td>
-<td>Estrés máximo para poder plantar</td>
+<td><code>/partydecline</code></td>
+<td>—</td>
+<td>Rechazar invitación</td>
 </tr>
 <tr>
-<td><code>CONFIG.StressValue</code></td>
-<td><code>number</code></td>
-<td><code>100</code></td>
-<td>Estrés añadido cada vez que se planta</td>
-</tr>
-</tbody>
-</table>
-<h3 id="plantas">Plantas</h3>
-<table>
-<thead>
-<tr>
-<th>Planta</th>
-<th>Semilla</th>
-<th>Tiempo</th>
-<th>Cosecha</th>
-<th style="text-align: center;">Agua</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>grain</code></td>
-<td><code>seme_grano</code></td>
-<td>30 min</td>
-<td>5x <code>grano</code></td>
-<td style="text-align: center;">✅</td>
+<td><code>/partyleave</code></td>
+<td>—</td>
+<td>Salir del party</td>
 </tr>
 <tr>
-<td><code>canapa</code></td>
-<td><code>seme_canapa</code></td>
-<td>45 min</td>
-<td>3x <code>canapa</code></td>
-<td style="text-align: center;">✅</td>
+<td><code>/partydisband</code></td>
+<td>—</td>
+<td>Disolver el party (líder)</td>
 </tr>
 <tr>
-<td><code>coca</code></td>
-<td><code>seme_coca</code></td>
-<td>60 min</td>
-<td>2x <code>coca</code></td>
-<td style="text-align: center;">✅</td>
+<td><code>/partykick</code></td>
+<td><code>[id jugador]</code></td>
+<td>Expulsar un miembro (líder)</td>
 </tr>
 <tr>
-<td><code>fungus</code></td>
-<td><code>seme_fungo</code></td>
-<td>20 min</td>
-<td>4x <code>funghi</code></td>
-<td style="text-align: center;">❌</td>
+<td><code>/partytransfer</code></td>
+<td><code>[id jugador]</code></td>
+<td>Transferir liderazgo (líder)</td>
 </tr>
 <tr>
-<td><code>papavero</code></td>
-<td><code>seme_papavero</code></td>
-<td>50 min</td>
-<td>2x <code>papavero</code></td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
-<h3 id="herramientas">Herramientas</h3>
-<table>
-<thead>
-<tr>
-<th>Herramienta</th>
-<th>Item</th>
-<th style="text-align: center;">Multiplicador</th>
-<th style="text-align: center;">Uso único</th>
-<th>Etapas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Regadera</td>
-<td><code>watering_can</code></td>
-<td style="text-align: center;">-25% tiempo</td>
-<td style="text-align: center;">❌</td>
-<td>seed, small</td>
+<td><code>/partyready</code></td>
+<td>—</td>
+<td>Iniciar ready check (líder)</td>
 </tr>
 <tr>
-<td>Fertilizante</td>
-<td><code>fertilizer</code></td>
-<td style="text-align: center;">-40% tiempo</td>
-<td style="text-align: center;">✅</td>
-<td>small, grown</td>
-</tr>
-<tr>
-<td>Lámpara</td>
-<td><code>grow_lamp</code></td>
-<td style="text-align: center;">-15% tiempo</td>
-<td style="text-align: center;">✅</td>
-<td>seed, small, grown</td>
+<td><code>/partywp</code></td>
+<td>—</td>
+<td>Compartir waypoint (líder)</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="exports-disponibles">Exports Disponibles</h2>
-<div class="admonition info">
-<p class="admonition-title">Tipo: Client-Side</p>
-<p>Estos exports están registrados en el <strong>cliente</strong> y deben llamarse desde scripts de cliente.</p>
-</div>
-<h3 id="seme_grano"><code>seme_grano</code></h3>
-<p>Inicia la colocación de una semilla de trigo.
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_coltivation&#39;</span><span class="p">]:</span><span class="nf">seme_grano</span><span class="p">()</span>
-</span></code></pre></div></p>
-<h3 id="seme_canapa"><code>seme_canapa</code></h3>
-<p>Inicia la colocación de una semilla de cáñamo.
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_coltivation&#39;</span><span class="p">]:</span><span class="nf">seme_canapa</span><span class="p">()</span>
-</span></code></pre></div></p>
-<h3 id="seme_coca"><code>seme_coca</code></h3>
-<p>Inicia la colocación de una semilla de coca.
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_coltivation&#39;</span><span class="p">]:</span><span class="nf">seme_coca</span><span class="p">()</span>
-</span></code></pre></div></p>
-<h3 id="seme_fungo"><code>seme_fungo</code></h3>
-<p>Inicia la colocación de una semilla de seta.
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_coltivation&#39;</span><span class="p">]:</span><span class="nf">seme_fungo</span><span class="p">()</span>
-</span></code></pre></div></p>
-<h3 id="seme_papavero"><code>seme_papavero</code></h3>
-<p>Inicia la colocación de una semilla de amapola.
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_coltivation&#39;</span><span class="p">]:</span><span class="nf">seme_papavero</span><span class="p">()</span>
-</span></code></pre></div></p>
+<h3 id="servidor">Servidor</h3>
+<h4 id="isinpartysource-boolean"><code>IsInParty(source)</code> → <code>boolean</code></h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">IsInParty</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1">-- lógica para jugadores en party</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<h4 id="getpartymemberssource-table-nil"><code>GetPartyMembers(source)</code> → <code>table | nil</code></h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">members</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">members</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nv">exports</span><span class="p">.</span><span class="py">ox_inventory</span><span class="p">:</span><span class="nf">AddItem</span><span class="p">(</span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pocion&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<h4 id="getpartyleadersource-number-nil"><code>GetPartyLeader(source)</code> → <code>number | nil</code></h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">leader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">GetPartyLeader</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="setmemberbarsource-barid-value-maxvalue-boolean"><code>SetMemberBar(source, barId, value, maxValue)</code> → <code>boolean</code></h4>
+<p>Actualiza una barra personalizada en el HUD visible para todo el party.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Actualizar mana tras lanzar un hechizo</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">&#39;magia:lanzar&#39;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">coste</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">nuevoMana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nf">GetMana</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">coste</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">SetMemberBar</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;mana&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">nuevoMana</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="setmemberstatussource-statusid-active-boolean"><code>SetMemberStatus(source, statusId, active)</code> → <code>boolean</code></h4>
+<p>Mostrar/ocultar un icono de estado en el HUD.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Mostrar &quot;envenenado&quot;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;poisoned&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">-- Quitar &quot;envenenado&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;poisoned&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="setpartybucketsource-bucket-boolean"><code>SetPartyBucket(source, bucket)</code> → <code>boolean</code></h4>
+<p>Mover todo el party a un routing bucket (instancia privada).</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">&#39;mazmorra:entrar&#39;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">id</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">SetPartyBucket</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">&#39;ox_lib:notify&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">description</span><span class="o">=</span><span class="s1">&#39;Necesitas un party!&#39;</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="getpartybucketsource-number"><code>GetPartyBucket(source)</code> → <code>number</code></h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">GetPartyBucket</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span></code></pre></div>
 <hr />
-<h2 id="ejemplo-de-uso">Ejemplo de Uso</h2>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- client/main.lua de tu script</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nf">RegisterCommand</span><span class="p">(</span><span class="s1">&#39;plantar_trigo&#39;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_coltivation&#39;</span><span class="p">]:</span><span class="nf">seme_grano</span><span class="p">()</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kr">end</span><span class="p">)</span>
+<h3 id="cliente">Cliente</h3>
+<h4 id="requestmemberpickmode-callbackevent"><code>RequestMemberPick(mode, callbackEvent)</code></h4>
+<p>Activa la selección de miembro con clic. El callback recibe <code>{ source, name }</code>.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nf">RegisterCommand</span><span class="p">(</span><span class="s1">&#39;curar_aliado&#39;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">RequestMemberPick</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;curacion:objetivo&#39;</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">&#39;curacion:objetivo&#39;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">member</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">member</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nf">TriggerServerEvent</span><span class="p">(</span><span class="s1">&#39;curacion:aplicar&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="py">source</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="cancelmemberpick"><code>CancelMemberPick()</code></h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">CancelMemberPick</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="getpartytarget-ped-netid-source-isplayer-nil"><code>GetPartyTarget()</code> → <code>{ ped, netId, source, isPlayer } | nil</code></h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">&#39;avalon_party&#39;</span><span class="p">]:</span><span class="nf">GetPartyTarget</span><span class="p">()</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">isPlayer</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nf">TriggerServerEvent</span><span class="p">(</span><span class="s1">&#39;combate:atacar&#39;</span><span class="p">,</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">source</span><span class="p">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kr">end</span>
 </span></code></pre></div>
 
 

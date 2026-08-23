@@ -1,0 +1,2627 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentazione ufficiale degli script FiveM di AvalonStudios">
+      
+      
+        <meta name="author" content="AvalonStudiosScripts">
+      
+      
+        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/scripts/party/">
+      
+      
+        <link rel="prev" href="../mounts/">
+      
+      
+        <link rel="next" href="../robbery/">
+      
+      
+        
+          <link rel="alternate" href="/script-docs/" hreflang="it">
+        
+          <link rel="alternate" href="/script-docs/en/" hreflang="en">
+        
+          <link rel="alternate" href="/script-docs/es/" hreflang="es">
+        
+          <link rel="alternate" href="/script-docs/pt/" hreflang="pt">
+        
+          <link rel="alternate" href="/script-docs/zh/" hreflang="zh">
+        
+          <link rel="alternate" href="/script-docs/th/" hreflang="th">
+        
+      
+      
+      <link rel="icon" href="../../img/logo_transparent.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>avalon_party - AvalonStudios Script Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#avalon_party" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="AvalonStudios Script Docs" class="md-header__button md-logo" aria-label="AvalonStudios Script Docs" data-md-component="logo">
+      
+  <img src="../../img/logo_transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AvalonStudios Script Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              avalon_party
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Tema chiaro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Tema chiaro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Tema scuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tema scuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/script-docs/" hreflang="it" class="md-select__link">
+              🇮🇹 Italiano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/en/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/es/" hreflang="es" class="md-select__link">
+              🇪🇸 Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/pt/" hreflang="pt" class="md-select__link">
+              🇵🇹 Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/zh/" hreflang="zh" class="md-select__link">
+              🇨🇳 中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/th/" hreflang="th" class="md-select__link">
+              🇹🇭 ภาษาไทย
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AvalonStudiosScripts/script-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AvalonStudiosScripts/script-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Script
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AvalonStudios Script Docs" class="md-nav__button md-logo" aria-label="AvalonStudios Script Docs" data-md-component="logo">
+      
+  <img src="../../img/logo_transparent.png" alt="logo">
+
+    </a>
+    AvalonStudios Script Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AvalonStudiosScripts/script-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AvalonStudiosScripts/script-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Script
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coltivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_coltivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dustman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_dustman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrician/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_electrician
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lumberjack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_lumberjack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_mining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_mounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_party
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_party
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dipendenze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dipendenze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lingue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lingue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interazione-con-ox_target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interazione con ox_target
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menu-party-f5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menu party (F5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impostazioni-generali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impostazioni Generali
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-attivadisattiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature (Attiva/Disattiva)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vita-e-stamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vita e stamina
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementi-nel-mondo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementi nel mondo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcatura-bersagli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marcatura bersagli
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marcatura bersagli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simboli-disponibili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simboli disponibili
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barre-vitali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barre Vitali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Barre Vitali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggiungere-una-barra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggiungere una barra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggiungere-uno-stato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggiungere uno stato
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-disponibili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Disponibili
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Disponibili">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-server-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Server-Side
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Server-Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isinpartysource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IsInParty(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartymemberssource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyMembers(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartyleadersource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyLeader(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmemberbarsource-barid-value-maxvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMemberBar(source, barId, value, maxValue)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmemberstatussource-statusid-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMemberStatus(source, statusId, active)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpartybucketsource-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPartyBucket(source, bucket)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartybucketsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyBucket(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-client-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Client-Side
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Client-Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestmemberpickmode-callbackevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RequestMemberPick(mode, callbackEvent)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelmemberpick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CancelMemberPick()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartytarget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyTarget()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esempio-completo-script-di-magia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio Completo — Script di Magia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../robbery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_robbery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_trash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dipendenze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dipendenze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lingue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lingue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interazione-con-ox_target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interazione con ox_target
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menu-party-f5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menu party (F5)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impostazioni-generali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impostazioni Generali
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-attivadisattiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature (Attiva/Disattiva)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vita-e-stamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vita e stamina
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elementi-nel-mondo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementi nel mondo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marcatura-bersagli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marcatura bersagli
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marcatura bersagli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simboli-disponibili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simboli disponibili
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barre-vitali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Barre Vitali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Barre Vitali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggiungere-una-barra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggiungere una barra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggiungere-uno-stato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggiungere uno stato
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-disponibili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Disponibili
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Disponibili">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-server-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Server-Side
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Server-Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isinpartysource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IsInParty(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartymemberssource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyMembers(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartyleadersource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyLeader(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmemberbarsource-barid-value-maxvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMemberBar(source, barId, value, maxValue)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmemberstatussource-statusid-active" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetMemberStatus(source, statusId, active)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpartybucketsource-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetPartyBucket(source, bucket)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartybucketsource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyBucket(source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-client-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Client-Side
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Export Client-Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestmemberpickmode-callbackevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RequestMemberPick(mode, callbackEvent)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelmemberpick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CancelMemberPick()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpartytarget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetPartyTarget()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esempio-completo-script-di-magia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio Completo — Script di Magia
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="avalon_party">avalon_party</h1>
+<p>Sistema <strong>party in stile MMORPG</strong> per FiveM. Permette ai giocatori di formare gruppi con HUD in tempo reale, barre vitali personalizzabili, ready check, waypoint condiviso, spettatore automatico, blip e marker sui compagni, marcatura bersagli con simboli e istanze private (routing bucket).</p>
+<p><strong>Versione:</strong> 1.0.0 | <strong>Autore:</strong> Avalon | <strong>Framework:</strong> ESX / QBCore / QBox / Standalone</p>
+<hr />
+<h2 id="dipendenze">Dipendenze</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th style="text-align: center;">Obbligatoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ox_lib</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>ox_target</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="installazione">Installazione</h2>
+<ol>
+<li>Copia la cartella <code>avalon_party/</code> in <code>resources/</code></li>
+<li>Aggiungi la risorsa al <code>server.cfg</code> <strong>dopo</strong> <code>ox_lib</code> e <code>ox_target</code></li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ensure ox_lib
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ensure ox_target
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ensure avalon_party
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Framework</p>
+<p>Il rilevamento è automatico: <code>es_extended</code> → ESX, <code>qbx_core</code> → QBox, <code>qb-core</code> → QBCore, altrimenti standalone. I nomi personaggio vengono letti dal framework rilevato.</p>
+</div>
+<hr />
+<h2 id="lingue">Lingue</h2>
+<p>I testi stanno in <code>locales/&lt;codice&gt;.lua</code>, un file per lingua. In dotazione: <strong>inglese, italiano, portoghese, spagnolo, russo, cinese semplificato, thailandese</strong>.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- config.lua (va lasciata in cima al file)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">Config</span><span class="p">.</span><span class="py">locale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'it'</span><span class="w">   </span><span class="c1">-- en | it | pt | es | ru | zh | th</span>
+</span></code></pre></div>
+<ul>
+<li>Una chiave mancante in una traduzione ricade automaticamente sull'inglese</li>
+<li>Le traduzioni valgono sia per le notifiche di gioco che per i testi dentro l'HUD</li>
+<li>Per aggiungerne una: copia <code>locales/en.lua</code>, rinominalo (es. <code>de.lua</code>), traduci i valori, cambia <code>Locales['en']</code> in <code>Locales['de']</code> e imposta <code>Config.locale = 'de'</code></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Label personalizzate</p>
+<p>Ogni <code>label</code> in <code>Config.Bars</code>, <code>Config.Statuses</code> e <code>Config.TargetSymbols</code> può essere una chiave <code>Locale.*</code> (tradotta) oppure una stringa scritta a mano.</p>
+</div>
+<hr />
+<h2 id="comandi">Comandi</h2>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Argomento</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/party</code></td>
+<td>—</td>
+<td>Apre il menu gestione party</td>
+</tr>
+<tr>
+<td><code>/partyinvite</code></td>
+<td><code>[id giocatore]</code></td>
+<td>Invita un giocatore nel party</td>
+</tr>
+<tr>
+<td><code>/partyaccept</code></td>
+<td>—</td>
+<td>Accetta l'invito ricevuto</td>
+</tr>
+<tr>
+<td><code>/partydecline</code></td>
+<td>—</td>
+<td>Rifiuta l'invito ricevuto</td>
+</tr>
+<tr>
+<td><code>/partyleave</code></td>
+<td>—</td>
+<td>Lascia il party</td>
+</tr>
+<tr>
+<td><code>/partydisband</code></td>
+<td>—</td>
+<td>Scioglie il party (solo leader)</td>
+</tr>
+<tr>
+<td><code>/partykick</code></td>
+<td><code>[id giocatore]</code></td>
+<td>Espelle un membro (solo leader)</td>
+</tr>
+<tr>
+<td><code>/partytransfer</code></td>
+<td><code>[id giocatore]</code></td>
+<td>Trasferisce la leadership (solo leader)</td>
+</tr>
+<tr>
+<td><code>/partyready</code></td>
+<td>—</td>
+<td>Avvia il ready check (solo leader)</td>
+</tr>
+<tr>
+<td><code>/partywp</code></td>
+<td>—</td>
+<td>Condivide il waypoint attuale (solo leader)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Chiunque può invitare</p>
+<p>Non serve essere già in un party: il primo invito crea il gruppo. I permessi (leader, membro, party esistente) sono comunque validati lato server.</p>
+</div>
+<hr />
+<h2 id="tasti">Tasti</h2>
+<table>
+<thead>
+<tr>
+<th>Tasto</th>
+<th>Azione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>F5</strong></td>
+<td>Apre il menu gestione party</td>
+</tr>
+<tr>
+<td><strong>F1</strong></td>
+<td>Accetta invito in arrivo</td>
+</tr>
+<tr>
+<td><strong>F2</strong></td>
+<td>Rifiuta invito in arrivo</td>
+</tr>
+<tr>
+<td><strong>F3</strong></td>
+<td>Conferma "Pronto" (ready check)</td>
+</tr>
+<tr>
+<td><strong>F4</strong></td>
+<td>Conferma "Non pronto" (ready check)</td>
+</tr>
+<tr>
+<td><strong>TAB</strong></td>
+<td>Cicla i bersagli vicini (va attivato dal menu)</td>
+</tr>
+<tr>
+<td><strong>CTRL</strong> (tenuto)</td>
+<td>Mirino di marcatura, solo leader — click destro su un ped apre la scelta del simbolo</td>
+</tr>
+<tr>
+<td><strong>← →</strong></td>
+<td>Cambia giocatore osservato in modalità spettatore</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Cambia i tasti</p>
+<p>I tasti di default sono in <code>config.lua</code> sotto <code>Config.Keys</code>. Essendo registrati con <code>lib.addKeybind</code>, ogni giocatore può rimapparli dalle impostazioni tasti di FiveM (<code>Impostazioni → Comandi → FiveM</code>).</p>
+</div>
+<hr />
+<h2 id="interazione-con-ox_target">Interazione con ox_target</h2>
+<p>Puntando un altro giocatore compare l'opzione <strong>"Invita nel Party"</strong> (raggio 3 m). È il modo più rapido di invitare senza conoscere l'ID server.</p>
+<hr />
+<h2 id="menu-party-f5">Menu party (F5)</h2>
+<p>Il menu è una schermata NUI e contiene:</p>
+<ul>
+<li><strong>Lista membri</strong> con kick e trasferimento leadership (solo leader)</li>
+<li><strong>Lascia party</strong> / <strong>Sciogli party</strong> (solo leader)</li>
+<li><strong>Avvia ready check</strong> e <strong>Condividi waypoint</strong> (solo leader)</li>
+<li><strong>Toggle bersaglio TAB</strong> e <strong>toggle marcatura simboli</strong></li>
+<li><strong>Visibilità HUD</strong>: ogni barra e il blocco stati si accendono/spengono singolarmente</li>
+<li><strong>Visibilità elementi 3D</strong>: blip sulla mappa e marker sopra la testa</li>
+<li><strong>Scala HUD</strong> regolabile da <code>0.5</code> a <code>3.0</code></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Le impostazioni restano</p>
+<p>Le scelte del menu sono <strong>per giocatore</strong> e vengono salvate nel <code>localStorage</code> della NUI: zero traffico server e nessuna tabella database. Restano anche dopo un riavvio del gioco.</p>
+</div>
+<hr />
+<h2 id="configurazione">Configurazione</h2>
+<h3 id="impostazioni-generali">Impostazioni Generali</h3>
+<table>
+<thead>
+<tr>
+<th>Opzione</th>
+<th>Default</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Config.locale</code></td>
+<td><code>'en'</code></td>
+<td>Lingua dei testi (<code>en</code> <code>it</code> <code>pt</code> <code>es</code> <code>ru</code> <code>zh</code> <code>th</code>)</td>
+</tr>
+<tr>
+<td><code>Config.maxPartySize</code></td>
+<td><code>6</code></td>
+<td>Numero massimo di membri per party</td>
+</tr>
+<tr>
+<td><code>Config.inviteExpiry</code></td>
+<td><code>30000</code></td>
+<td>ms prima che un invito scada</td>
+</tr>
+<tr>
+<td><code>Config.offlineGracePeriod</code></td>
+<td><code>120000</code></td>
+<td>ms in cui un membro disconnesso mantiene il suo posto</td>
+</tr>
+<tr>
+<td><code>Config.readyCheckTimeout</code></td>
+<td><code>15000</code></td>
+<td>ms di durata del ready check</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Riconnessione</p>
+<p>Entro il <code>offlineGracePeriod</code> il giocatore che rientra torna nel suo party. Se era leader, la leadership passa subito a un altro membro ma gli viene restituita al rientro.</p>
+</div>
+<h3 id="feature-attivadisattiva">Feature (Attiva/Disattiva)</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">Config</span><span class="p">.</span><span class="py">Features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nv">distance</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="c1">-- distanza in metri sui member card</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nv">readyCheck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="c1">-- sistema ready check</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">waypoint</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="c1">-- waypoint condiviso dal leader</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nv">spectator</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="c1">-- spettatore automatico alla morte</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nv">targetMark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">  </span><span class="c1">-- marcatura bersagli con simboli</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Disattivare una feature ne rimuove anche i comandi, i tasti e le voci di menu collegate.</p>
+<h3 id="hud">HUD</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">Config</span><span class="p">.</span><span class="py">UI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nv">position</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s1">'top-left'</span><span class="p">,</span><span class="w">  </span><span class="c1">-- 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nv">pickClick</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s1">'right'</span><span class="p">,</span><span class="w">     </span><span class="c1">-- tasto mouse per selezionare un membro: 'right' | 'left'</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nv">offsetX</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nv">offsetY</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nv">hudWidth</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mi">260</span><span class="p">,</span><span class="w">         </span><span class="c1">-- larghezza card in px, prima della scala</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nv">scale</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">         </span><span class="c1">-- 1.0 = automatico (vedi sotto)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nv">showStatuses</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">        </span><span class="c1">-- mostra il blocco icone di stato</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nv">updateInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">         </span><span class="c1">-- ms tra gli aggiornamenti dei valori vitali</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nv">criticalPct</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">          </span><span class="c1">-- sotto questa percentuale la barra pulsa in rosso</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Scala automatica</p>
+<p>Lasciando <code>scale = 1.0</code> l'HUD si adatta da solo alla risoluzione: <code>1.5</code> da 2560 px, <code>1.6</code> da 3440 px (ultrawide), <code>2.0</code> da 3840 px (4K). Qualunque altro valore viene usato così com'è. Il giocatore può comunque sovrascriverlo dal menu F5.</p>
+</div>
+<h3 id="vita-e-stamina">Vita e stamina</h3>
+<p>Vita e stamina non passano dal server: ogni client le legge dai nativi GTA per tutti i membri visibili. Fuori dal raggio di streaming (~200 m) i valori restano l'ultimo noto e vengono marcati come non aggiornati.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">Config</span><span class="p">.</span><span class="py">Health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nv">displayMode</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">'usable'</span><span class="p">,</span><span class="w">  </span><span class="c1">-- 'usable' | 'raw' | 'percent'</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nv">syncMaxHealth</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">      </span><span class="c1">-- condivide il massimale HP tra i client (statebag)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nv">applyMaxToClone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">      </span><span class="c1">-- alza il tetto HP dei ped clonati sugli altri client</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nv">autoDeadStatus</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">      </span><span class="c1">-- accende da solo lo stato 'dead' a vita zero</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nv">deadStatusId</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">'dead'</span><span class="p">,</span><span class="w">    </span><span class="c1">-- id dello status usato per la morte</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th><code>displayMode</code></th>
+<th>Cosa mostra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>usable</code></td>
+<td><code>87/100</code> uomo, <code>62/75</code> donna — vita meno la soglia di morte</td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>187/200</code> e <code>162/175</code> — valori nativi, barra a metà alla morte</td>
+</tr>
+<tr>
+<td><code>percent</code></td>
+<td><code>87/100</code> per tutti — stessa lunghezza barra per uomo e donna</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Massimali personalizzati</p>
+<p>GTA non sincronizza il massimale HP. Con <code>syncMaxHealth = false</code> le donne appaiono al 75% sugli HUD altrui e i potenziamenti vita restano invisibili. Con <code>applyMaxToClone = false</code> un membro da 400 HP viene mostrato a 200 sullo schermo degli altri.</p>
+</div>
+<h3 id="elementi-nel-mondo">Elementi nel mondo</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">Config</span><span class="p">.</span><span class="py">World</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nv">showBlips</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nv">blipSprite</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">      </span><span class="c1">-- 1 = punto giocatore standard</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nv">blipColorMember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">      </span><span class="c1">-- giallo</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nv">blipColorLeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">     </span><span class="c1">-- oro</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nv">blipScale</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nv">showHeadMarker</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nv">headMarkerDist</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span><span class="w">   </span><span class="c1">-- distanza massima, unità GTA</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nv">headMarkerOffsetZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nv">headMarker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="nv">text</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">'🛡'</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="nv">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.30</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="nv">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="nv">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">220</span><span class="p">,</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>I valori qui sono i <strong>default</strong>: ogni giocatore può poi spegnere blip e marker dal menu F5.</p>
+<h3 id="marcatura-bersagli">Marcatura bersagli</h3>
+<p>Con <code>Config.Features.targetMark = true</code> il leader può segnare un ped con un simbolo visibile a tutto il party: tiene premuto <strong>CTRL</strong>, punta il ped e fa click destro per scegliere il simbolo. Il <strong>TAB</strong> invece cicla i ped vicini ed è disponibile a tutti i membri, una volta attivato dal menu.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">Config</span><span class="p">.</span><span class="py">TargetMark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nv">range</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mf">25.0</span><span class="p">,</span><span class="w">    </span><span class="c1">-- raggio di rilevamento TAB</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nv">oxTargetRange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25.0</span><span class="p">,</span><span class="w">    </span><span class="c1">-- raggio ox_target per "Segna Bersaglio"</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nv">tabMarker</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="nv">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nv">tabRingType</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">        </span><span class="c1">-- 1 = cerchio piatto, 28 = sottile, 36 = checkpoint</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nv">tabShowRing</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nv">tabArrowType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">       </span><span class="c1">-- 27 = freccia giù, 0 = freccia su</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nv">tabShowArrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nv">ctrlIcon</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s1">'fa-solid fa-arrows-to-dot'</span><span class="p">,</span><span class="w">  </span><span class="c1">-- icona mirino (classe Font Awesome)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nv">symbolScale</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mf">0.70</span><span class="p">,</span><span class="w">    </span><span class="c1">-- dimensione del simbolo sopra il ped</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="nv">symbolOffsetZ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">     </span><span class="c1">-- altezza sopra il ped</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nv">symbolMaxDist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span><span class="w">    </span><span class="c1">-- oltre questa distanza il simbolo non viene disegnato</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="nv">arrowScale</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mf">0.65</span><span class="p">,</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="nv">ringScale</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="nv">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.15</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="simboli-disponibili">Simboli disponibili</h4>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+<th style="text-align: center;">Icona</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>warning</code></td>
+<td>Attenzione</td>
+<td style="text-align: center;">⚠️</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>Bersaglio</td>
+<td style="text-align: center;">🎯</td>
+</tr>
+<tr>
+<td><code>attack</code></td>
+<td>Attacca</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td><code>defend</code></td>
+<td>Difendi</td>
+<td style="text-align: center;">🛡️</td>
+</tr>
+<tr>
+<td><code>heal</code></td>
+<td>Cura</td>
+<td style="text-align: center;">💊</td>
+</tr>
+<tr>
+<td><code>focus</code></td>
+<td>Focus</td>
+<td style="text-align: center;">⭐</td>
+</tr>
+</tbody>
+</table>
+<p>Puoi aggiungerne o rimuoverne liberamente in <code>Config.TargetSymbols</code>.</p>
+<h3 id="barre-vitali">Barre Vitali</h3>
+<p>Le barre con <code>builtin = true</code> si aggiornano automaticamente dai nativi GTA (zero traffico server). Le barre con <code>builtin = false</code> restano <strong>nascoste finché il tuo script non manda un valore</strong> con l'export <code>SetMemberBar</code>.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+<th style="text-align: center;">Builtin</th>
+<th>Colore</th>
+<th style="text-align: center;">Visibile di default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>health</code></td>
+<td>HP</td>
+<td style="text-align: center;">✅</td>
+<td>Rosso</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>stamina</code></td>
+<td>Stamina</td>
+<td style="text-align: center;">✅</td>
+<td>Verde</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>mana</code></td>
+<td>Mana</td>
+<td style="text-align: center;">❌</td>
+<td>Blu</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>shield</code></td>
+<td>Scudo</td>
+<td style="text-align: center;">❌</td>
+<td>Grigio</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>rage</code></td>
+<td>Furia</td>
+<td style="text-align: center;">❌</td>
+<td>Arancio</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h4 id="aggiungere-una-barra">Aggiungere una barra</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">-- config.lua, dentro Config.Bars</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nv">id</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s1">'energy'</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nv">label</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s1">'Energia'</span><span class="p">,</span><span class="w">     </span><span class="c1">-- oppure una chiave Locale.*</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nv">color</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s1">'#f39c12'</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nv">bgColor</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">'#3d2200'</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nv">icon</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="s1">'⚡'</span><span class="p">,</span><span class="w">           </span><span class="c1">-- emoji o path sotto ui/dist/img/ (es. 'img/energy.png')</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="nv">defaultMax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="nv">builtin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">         </span><span class="c1">-- IMPORTANTE: false per le barre gestite da script esterni</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nv">visible</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">          </span><span class="c1">-- stato iniziale del toggle nel menu</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">},</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Gestire vita o stamina con il tuo sistema</p>
+<p>Metti <code>builtin = false</code> sulla barra <code>health</code> (o <code>stamina</code>): la risorsa smette di scriverci e il valore passa a essere quello che mandi tu con <code>SetMemberBar</code>. Utile con sistemi di ferite o scale HP personalizzate.</p>
+</div>
+<h3 id="status">Status</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Label</th>
+<th style="text-align: center;">Icona</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>combat</code></td>
+<td>In combattimento</td>
+<td style="text-align: center;">⚔️</td>
+</tr>
+<tr>
+<td><code>poisoned</code></td>
+<td>Avvelenato</td>
+<td style="text-align: center;">☠️</td>
+</tr>
+<tr>
+<td><code>buffed</code></td>
+<td>Potenziato</td>
+<td style="text-align: center;">✨</td>
+</tr>
+<tr>
+<td><code>dead</code></td>
+<td>Morto</td>
+<td style="text-align: center;">💀</td>
+</tr>
+<tr>
+<td><code>afk</code></td>
+<td>AFK</td>
+<td style="text-align: center;">💤</td>
+</tr>
+</tbody>
+</table>
+<p>Tutti gli stati si accendono e spengono con <code>SetMemberStatus</code>, tranne <code>dead</code> che è automatico finché <code>Config.Health.autoDeadStatus = true</code>.</p>
+<h4 id="aggiungere-uno-stato">Aggiungere uno stato</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- config.lua, dentro Config.Statuses</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'stunned'</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Stordito'</span><span class="p">,</span><span class="w"> </span><span class="nv">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'💫'</span><span class="p">,</span><span class="w"> </span><span class="nv">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'#9b59b6'</span><span class="p">,</span><span class="w"> </span><span class="nv">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span>
+</span></code></pre></div>
+<p><code>duration</code> a <code>0</code> significa che lo stato resta finché non lo spegni tu.</p>
+<hr />
+<h2 id="export-disponibili">Export Disponibili</h2>
+<hr />
+<h3 id="export-server-side">Export Server-Side</h3>
+<h4 id="isinpartysource"><code>IsInParty(source)</code></h4>
+<p>Controlla se un giocatore è attualmente in un party.</p>
+<p><strong>Parametri:</strong> <code>source</code> — ID server del giocatore
+<strong>Ritorna:</strong> <code>boolean</code></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- server/main.lua</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">inParty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">IsInParty</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kr">if</span><span class="w"> </span><span class="nv">inParty</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="c1">-- blocca accesso a una zona solo-player</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'zone:denied'</span><span class="p">,</span><span class="w"> </span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s2">"Non puoi entrare in party"</span><span class="p">)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h4 id="getpartymemberssource"><code>GetPartyMembers(source)</code></h4>
+<p>Restituisce la lista degli ID server di tutti i membri del party del giocatore (leader incluso).</p>
+<p><strong>Parametri:</strong> <code>source</code> — qualsiasi membro del party
+<strong>Ritorna:</strong> <code>table</code> di sources, oppure <code>nil</code> se non è in party</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">-- server/main.lua</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kr">if</span><span class="w"> </span><span class="nv">members</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Il party ha "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="o">#</span><span class="nv">members</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">" membri"</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">memberId</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">members</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="c1">-- dai un item a tutti i membri del party</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="nv">exports</span><span class="p">.</span><span class="py">ox_inventory</span><span class="p">:</span><span class="nf">AddItem</span><span class="p">(</span><span class="nv">memberId</span><span class="p">,</span><span class="w"> </span><span class="s1">'health_potion'</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h4 id="getpartyleadersource"><code>GetPartyLeader(source)</code></h4>
+<p>Restituisce l'ID server del leader del party.</p>
+<p><strong>Parametri:</strong> <code>source</code> — qualsiasi membro del party
+<strong>Ritorna:</strong> <code>number</code> (source del leader), oppure <code>nil</code></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">-- server/main.lua</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">leader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyLeader</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kr">if</span><span class="w"> </span><span class="nv">leader</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">source</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Questo giocatore è il leader del suo party"</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h4 id="setmemberbarsource-barid-value-maxvalue"><code>SetMemberBar(source, barId, value, maxValue)</code></h4>
+<p>Aggiorna il valore di una barra nel HUD del party per un giocatore specifico. Visibile a tutti i membri del suo party in tempo reale.</p>
+<p><strong>Parametri:</strong>
+| Nome | Tipo | Descrizione |
+|------|------|-------------|
+| <code>source</code> | <code>number</code> | ID server del giocatore |
+| <code>barId</code> | <code>string</code> | ID della barra (<code>"mana"</code>, <code>"shield"</code>, <code>"rage"</code>, o custom) |
+| <code>value</code> | <code>number</code> | Valore attuale |
+| <code>maxValue</code> | <code>number</code> | Valore massimo |</p>
+<p><strong>Ritorna:</strong> <code>boolean</code> — <code>true</code> se aggiornato, <code>false</code> se il giocatore non è in party o l'ID barra non è valido</p>
+<div class="admonition warning">
+<p class="admonition-title">Solo barre con <code>builtin = false</code></p>
+<p>La chiamata viene rifiutata sulle barre marcate <code>builtin = true</code>, gestite dalla risorsa stessa. Per prendere il controllo di <code>health</code> o <code>stamina</code> metti <code>builtin = false</code> su quella barra in <code>config.lua</code>.</p>
+</div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">-- server/main.lua — sistema mana</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'magic:castSpell'</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'magic:castSpell'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">manaCost</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">currentMana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">GetPlayerMana</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span><span class="w"> </span><span class="c1">-- funzione del tuo script</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">newMana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">currentMana</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">manaCost</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nf">SetPlayerMana</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">newMana</span><span class="p">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="c1">-- aggiorna la barra nel HUD del party</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberBar</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'mana'</span><span class="p">,</span><span class="w"> </span><span class="nv">newMana</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">-- Esempio: shield che si riduce ai danni</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'combat:takeDamage'</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'combat:takeDamage'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">damage</span><span class="p">)</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">shield</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">GetPlayerShield</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">newShield</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nv">shield</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">damage</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberBar</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'shield'</span><span class="p">,</span><span class="w"> </span><span class="nv">newShield</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h4 id="setmemberstatussource-statusid-active"><code>SetMemberStatus(source, statusId, active)</code></h4>
+<p>Attiva o disattiva un'icona di stato sul member card HUD.</p>
+<p><strong>Parametri:</strong>
+| Nome | Tipo | Descrizione |
+|------|------|-------------|
+| <code>source</code> | <code>number</code> | ID server del giocatore |
+| <code>statusId</code> | <code>string</code> | ID dello status (<code>"combat"</code>, <code>"poisoned"</code>, <code>"buffed"</code>, <code>"dead"</code>, <code>"afk"</code>) |
+| <code>active</code> | <code>boolean</code> | <code>true</code> per mostrarlo, <code>false</code> per nasconderlo |</p>
+<p><strong>Ritorna:</strong> <code>boolean</code></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- server/main.lua</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">-- Mostra "In Combat" quando il giocatore spara</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'weaponDamageEvent'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">'combat'</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="c1">-- Rimuovi dopo 5 secondi</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="nf">SetTimeout</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">'combat'</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="c1">-- Mostra "Avvelenato" quando il giocatore viene avvelenato</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'poison:apply'</span><span class="p">)</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'poison:apply'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">'poisoned'</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'poison:cure'</span><span class="p">)</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'poison:cure'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="s1">'poisoned'</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Stato <code>dead</code></p>
+<p>Con <code>Config.Health.autoDeadStatus = true</code> (default) lo stato morte è gestito dalla risorsa. Mettilo a <code>false</code> se vuoi pilotarlo dal tuo script.</p>
+</div>
+<hr />
+<h4 id="setpartybucketsource-bucket"><code>SetPartyBucket(source, bucket)</code></h4>
+<p>Sposta l'intero party di un giocatore in un routing bucket (dimensione separata). Utile per dungeon, istanze private, eventi.</p>
+<p><strong>Parametri:</strong>
+| Nome | Tipo | Descrizione |
+|------|------|-------------|
+| <code>source</code> | <code>number</code> | Qualsiasi membro del party |
+| <code>bucket</code> | <code>number</code> | ID del routing bucket di destinazione (0 = mondo principale) |</p>
+<p><strong>Ritorna:</strong> <code>boolean</code></p>
+<p>Il bucket resta associato al party: chi entra dopo viene spostato automaticamente, chi lascia il party torna al bucket 0. Non serve essere leader per chiamarlo.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">-- server/main.lua — dungeon instanziato</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'dungeon:enter'</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'dungeon:enter'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">dungeonId</span><span class="p">)</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="c1">-- Genera un bucket univoco per questo dungeon</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">dungeonId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1000</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetPartyBucket</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">bucket</span><span class="p">)</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'dungeon:teleport'</span><span class="p">,</span><span class="w"> </span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">dungeonId</span><span class="p">)</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Party spostato nel bucket "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">bucket</span><span class="p">)</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="kr">else</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'ox_lib:notify'</span><span class="p">,</span><span class="w"> </span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">            </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'error'</span><span class="p">,</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">            </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Devi essere in un party per entrare nel dungeon!'</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">        </span><span class="p">})</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="c1">-- Riporta al mondo principale all'uscita</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'dungeon:exit'</span><span class="p">)</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'dungeon:exit'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetPartyBucket</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h4 id="getpartybucketsource"><code>GetPartyBucket(source)</code></h4>
+<p>Ottiene il routing bucket attuale del party.</p>
+<p><strong>Parametri:</strong> <code>source</code> — qualsiasi membro del party
+<strong>Ritorna:</strong> <code>number</code> (0 = mondo principale, anche se il giocatore non è in party)</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyBucket</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Il party è nel bucket: "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">bucket</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="export-client-side">Export Client-Side</h3>
+<h4 id="requestmemberpickmode-callbackevent"><code>RequestMemberPick(mode, callbackEvent)</code></h4>
+<p>Attiva la modalità selezione membro: compare il cursore sulle card del party e il giocatore clicca il membro che vuole selezionare. Utile per puntare cure, buff, scambi o abilità a un membro specifico.</p>
+<p><strong>Parametri:</strong>
+| Nome | Tipo | Valori | Descrizione |
+|------|------|--------|-------------|
+| <code>mode</code> | <code>string</code> | <code>"self"</code> / <code>"target"</code> | Chi riceve l'evento: <code>"self"</code> chi ha selezionato · <code>"target"</code> il membro selezionato |
+| <code>callbackEvent</code> | <code>string</code> | nome evento | Evento client (<code>RegisterNetEvent</code>) che riceve i dati |</p>
+<p><strong>L'evento di callback riceve una tabella:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Server ID del membro selezionato</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Nome del personaggio</td>
+</tr>
+<tr>
+<td><code>bars</code></td>
+<td><code>table</code></td>
+<td>Barre lato server (mana, shield, …) — <strong>non</strong> vita e stamina</td>
+</tr>
+<tr>
+<td><code>statuses</code></td>
+<td><code>table</code></td>
+<td>Stati attivi</td>
+</tr>
+<tr>
+<td><code>isLeader</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code> se il membro selezionato è il leader</td>
+</tr>
+<tr>
+<td><code>offline</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code> se è disconnesso ma ancora nel party</td>
+</tr>
+<tr>
+<td><code>picker</code></td>
+<td><code>number</code></td>
+<td>Server ID di chi ha avviato la selezione</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Nessun callback all'annullamento</p>
+<p>Se il giocatore preme <strong>ESC</strong> o chiami <code>CancelMemberPick()</code>, l'evento <strong>non</strong> viene emesso. Il tasto del mouse usato per il click si imposta con <code>Config.UI.pickClick</code>. Se il giocatore non è in un party la chiamata mostra una notifica di errore e non fa nulla.</p>
+</div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">-- client/main.lua del tuo script</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1">-- Seleziona un alleato da curare, con rinuncia dopo 10 secondi</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nf">RegisterCommand</span><span class="p">(</span><span class="s1">'cure'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">RequestMemberPick</span><span class="p">(</span><span class="s1">'self'</span><span class="p">,</span><span class="w"> </span><span class="s1">'myScript:onMemberPicked'</span><span class="p">)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="nf">SetTimeout</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">CancelMemberPick</span><span class="p">()</span><span class="w">  </span><span class="c1">-- ignorato se ha già scelto</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'myScript:onMemberPicked'</span><span class="p">)</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'myScript:onMemberPicked'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">member</span><span class="p">)</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="py">offline</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Hai selezionato: "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="py">name</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">" (source: "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="py">id</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">")"</span><span class="p">)</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="nf">TriggerServerEvent</span><span class="p">(</span><span class="s1">'healing:applyHeal'</span><span class="p">,</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="py">id</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">-- mode 'target': l'evento arriva al membro selezionato, non a chi seleziona</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nf">RegisterCommand</span><span class="p">(</span><span class="s1">'giveitem'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">RequestMemberPick</span><span class="p">(</span><span class="s1">'target'</span><span class="p">,</span><span class="w"> </span><span class="s1">'myScript:itemOffered'</span><span class="p">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'myScript:itemOffered'</span><span class="p">)</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'myScript:itemOffered'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">data</span><span class="p">)</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="c1">-- data.picker = chi ha avviato la selezione</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="nb">print</span><span class="p">((</span><span class="s1">'Il giocatore %s vuole darti un oggetto'</span><span class="p">):</span><span class="nf">format</span><span class="p">(</span><span class="nv">data</span><span class="p">.</span><span class="py">picker</span><span class="p">))</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h4 id="cancelmemberpick"><code>CancelMemberPick()</code></h4>
+<p>Cancella la modalità selezione membro attiva senza selezionare nessuno. Nessun evento viene emesso. La chiamata è ignorata se non c'è una selezione in corso.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">CancelMemberPick</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h4 id="getpartytarget"><code>GetPartyTarget()</code></h4>
+<p>Restituisce le informazioni sul ped attualmente selezionato con il ciclo <strong>TAB</strong>. Disponibile solo se <code>Config.Features.targetMark = true</code>.</p>
+<p><strong>Ritorna:</strong> <code>table</code> <code>{ ped, netId, source, isPlayer }</code> oppure <code>nil</code> se nessun target attivo</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ped</code></td>
+<td><code>number</code></td>
+<td>Handle dell'entità</td>
+</tr>
+<tr>
+<td><code>netId</code></td>
+<td><code>number</code></td>
+<td>Network ID dell'entità</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>number</code></td>
+<td>Server ID (se è un player, altrimenti <code>nil</code>)</td>
+</tr>
+<tr>
+<td><code>isPlayer</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code> se il target è un altro giocatore</td>
+</tr>
+</tbody>
+</table>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">-- client/main.lua del tuo script</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1">-- Attacca il target attualmente selezionato</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nf">RegisterCommand</span><span class="p">(</span><span class="s1">'attack_target'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyTarget</span><span class="p">()</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">        </span><span class="nv">lib</span><span class="p">.</span><span class="nf">notify</span><span class="p">({</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'error'</span><span class="p">,</span><span class="w"> </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Nessun bersaglio selezionato'</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">        </span><span class="kr">return</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">isPlayer</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Target: giocatore "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">source</span><span class="p">)</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">        </span><span class="nf">TriggerServerEvent</span><span class="p">(</span><span class="s1">'combat:attackPlayer'</span><span class="p">,</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">source</span><span class="p">)</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="kr">else</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Target: NPC con netId "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">netId</span><span class="p">)</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">        </span><span class="nf">TriggerServerEvent</span><span class="p">(</span><span class="s1">'combat:attackNpc'</span><span class="p">,</span><span class="w"> </span><span class="nv">target</span><span class="p">.</span><span class="py">netId</span><span class="p">)</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">-- Controlla continuamente il target e disegna un marker</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nf">CreateThread</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="kr">while</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">        </span><span class="nf">Wait</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyTarget</span><span class="p">()</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">            </span><span class="kd">local</span><span class="w"> </span><span class="nv">coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">GetEntityCoords</span><span class="p">(</span><span class="nv">target</span><span class="p">.</span><span class="py">ped</span><span class="p">)</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">            </span><span class="nf">DrawMarker</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">coords</span><span class="p">.</span><span class="py">x</span><span class="p">,</span><span class="w"> </span><span class="nv">coords</span><span class="p">.</span><span class="py">y</span><span class="p">,</span><span class="w"> </span><span class="nv">coords</span><span class="p">.</span><span class="py">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">                </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">                </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">                </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">                </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">        </span><span class="kr">end</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="esempio-completo-script-di-magia">Esempio Completo — Script di Magia</h2>
+<p>Integrazione completa di <code>avalon_party</code> in uno script che gestisce mana, shield, status e dungeon istanziati.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">-- server/main.lua dello script magia</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">updateBars</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">mana</span><span class="p">,</span><span class="w"> </span><span class="nv">shield</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberBar</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'mana'</span><span class="p">,</span><span class="w">   </span><span class="nv">mana</span><span class="p">,</span><span class="w">   </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberBar</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'shield'</span><span class="p">,</span><span class="w"> </span><span class="nv">shield</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="kr">end</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1">-- Inizializza i valori al login</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'esx:playerLoaded'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">source</span><span class="p">)</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="nf">updateBars</span><span class="p">(</span><span class="nv">source</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="c1">-- Cast di un incantesimo</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'magic:cast'</span><span class="p">)</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'magic:cast'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">spellName</span><span class="p">)</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">mana</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">GetPlayerMana</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">shield</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">GetPlayerShield</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">cost</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">SpellCosts</span><span class="p">[</span><span class="nv">spellName</span><span class="p">]</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="mi">10</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">mana</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">cost</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'ox_lib:notify'</span><span class="p">,</span><span class="w"> </span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="s1">'error'</span><span class="p">,</span><span class="w"> </span><span class="nv">description</span><span class="o">=</span><span class="s1">'Mana insufficiente!'</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">        </span><span class="kr">return</span>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">    </span><span class="nv">mana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">mana</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">cost</span>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">    </span><span class="nf">SetPlayerMana</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">mana</span><span class="p">)</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="w">    </span><span class="nf">updateBars</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">mana</span><span class="p">,</span><span class="w"> </span><span class="nv">shield</span><span class="p">)</span>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">    </span><span class="c1">-- Mostra "Potenziato" agli alleati del party</span>
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'buffed'</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">    </span><span class="nf">SetTimeout</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">        </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetMemberStatus</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'buffed'</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a><span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a>
+</span><span id="__span-22-37"><a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="c1">-- Dungeon: sposta l'intero party in un'istanza privata</span>
+</span><span id="__span-22-38"><a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'dungeon:enter'</span><span class="p">)</span>
+</span><span id="__span-22-39"><a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'dungeon:enter'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">id</span><span class="p">)</span>
+</span><span id="__span-22-40"><a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-22-41"><a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">bucket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">id</span>
+</span><span id="__span-22-42"><a id="__codelineno-22-42" name="__codelineno-22-42" href="#__codelineno-22-42"></a>
+</span><span id="__span-22-43"><a id="__codelineno-22-43" name="__codelineno-22-43" href="#__codelineno-22-43"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">IsInParty</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-22-44"><a id="__codelineno-22-44" name="__codelineno-22-44" href="#__codelineno-22-44"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'ox_lib:notify'</span><span class="p">,</span><span class="w"> </span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="s1">'error'</span><span class="p">,</span><span class="w"> </span><span class="nv">description</span><span class="o">=</span><span class="s1">'Devi essere in party!'</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-22-45"><a id="__codelineno-22-45" name="__codelineno-22-45" href="#__codelineno-22-45"></a><span class="w">        </span><span class="kr">return</span>
+</span><span id="__span-22-46"><a id="__codelineno-22-46" name="__codelineno-22-46" href="#__codelineno-22-46"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-22-47"><a id="__codelineno-22-47" name="__codelineno-22-47" href="#__codelineno-22-47"></a>
+</span><span id="__span-22-48"><a id="__codelineno-22-48" name="__codelineno-22-48" href="#__codelineno-22-48"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyBucket</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-22-49"><a id="__codelineno-22-49" name="__codelineno-22-49" href="#__codelineno-22-49"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'ox_lib:notify'</span><span class="p">,</span><span class="w"> </span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">type</span><span class="o">=</span><span class="s1">'error'</span><span class="p">,</span><span class="w"> </span><span class="nv">description</span><span class="o">=</span><span class="s1">'Il tuo party è già in un istanza!'</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-22-50"><a id="__codelineno-22-50" name="__codelineno-22-50" href="#__codelineno-22-50"></a><span class="w">        </span><span class="kr">return</span>
+</span><span id="__span-22-51"><a id="__codelineno-22-51" name="__codelineno-22-51" href="#__codelineno-22-51"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-22-52"><a id="__codelineno-22-52" name="__codelineno-22-52" href="#__codelineno-22-52"></a>
+</span><span id="__span-22-53"><a id="__codelineno-22-53" name="__codelineno-22-53" href="#__codelineno-22-53"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetPartyBucket</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">bucket</span><span class="p">)</span>
+</span><span id="__span-22-54"><a id="__codelineno-22-54" name="__codelineno-22-54" href="#__codelineno-22-54"></a>
+</span><span id="__span-22-55"><a id="__codelineno-22-55" name="__codelineno-22-55" href="#__codelineno-22-55"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">memberId</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="nv">src</span><span class="p">))</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-22-56"><a id="__codelineno-22-56" name="__codelineno-22-56" href="#__codelineno-22-56"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'dungeon:teleport'</span><span class="p">,</span><span class="w"> </span><span class="nv">memberId</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+</span><span id="__span-22-57"><a id="__codelineno-22-57" name="__codelineno-22-57" href="#__codelineno-22-57"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-22-58"><a id="__codelineno-22-58" name="__codelineno-22-58" href="#__codelineno-22-58"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-22-59"><a id="__codelineno-22-59" name="__codelineno-22-59" href="#__codelineno-22-59"></a>
+</span><span id="__span-22-60"><a id="__codelineno-22-60" name="__codelineno-22-60" href="#__codelineno-22-60"></a><span class="c1">-- Ricompensa divisa tra i membri a fine dungeon</span>
+</span><span id="__span-22-61"><a id="__codelineno-22-61" name="__codelineno-22-61" href="#__codelineno-22-61"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'dungeon:completed'</span><span class="p">)</span>
+</span><span id="__span-22-62"><a id="__codelineno-22-62" name="__codelineno-22-62" href="#__codelineno-22-62"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'dungeon:completed'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-22-63"><a id="__codelineno-22-63" name="__codelineno-22-63" href="#__codelineno-22-63"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-22-64"><a id="__codelineno-22-64" name="__codelineno-22-64" href="#__codelineno-22-64"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">GetPartyMembers</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span>
+</span><span id="__span-22-65"><a id="__codelineno-22-65" name="__codelineno-22-65" href="#__codelineno-22-65"></a>
+</span><span id="__span-22-66"><a id="__codelineno-22-66" name="__codelineno-22-66" href="#__codelineno-22-66"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">members</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-22-67"><a id="__codelineno-22-67" name="__codelineno-22-67" href="#__codelineno-22-67"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'reward:give'</span><span class="p">,</span><span class="w"> </span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">)</span>
+</span><span id="__span-22-68"><a id="__codelineno-22-68" name="__codelineno-22-68" href="#__codelineno-22-68"></a><span class="w">        </span><span class="kr">return</span>
+</span><span id="__span-22-69"><a id="__codelineno-22-69" name="__codelineno-22-69" href="#__codelineno-22-69"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-22-70"><a id="__codelineno-22-70" name="__codelineno-22-70" href="#__codelineno-22-70"></a>
+</span><span id="__span-22-71"><a id="__codelineno-22-71" name="__codelineno-22-71" href="#__codelineno-22-71"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">share</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">math.floor</span><span class="p">(</span><span class="mi">2000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">#</span><span class="nv">members</span><span class="p">)</span>
+</span><span id="__span-22-72"><a id="__codelineno-22-72" name="__codelineno-22-72" href="#__codelineno-22-72"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">memberId</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">members</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-22-73"><a id="__codelineno-22-73" name="__codelineno-22-73" href="#__codelineno-22-73"></a><span class="w">        </span><span class="nf">TriggerClientEvent</span><span class="p">(</span><span class="s1">'reward:give'</span><span class="p">,</span><span class="w"> </span><span class="nv">memberId</span><span class="p">,</span><span class="w"> </span><span class="nv">share</span><span class="p">)</span>
+</span><span id="__span-22-74"><a id="__codelineno-22-74" name="__codelineno-22-74" href="#__codelineno-22-74"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-22-75"><a id="__codelineno-22-75" name="__codelineno-22-75" href="#__codelineno-22-75"></a>
+</span><span id="__span-22-76"><a id="__codelineno-22-76" name="__codelineno-22-76" href="#__codelineno-22-76"></a><span class="w">    </span><span class="nv">exports</span><span class="p">[</span><span class="s1">'avalon_party'</span><span class="p">]:</span><span class="nf">SetPartyBucket</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="c1">-- ritorno al mondo pubblico</span>
+</span><span id="__span-22-77"><a id="__codelineno-22-77" name="__codelineno-22-77" href="#__codelineno-22-77"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">File di riferimento</p>
+<p>La risorsa include <code>example_integration.lua</code>: non viene mai caricato, serve solo come raccolta di snippet pronti da copiare nel tuo script.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AvalonStudiosScripts" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

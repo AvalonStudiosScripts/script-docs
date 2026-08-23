@@ -1,21 +1,21 @@
 site_name: AvalonStudios Script Docs
 site_description: Documentazione ufficiale degli script FiveM di AvalonStudios
 site_author: AvalonStudiosScripts
-site_url: https://avalonstudiosscripts.github.io/script-docs
+site_url: https://AvalonStudiosScripts.github.io/script-docs
 
 theme:
   name: material
   language: it
   palette:
     - scheme: slate
-      primary: deep purple
-      accent: purple
+      primary: black
+      accent: white
       toggle:
         icon: material/brightness-4
         name: Tema chiaro
     - scheme: default
-      primary: deep purple
-      accent: purple
+      primary: black
+      accent: black
       toggle:
         icon: material/brightness-7
         name: Tema scuro
@@ -31,8 +31,11 @@ theme:
     - content.code.annotate
   icon:
     repo: fontawesome/brands/github
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  logo: img/logo_transparent.png
+  favicon: img/logo_transparent.png
+
+extra_css:
+  - stylesheets/extra.css
 
 repo_name: AvalonStudiosScripts/script-docs
 repo_url: https://github.com/AvalonStudiosScripts/script-docs
@@ -93,5 +96,7 @@ nav:
     - avalon_electrician: scripts/electrician.md
     - avalon_lumberjack: scripts/lumberjack.md
     - avalon_mining: scripts/mining.md
+    - avalon_mounts: scripts/mounts.md
+    - avalon_party: scripts/party.md
     - avalon_robbery: scripts/robbery.md
     - avalon_trash: scripts/trash.md

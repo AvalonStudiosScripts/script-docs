@@ -15,6 +15,8 @@ Aqui encontras a referência completa de todos os scripts: configuração, expor
 | [avalon_electrician](scripts/electrician.md) | Trabalho de eletricista com minijogos | ❌ |
 | [avalon_lumberjack](scripts/lumberjack.md) | Trabalho de lenhador com minijogo | ❌ |
 | [avalon_mining](scripts/mining.md) | Trabalho de mineiro com minijogo | ❌ |
+| [avalon_mounts](scripts/mounts.md) | Criaturas montáveis (dragões, grifos, pégasos...) | ✅ |
+| [avalon_party](scripts/party.md) | Sistema de party MMORPG com HUD, barras vitais, masmorras | ✅ |
 | [avalon_robbery](scripts/robbery.md) | Sistema de roubo a lojas | ❌ |
 | [avalon_trash](scripts/trash.md) | Sistema de busca no lixo | ❌ |
 

@@ -15,6 +15,8 @@
 | [avalon_electrician](scripts/electrician.md) | 电工工作（含小游戏） | ❌ |
 | [avalon_lumberjack](scripts/lumberjack.md) | 伐木工工作（含小游戏） | ❌ |
 | [avalon_mining](scripts/mining.md) | 矿工工作（含小游戏） | ❌ |
+| [avalon_mounts](scripts/mounts.md) | 骑乘生物（龙、狮鹫、飞马...） | ✅ |
+| [avalon_party](scripts/party.md) | MMORPG 组队系统（HUD、生命值条、副本） | ✅ |
 | [avalon_robbery](scripts/robbery.md) | 商店抢劫系统 | ❌ |
 | [avalon_trash](scripts/trash.md) | 垃圾搜索系统 | ❌ |
 

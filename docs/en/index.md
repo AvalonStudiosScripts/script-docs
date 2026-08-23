@@ -15,6 +15,8 @@ Here you'll find the complete reference for all scripts: configuration, availabl
 | [avalon_electrician](scripts/electrician.md) | Electrician job with minigames | ❌ |
 | [avalon_lumberjack](scripts/lumberjack.md) | Lumberjack job with minigame | ❌ |
 | [avalon_mining](scripts/mining.md) | Mining job with minigame | ❌ |
+| [avalon_mounts](scripts/mounts.md) | Rideable creatures (dragons, griffins, pegasi...) | ✅ |
+| [avalon_party](scripts/party.md) | MMORPG party system with HUD, vital bars, dungeons | ✅ |
 | [avalon_robbery](scripts/robbery.md) | Shop robbery system | ❌ |
 | [avalon_trash](scripts/trash.md) | Trash searching system | ❌ |
 

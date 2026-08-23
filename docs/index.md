@@ -15,6 +15,8 @@ Qui trovi la reference completa per tutti gli script: configurazione, export dis
 | [avalon_electrician](scripts/electrician.md) | Lavoro elettricista con minigiochi | ❌ |
 | [avalon_lumberjack](scripts/lumberjack.md) | Lavoro taglialegna con minigioco | ❌ |
 | [avalon_mining](scripts/mining.md) | Lavoro minatore con minigioco | ❌ |
+| [avalon_mounts](scripts/mounts.md) | Creature cavalcabili (draghi, grifoni, pegasi...) | ✅ |
+| [avalon_party](scripts/party.md) | Sistema party MMORPG con HUD, barre vitali, dungeon | ✅ |
 | [avalon_robbery](scripts/robbery.md) | Sistema rapina negozi | ❌ |
 | [avalon_trash](scripts/trash.md) | Ricerca oggetti nei bidoni | ❌ |
 

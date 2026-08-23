@@ -1,0 +1,54 @@
+/* ─── Accent color override ─── */
+:root {
+  --md-accent-fg-color: #e0e0e0;
+  --md-accent-fg-color--transparent: rgba(224,224,224,.1);
+}
+
+/* Dark mode tweaks */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0d0d0d;
+  --md-default-bg-color--light: #181818;
+  --md-default-bg-color--lighter: #222222;
+  --md-code-bg-color: #1a1a1a;
+  --md-accent-fg-color: #ffffff;
+}
+
+/* Light mode tweaks */
+[data-md-color-scheme="default"] {
+  --md-accent-fg-color: #111111;
+  --md-code-bg-color: #f5f5f5;
+}
+
+/* Navigation active link */
+.md-nav__link--active {
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 600;
+}
+
+/* Code blocks: sottile bordo laterale bianco/grigio */
+[data-md-color-scheme="slate"] .highlight {
+  border-left: 3px solid #444;
+}
+[data-md-color-scheme="default"] .highlight {
+  border-left: 3px solid #ccc;
+}
+
+/* Admonition tip: grigio scuro invece di verde */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #555;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(85,85,85,.1);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  color: #aaa;
+}
+
+/* Logo dimensioni */
+.md-header__button.md-logo img {
+  height: 32px;
+  width: auto;
+}

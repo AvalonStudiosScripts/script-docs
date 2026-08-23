@@ -15,6 +15,8 @@
 | [avalon_electrician](scripts/electrician.md) | งานช่างไฟฟ้า (มีมินิเกม) | ❌ |
 | [avalon_lumberjack](scripts/lumberjack.md) | งานตัดไม้ (มีมินิเกม) | ❌ |
 | [avalon_mining](scripts/mining.md) | งานขุดแร่ (มีมินิเกม) | ❌ |
+| [avalon_mounts](scripts/mounts.md) | สัตว์ขี่ (มังกร กริฟฟิน เพกาซัส...) | ✅ |
+| [avalon_party](scripts/party.md) | ระบบปาร์ตี้ MMORPG (HUD, แถบพลังชีวิต, ดันเจี้ยน) | ✅ |
 | [avalon_robbery](scripts/robbery.md) | ระบบปล้นร้านค้า | ❌ |
 | [avalon_trash](scripts/trash.md) | ระบบค้นหาในขยะ | ❌ |
 

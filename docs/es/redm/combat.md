@@ -13,8 +13,8 @@ Incluye: combos ligeros y pesados, ataques emparejados (dos peds animados a la v
 | Resource | Obligatoria | Para qué sirve |
 |----------|:---:|---|
 | OneSync | ✅ | NPC combatientes y parada (state bag) |
-| `avalon_weapons_rdr2` | ✅ | Los modelos de las armas empuñadas |
-| `avalon_shields_tint` | ✅ | Los modelos de los escudos |
+| `avalon_weapons_rdr2` | ❌ | Opcional: los modelos de armas de la config incluida. Sirven también las armas que ya tienes ([Armas y escudos](#armas-y-escudos)) |
+| `avalon_shields_tint` | ❌ | Opcional: los modelos de escudos de la config incluida. Sirven también los escudos que ya tienes |
 | Paquetes de animación `avalon_anims_*` | ✅ al menos uno | Las animaciones y los estilos (ver [Estilos](#estilos)) |
 
 No se requiere ningún framework: el script trabaja sobre los peds y los jugadores. La conexión con inventarios, niveles o barras de vida se hace con los [exports](#exportaciones-disponibles).
@@ -24,11 +24,10 @@ No se requiere ningún framework: el script trabaja sobre los peds y los jugador
 ## Instalación
 
 1. Copia la carpeta `avalon_combat/` en `resources/`
-2. Inicia las armas, los escudos y los paquetes de animación, luego el recurso:
+2. Inicia los paquetes de animación y los recursos de tus modelos de armas y escudos, luego el recurso:
 
 ```
-ensure avalon_weapons_rdr2
-ensure avalon_shields_tint
+# ... los recursos de tus armas y escudos
 ensure avalon_anims_werewolf
 ensure avalon_anims_vampire
 ensure avalon_anims_ka_02
@@ -230,6 +229,8 @@ Los sonidos cuerpo a cuerpo incluidos son los del juego, extraídos en `sounds/m
 
 ## Armas y escudos
 
+Las armas y los escudos son los de tu servidor: `model` es el nombre de cualquier prop en stream, siempre que su recurso esté iniciado. La config incluida lista los modelos de `avalon_weapons_rdr2` y `avalon_shields_tint`: sustitúyelos por los tuyos o añade otros.
+
 Cada entrada de `config/weapons.lua`, `config/offhand.lua` y `config/shields.lua` es un modelo empuñado:
 
 ```lua
@@ -246,7 +247,7 @@ AvalonCombat.Weapons.xur_katana = {
 
 | Campo | Descripción |
 |-------|-------------|
-| `model` | Arquetipo del modelo |
+| `model` | Arquetipo del modelo: cualquier prop en stream |
 | `tint` | Opcional: índice del color (los escudos tienen una entrada por color) |
 | `bone`, `offset`, `rot` | Dónde se sostiene en la mano. Se ajusta en el juego con `/avalon_weapon_offset`, que imprime la línea para copiar |
 | `damage` | Daño por golpe de hoja |

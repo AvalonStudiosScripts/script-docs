@@ -13,8 +13,8 @@
 | Resource | จำเป็น | ใช้ทำอะไร |
 |----------|:---:|---|
 | OneSync | ✅ | NPC ที่ต่อสู้และการป้องกัน (state bag) |
-| `avalon_weapons_rdr2` | ✅ | โมเดลอาวุธที่ถือในมือ |
-| `avalon_shields_tint` | ✅ | โมเดลโล่ |
+| `avalon_weapons_rdr2` | ❌ | ไม่บังคับ: โมเดลอาวุธใน config ที่ให้มา อาวุธที่คุณมีอยู่แล้วก็ใช้ได้ ([อาวุธและโล่](#weapons)) |
+| `avalon_shields_tint` | ❌ | ไม่บังคับ: โมเดลโล่ใน config ที่ให้มา โล่ที่คุณมีอยู่แล้วก็ใช้ได้ |
 | แพ็กเกจแอนิเมชัน `avalon_anims_*` | ✅ อย่างน้อยหนึ่งชุด | แอนิเมชันและสไตล์ (ดู [สไตล์](#styles)) |
 
 ไม่ต้องใช้ framework: สคริปต์ทำงานกับ ped และผู้เล่นโดยตรง การเชื่อมกับกระเป๋า เลเวล หรือแถบพลังชีวิตทำผ่าน [export](#exports)
@@ -24,11 +24,10 @@
 ## การติดตั้ง
 
 1. คัดลอกโฟลเดอร์ `avalon_combat/` ไปไว้ใน `resources/`
-2. เริ่มอาวุธ โล่ และแพ็กเกจแอนิเมชัน แล้วจึงเริ่ม resource:
+2. เริ่มแพ็กเกจแอนิเมชันและ resource ของโมเดลอาวุธและโล่ของคุณ แล้วจึงเริ่ม resource:
 
 ```
-ensure avalon_weapons_rdr2
-ensure avalon_shields_tint
+# ... resource ของอาวุธและโล่ของคุณ
 ensure avalon_anims_werewolf
 ensure avalon_anims_vampire
 ensure avalon_anims_ka_02
@@ -228,7 +227,9 @@ AvalonCombat.Sounds = {
 
 ---
 
-## อาวุธและโล่
+## อาวุธและโล่ {#weapons}
+
+อาวุธและโล่เป็นของเซิร์ฟเวอร์คุณเอง: `model` คือชื่อของ prop ใดก็ได้ที่ stream อยู่ ขอแค่ resource ของมันเริ่มทำงานแล้ว config ที่ให้มาระบุโมเดลของ `avalon_weapons_rdr2` และ `avalon_shields_tint`: แทนที่ด้วยของคุณหรือเพิ่มเติมได้
 
 ทุกรายการใน `config/weapons.lua`, `config/offhand.lua` และ `config/shields.lua` คือโมเดลที่ถือในมือ:
 
@@ -246,7 +247,7 @@ AvalonCombat.Weapons.xur_katana = {
 
 | ฟิลด์ | คำอธิบาย |
 |-------|-------------|
-| `model` | archetype ของโมเดล |
+| `model` | archetype ของโมเดล: prop ใดก็ได้ที่ stream อยู่ |
 | `tint` | ไม่บังคับ: ดัชนีสี (โล่มีหนึ่งรายการต่อสี) |
 | `bone`, `offset`, `rot` | ตำแหน่งในมือ ปรับในเกมด้วย `/avalon_weapon_offset` ซึ่งจะพิมพ์บรรทัดที่ต้องคัดลอก |
 | `damage` | ความเสียหายต่อการฟันหนึ่งครั้ง |

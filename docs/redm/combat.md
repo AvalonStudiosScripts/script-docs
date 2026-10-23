@@ -13,8 +13,8 @@ Comprende: combo leggere e pesanti, attacchi accoppiati (due ped animati insieme
 | Resource | Obbligatoria | A cosa serve |
 |----------|:---:|---|
 | OneSync | ✅ | NPC combattenti e parata (state bag) |
-| `avalon_weapons_rdr2` | ✅ | I modelli delle armi impugnate |
-| `avalon_shields_tint` | ✅ | I modelli degli scudi |
+| `avalon_weapons_rdr2` | ❌ | Opzionale: i modelli delle armi della config fornita. Vanno bene le armi che hai già ([Armi e scudi](#armi-e-scudi)) |
+| `avalon_shields_tint` | ❌ | Opzionale: i modelli degli scudi della config fornita. Vanno bene gli scudi che hai già |
 | Pacchetti animazione `avalon_anims_*` | ✅ almeno uno | Le animazioni e gli stili (vedi [Stili](#stili)) |
 
 Nessun framework richiesto: lo script lavora sui ped e sui giocatori. Il collegamento con inventari, livelli o barre vita si fa con gli [export](#export-disponibili).
@@ -24,11 +24,10 @@ Nessun framework richiesto: lo script lavora sui ped e sui giocatori. Il collega
 ## Installazione
 
 1. Copia la cartella `avalon_combat/` in `resources/`
-2. Avvia le armi, gli scudi e i pacchetti animazione, poi la risorsa:
+2. Avvia i pacchetti animazione e le risorse dei tuoi modelli di armi e scudi, poi la risorsa:
 
 ```
-ensure avalon_weapons_rdr2
-ensure avalon_shields_tint
+# ... le risorse delle tue armi e dei tuoi scudi
 ensure avalon_anims_werewolf
 ensure avalon_anims_vampire
 ensure avalon_anims_ka_02
@@ -230,6 +229,8 @@ I suoni corpo a corpo inclusi sono quelli del gioco, estratti in `sounds/melee_*
 
 ## Armi e scudi
 
+Armi e scudi sono quelli del tuo server: `model` è il nome di qualsiasi prop in stream, basta che la sua risorsa sia avviata. La config fornita elenca i modelli di `avalon_weapons_rdr2` e `avalon_shields_tint`: sostituiscili con i tuoi o aggiungine altri.
+
 Ogni voce di `config/weapons.lua`, `config/offhand.lua` e `config/shields.lua` è un modello impugnato:
 
 ```lua
@@ -246,7 +247,7 @@ AvalonCombat.Weapons.xur_katana = {
 
 | Campo | Descrizione |
 |-------|-------------|
-| `model` | Archetipo del modello |
+| `model` | Archetipo del modello: qualsiasi prop in stream |
 | `tint` | Opzionale: indice del colore (gli scudi hanno una voce per colore) |
 | `bone`, `offset`, `rot` | Dove sta in mano. Si regola in gioco con `/avalon_weapon_offset`, che stampa la riga da copiare |
 | `damage` | Danno per colpo di lama |

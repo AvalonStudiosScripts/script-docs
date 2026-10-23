@@ -15,7 +15,7 @@
 ## Dependency ของแต่ละสคริปต์
 
 ```
-avalon_combat  → OneSync, avalon_weapons_rdr2, avalon_shields_tint, แพ็กเกจแอนิเมชัน avalon_anims_*
+avalon_combat  → OneSync, แพ็กเกจแอนิเมชัน avalon_anims_*
 ```
 
 !!! info "แพ็กเกจแอนิเมชัน"

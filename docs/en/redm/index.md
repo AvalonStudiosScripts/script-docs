@@ -15,7 +15,7 @@ AvalonStudios RedM scripts are **standalone**: they do not depend on a framework
 ## Dependencies per Script
 
 ```
-avalon_combat  → OneSync, avalon_weapons_rdr2, avalon_shields_tint, avalon_anims_* animation packs
+avalon_combat  → OneSync, avalon_anims_* animation packs
 ```
 
 !!! info "Animation packs"

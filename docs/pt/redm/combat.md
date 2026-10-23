@@ -13,8 +13,8 @@ Inclui: combos leves e pesados, ataques emparelhados (dois peds animados em conj
 | Resource | Obrigatória | Para que serve |
 |----------|:---:|---|
 | OneSync | ✅ | NPCs lutadores e defesa (state bag) |
-| `avalon_weapons_rdr2` | ✅ | Os modelos das armas empunhadas |
-| `avalon_shields_tint` | ✅ | Os modelos dos escudos |
+| `avalon_weapons_rdr2` | ❌ | Opcional: os modelos de armas da config incluída. Servem também as armas que já tens ([Armas e escudos](#armas-e-escudos)) |
+| `avalon_shields_tint` | ❌ | Opcional: os modelos de escudos da config incluída. Servem também os escudos que já tens |
 | Pacotes de animação `avalon_anims_*` | ✅ pelo menos um | As animações e os estilos (vê [Estilos](#estilos)) |
 
 Nenhuma framework necessária: o script trabalha sobre peds e jogadores. A ligação com inventários, níveis ou barras de vida faz-se com os [exports](#exports-disponiveis).
@@ -24,11 +24,10 @@ Nenhuma framework necessária: o script trabalha sobre peds e jogadores. A liga�
 ## Instalação
 
 1. Copia a pasta `avalon_combat/` para `resources/`
-2. Inicia as armas, os escudos e os pacotes de animação, depois o resource:
+2. Inicia os pacotes de animação e os resources dos teus modelos de armas e escudos, depois o resource:
 
 ```
-ensure avalon_weapons_rdr2
-ensure avalon_shields_tint
+# ... os resources das tuas armas e escudos
 ensure avalon_anims_werewolf
 ensure avalon_anims_vampire
 ensure avalon_anims_ka_02
@@ -230,6 +229,8 @@ Os sons corpo a corpo incluídos são os do jogo, extraídos para `sounds/melee_
 
 ## Armas e escudos
 
+As armas e os escudos são os do teu servidor: `model` é o nome de qualquer prop em stream, desde que o seu resource esteja iniciado. A config incluída lista os modelos de `avalon_weapons_rdr2` e `avalon_shields_tint`: substitui-os pelos teus ou acrescenta outros.
+
 Cada entrada de `config/weapons.lua`, `config/offhand.lua` e `config/shields.lua` é um modelo empunhado:
 
 ```lua
@@ -246,7 +247,7 @@ AvalonCombat.Weapons.xur_katana = {
 
 | Campo | Descrição |
 |-------|-----------|
-| `model` | Arquétipo do modelo |
+| `model` | Arquétipo do modelo: qualquer prop em stream |
 | `tint` | Opcional: índice da cor (os escudos têm uma entrada por cor) |
 | `bone`, `offset`, `rot` | Onde fica na mão. Ajusta-se no jogo com `/avalon_weapon_offset`, que imprime a linha para copiar |
 | `damage` | Dano por golpe de lâmina |

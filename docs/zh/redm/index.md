@@ -15,7 +15,7 @@ AvalonStudios 的 RedM 脚本均为 **standalone**：不依赖任何框架，通
 ## 各脚本的依赖项
 
 ```
-avalon_combat  → OneSync, avalon_weapons_rdr2, avalon_shields_tint, 动画包 avalon_anims_*
+avalon_combat  → OneSync, 动画包 avalon_anims_*
 ```
 
 !!! info "动画包"

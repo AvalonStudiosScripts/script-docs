@@ -13,8 +13,8 @@ RedM **近战战斗系统**。每种风格（狼人、吸血鬼、太刀、剑�
 | Resource | 是否必须 | 用途 |
 |----------|:---:|---|
 | OneSync | ✅ | 战斗 NPC 与格挡（state bag） |
-| `avalon_weapons_rdr2` | ✅ | 手持武器的模型 |
-| `avalon_shields_tint` | ✅ | 盾牌的模型 |
+| `avalon_weapons_rdr2` | ❌ | 可选：附带配置中使用的武器模型。你已有的武器同样可用（[武器与盾牌](#weapons)） |
+| `avalon_shields_tint` | ❌ | 可选：附带配置中使用的盾牌模型。你已有的盾牌同样可用 |
 | 动画包 `avalon_anims_*` | ✅ 至少一个 | 动画与风格（参见[风格](#styles)） |
 
 无需任何框架：脚本直接作用于 ped 和玩家。与背包、等级或生命条的对接通过[导出函数](#exports)完成。
@@ -24,11 +24,10 @@ RedM **近战战斗系统**。每种风格（狼人、吸血鬼、太刀、剑�
 ## 安装
 
 1. 将 `avalon_combat/` 文件夹复制到 `resources/`
-2. 先启动武器、盾牌和动画包，然后再启动本资源：
+2. 先启动动画包以及你的武器和盾牌模型所在的资源，然后再启动本资源：
 
 ```
-ensure avalon_weapons_rdr2
-ensure avalon_shields_tint
+# ... 你的武器和盾牌所在的资源
 ensure avalon_anims_werewolf
 ensure avalon_anims_vampire
 ensure avalon_anims_ka_02
@@ -228,7 +227,9 @@ AvalonCombat.Sounds = {
 
 ---
 
-## 武器与盾牌
+## 武器与盾牌 {#weapons}
+
+武器和盾牌使用你服务器自己的：`model` 可以是任何已 stream 的 prop 名称，只要其所在资源已启动。附带的配置列出了 `avalon_weapons_rdr2` 和 `avalon_shields_tint` 的模型：可以替换成你自己的，或继续添加。
 
 `config/weapons.lua`、`config/offhand.lua` 和 `config/shields.lua` 中的每一项都是一个手持模型：
 
@@ -246,7 +247,7 @@ AvalonCombat.Weapons.xur_katana = {
 
 | 字段 | 说明 |
 |------|------|
-| `model` | 模型的 archetype |
+| `model` | 模型的 archetype：任何已 stream 的 prop |
 | `tint` | 可选：颜色索引（盾牌每种颜色一项） |
 | `bone`、`offset`、`rot` | 握持的位置。可在游戏中用 `/avalon_weapon_offset` 调整，它会输出可复制的那一行 |
 | `damage` | 每次刀刃命中的伤害 |

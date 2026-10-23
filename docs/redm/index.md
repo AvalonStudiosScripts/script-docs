@@ -15,7 +15,7 @@ Gli script RedM di AvalonStudios sono **standalone**: non dipendono da un framew
 ## Dipendenze per Script
 
 ```
-avalon_combat  → OneSync, avalon_weapons_rdr2, avalon_shields_tint, pacchetti animazione avalon_anims_*
+avalon_combat  → OneSync, pacchetti animazione avalon_anims_*
 ```
 
 !!! info "Pacchetti animazione"

@@ -13,8 +13,8 @@ It includes: light and heavy combos, paired attacks (two peds animated together)
 | Resource | Required | What it is for |
 |----------|:---:|---|
 | OneSync | ✅ | NPC fighters and parry (state bags) |
-| `avalon_weapons_rdr2` | ✅ | The wielded weapon models |
-| `avalon_shields_tint` | ✅ | The shield models |
+| `avalon_weapons_rdr2` | ❌ | Optional: the weapon models of the shipped config. The weapons you already have work too ([Weapons and Shields](#weapons-and-shields)) |
+| `avalon_shields_tint` | ❌ | Optional: the shield models of the shipped config. The shields you already have work too |
 | Animation packs `avalon_anims_*` | ✅ at least one | The animations and styles (see [Styles](#styles)) |
 
 No framework required: the script works on peds and players. Link it to inventories, levels or health bars through the [exports](#available-exports).
@@ -24,11 +24,10 @@ No framework required: the script works on peds and players. Link it to inventor
 ## Installation
 
 1. Copy the `avalon_combat/` folder into `resources/`
-2. Start the weapons, the shields and the animation packs, then the resource:
+2. Start the animation packs and the resources of your weapon and shield models, then the resource:
 
 ```
-ensure avalon_weapons_rdr2
-ensure avalon_shields_tint
+# ... the resources of your weapons and shields
 ensure avalon_anims_werewolf
 ensure avalon_anims_vampire
 ensure avalon_anims_ka_02
@@ -230,6 +229,8 @@ The included melee sounds are the game's own, extracted into `sounds/melee_*.wav
 
 ## Weapons and Shields
 
+Weapons and shields are your server's own: `model` is the name of any streamed prop, as long as its resource is started. The shipped config lists the models of `avalon_weapons_rdr2` and `avalon_shields_tint`: replace them with yours or add more.
+
 Each entry in `config/weapons.lua`, `config/offhand.lua` and `config/shields.lua` is a wielded model:
 
 ```lua
@@ -246,7 +247,7 @@ AvalonCombat.Weapons.xur_katana = {
 
 | Field | Description |
 |-------|-------------|
-| `model` | Model archetype |
+| `model` | Model archetype: any streamed prop |
 | `tint` | Optional: color index (shields have one entry per color) |
 | `bone`, `offset`, `rot` | Where it sits in the hand. Adjust it in game with `/avalon_weapon_offset`, which prints the line to copy |
 | `damage` | Damage per blade hit |

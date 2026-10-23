@@ -1,12 +1,12 @@
 # AvalonStudios 脚本文档
 
-欢迎来到 **AvalonStudios** FiveM 脚本的官方文档。
+欢迎来到 **AvalonStudios** FiveM 和 RedM 脚本的官方文档。
 
 在这里你可以找到所有脚本的完整参考：配置、可用导出函数和使用示例。
 
 ---
 
-## 可用脚本
+## FiveM 脚本
 
 | 脚本 | 描述 | 导出函数 |
 |------|------|:--------:|
@@ -20,11 +20,17 @@
 | [avalon_robbery](scripts/robbery.md) | 商店抢劫系统 | ❌ |
 | [avalon_trash](scripts/trash.md) | 垃圾搜索系统 | ❌ |
 
+## RedM 脚本
+
+| 脚本 | 描述 | 导出函数 |
+|------|------|:--------:|
+| [avalon_combat](redm/combat.md) | 近战战斗：风格、武器、格挡、配对攻击与 NPC | ✅ |
+
 ---
 
-## 公共依赖项
+## 公共依赖项（FiveM）
 
-所有脚本都需要以下资源处于运行状态：
+所有 FiveM 脚本都需要以下资源处于运行状态：
 
 - **[ox_lib](https://github.com/overextended/ox_lib)** — 基础库
 - **[ox_target](https://github.com/overextended/ox_target)** — 交互系统
@@ -33,6 +39,8 @@
 
 !!! tip "提示"
     确保所有依赖项在 `server.cfg` 中 **先于** Avalon 脚本启动。
+
+RedM 脚本是 standalone 的：它们的依赖项见 [RedM 概览](redm/index.md)。
 
 ---
 

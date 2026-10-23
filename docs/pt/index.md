@@ -1,12 +1,12 @@
 # AvalonStudios Script Docs
 
-Bem-vindo à documentação oficial dos scripts FiveM da **AvalonStudios**.
+Bem-vindo à documentação oficial dos scripts FiveM e RedM da **AvalonStudios**.
 
 Aqui encontras a referência completa de todos os scripts: configuração, exports disponíveis e exemplos de utilização.
 
 ---
 
-## Scripts Disponíveis
+## Scripts FiveM
 
 | Script | Descrição | Exports |
 |--------|-----------|:-------:|
@@ -20,11 +20,17 @@ Aqui encontras a referência completa de todos os scripts: configuração, expor
 | [avalon_robbery](scripts/robbery.md) | Sistema de roubo a lojas | ❌ |
 | [avalon_trash](scripts/trash.md) | Sistema de busca no lixo | ❌ |
 
+## Scripts RedM
+
+| Script | Descrição | Exports |
+|--------|-----------|:-------:|
+| [avalon_combat](redm/combat.md) | Combate corpo a corpo com estilos, armas, defesa, ataques emparelhados e NPCs | ✅ |
+
 ---
 
-## Dependências Comuns
+## Dependências Comuns (FiveM)
 
-Todos os scripts requerem os seguintes recursos ativos:
+Todos os scripts FiveM requerem os seguintes recursos ativos:
 
 - **[ox_lib](https://github.com/overextended/ox_lib)** — Biblioteca base
 - **[ox_target](https://github.com/overextended/ox_target)** — Sistema de interações
@@ -33,6 +39,8 @@ Todos os scripts requerem os seguintes recursos ativos:
 
 !!! tip "Dica"
     Garante que todas as dependências sejam iniciadas **antes** dos scripts Avalon no `server.cfg`.
+
+Os scripts RedM são standalone: as suas dependências estão na [visão geral RedM](redm/index.md).
 
 ---
 

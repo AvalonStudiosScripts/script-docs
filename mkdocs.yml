@@ -1,5 +1,5 @@
 site_name: AvalonStudios Script Docs
-site_description: Documentazione ufficiale degli script FiveM di AvalonStudios
+site_description: Documentazione ufficiale degli script FiveM e RedM di AvalonStudios
 site_author: AvalonStudiosScripts
 site_url: https://AvalonStudiosScripts.github.io/script-docs
 
@@ -89,7 +89,7 @@ plugins:
 
 nav:
   - Home: index.md
-  - Script:
+  - Script FiveM:
     - Panoramica: scripts/index.md
     - avalon_coltivation: scripts/coltivation.md
     - avalon_dustman: scripts/dustman.md
@@ -100,3 +100,6 @@ nav:
     - avalon_party: scripts/party.md
     - avalon_robbery: scripts/robbery.md
     - avalon_trash: scripts/trash.md
+  - Script RedM:
+    - Panoramica: redm/index.md
+    - avalon_combat: redm/combat.md

@@ -68,6 +68,9 @@ Para escribir tu propio estilo mira [Crear un estilo](#crear-un-estilo).
 
 ## Comandos y teclas
 
+!!! warning "Solo con el debug activo"
+    Todos los comandos de chat existen solo con `AvalonCombat.Debug = true` en `config/config.lua`: sirven para configurar y probar estilos, armas y NPC. En un servidor en producción deja `Debug = false` y pon a los jugadores en combate desde tu script con el export de servidor `SetStyle`. Las teclas funcionan siempre.
+
 ### Modo combate
 
 | Comando | Descripción |
@@ -102,7 +105,7 @@ Para escribir tu propio estilo mira [Crear un estilo](#crear-un-estilo).
 | `/avalon_weapon_offset <x y z rx ry rz> [hueso]` | Ajusta la posición del arma e imprime la línea para copiar en el config (también `_offhand_offset`, `_shield_offset`) |
 | `/avalon_sound <nombre>` | Reproduce un sonido del config |
 | `/avalon_sound_game <set> <nombre> [bank]` | Prueba cualquier sonido del juego |
-| `/avalon_npc <estilo> [team] [modelo]` | Crea un NPC combatiente 4 m delante |
+| `/avalon_npc <estilo> [team] [modelo] [escala]` | Crea un NPC combatiente 4 m delante |
 | `/avalon_npc_clear` | Borra los NPC creados por ti |
 | `/avalon_npc_info` | Estado de los NPC combatientes a menos de 30 m |
 | `/avalon_dummy [modelo]` · `/avalon_dummy_clear` | Maniquíes quietos para golpear |
@@ -139,10 +142,14 @@ Los archivos de configuración están en `config/`:
 | `config/shields.lua` | Escudos (una entrada por color) |
 | `config/styles/` | Estilos locales opcionales y `example.lua` con todos los campos explicados |
 
+!!! info "Archivos editables"
+    Los archivos de `config/` (y `config/styles/`) están abiertos: el resto del recurso está protegido con Cfx Escrow. Todo se personaliza desde ahí y con los [exports](#exportaciones-disponibles).
+
 ### Ajustes generales
 
 | Opción | Por defecto | Descripción |
 |--------|-------------|-------------|
+| `Debug` | `false` | Activa los comandos de chat y `/avalon_combat_debug` (solo para pruebas) |
 | `TargetRange` | `4.0` | m: los peds más lejanos no se comprueban |
 | `LockRange` / `LockCone` | `3.0` / `45` | Un ataque se orienta hacia el ped más cercano dentro de estos metros y grados |
 | `LockOnRange` | `12.0` | m: radio de la fijación con E |
@@ -277,8 +284,6 @@ Un estilo se puede escribir en dos lugares:
     shared_script 'avalon_combat.lua'
     ```
 
-    Una build de Avalon Explorer escribe estas dos líneas por sí sola si el archivo existe.
-
 === "En config/styles"
 
     Un archivo `config/styles/mystyle.lua` dentro de `avalon_combat`:
@@ -345,7 +350,7 @@ pairs = {
 `att` / `vic` son los clips de quien ataca y de la víctima. `x`, `y` y `yaw` indican dónde está la víctima respecto a quien ataca (m, grados). `damageAt` es la fase en la que llega el daño. Se ajusta en el juego con `/avalon_pair_offset`.
 
 !!! info "Movimiento de las animaciones"
-    Los clips que desplazan al ped siguen su *mover*, leído de `data/clip_movers.lua`. Los clips de un paquete nuevo necesitan sus movers, generados con Avalon Explorer; sin ellos, el clip se queda en el sitio.
+    Los clips de los paquetes Avalon desplazan al ped según su propio movimiento (pasos, sprints, saltos). Los clips de paquetes de terceros se reproducen en el sitio.
 
 ---
 
@@ -361,6 +366,7 @@ Un NPC combatiente es un ped de red que combate solo con un estilo: busca un obj
 local net = exports.avalon_combat:SpawnFighter('werewolf', vector3(-300.0, 790.0, 118.0), 90.0, {
     team = 'bandits',
     health = 400,
+    scale = 1.5,
     skill = { BlockChance = 0.6, Weights = { heavy = 0.6 } },
 })
 
@@ -374,6 +380,7 @@ exports.avalon_combat:StopFighter(net)
 | `weapon` / `offhand` / `shield` | Qué empuña (por defecto: los del estilo; `shield = false` = ninguno) |
 | `team` | Team (por defecto `'npc'`) |
 | `health` | Vida |
+| `scale` | Tamaño del NPC (`1` = normal, de `0.2` a `5`). Con él crecen las hitbox, el alcance de los golpes, el movimiento de las animaciones y las distancias de combate |
 | `skill` | Solo los valores de `AvalonCombat.Npc` que cambian |
 
 !!! warning "Se necesita un jugador"

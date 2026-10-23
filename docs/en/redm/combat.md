@@ -68,6 +68,9 @@ To write a style of your own see [Creating a Style](#creating-a-style).
 
 ## Commands and Keys
 
+!!! warning "Debug only"
+    All chat commands exist only with `AvalonCombat.Debug = true` in `config/config.lua`: they are for setting up and testing styles, weapons and NPCs. On a live server leave `Debug = false` and put players into combat from your own script with the server export `SetStyle`. The keys always work.
+
 ### Combat Mode
 
 | Command | Description |
@@ -102,7 +105,7 @@ To write a style of your own see [Creating a Style](#creating-a-style).
 | `/avalon_weapon_offset <x y z rx ry rz> [bone]` | Adjust the weapon position and print the line to copy into the config (also `_offhand_offset`, `_shield_offset`) |
 | `/avalon_sound <name>` | Play a sound from the config |
 | `/avalon_sound_game <set> <name> [bank]` | Try any sound from the game |
-| `/avalon_npc <style> [team] [model]` | Create an NPC fighter 4 m in front of you |
+| `/avalon_npc <style> [team] [model] [scale]` | Create an NPC fighter 4 m in front of you |
 | `/avalon_npc_clear` | Delete the NPCs you created |
 | `/avalon_npc_info` | State of the NPC fighters within 30 m |
 | `/avalon_dummy [model]` · `/avalon_dummy_clear` | Stationary dummies to hit |
@@ -139,10 +142,14 @@ The configuration files are in `config/`:
 | `config/shields.lua` | Shields (one entry per color) |
 | `config/styles/` | Optional local styles and `example.lua` with every field explained |
 
+!!! info "Editable files"
+    The files in `config/` (and `config/styles/`) are open: the rest of the resource is protected with Cfx Escrow. Everything is customised from there and through the [exports](#available-exports).
+
 ### General Settings
 
 | Option | Default | Description |
 |--------|---------|-------------|
+| `Debug` | `false` | Enables the chat commands and `/avalon_combat_debug` (testing only) |
 | `TargetRange` | `4.0` | m: peds farther away are not checked |
 | `LockRange` / `LockCone` | `3.0` / `45` | An attack turns toward the nearest ped within these meters and degrees |
 | `LockOnRange` | `12.0` | m: lock-on radius with E |
@@ -277,8 +284,6 @@ A style can be written in two places:
     shared_script 'avalon_combat.lua'
     ```
 
-    An Avalon Explorer build writes these two lines on its own if the file is there.
-
 === "In config/styles"
 
     A `config/styles/mystyle.lua` file inside `avalon_combat`:
@@ -345,7 +350,7 @@ pairs = {
 `att` / `vic` are the clips of the attacker and of the victim. `x`, `y` and `yaw` say where the victim stands relative to the attacker (m, degrees). `damageAt` is the phase at which the damage lands. Adjust it in game with `/avalon_pair_offset`.
 
 !!! info "Animation movement"
-    Clips that move the ped follow their *mover*, read from `data/clip_movers.lua`. The clips of a new pack need their movers, generated with Avalon Explorer; without them the clip stays in place.
+    The clips of the Avalon packs move the ped along their own motion (steps, dashes, leaps). Clips from third-party packs play in place.
 
 ---
 
@@ -361,6 +366,7 @@ An NPC fighter is a networked ped that fights on its own with a style: it looks 
 local net = exports.avalon_combat:SpawnFighter('werewolf', vector3(-300.0, 790.0, 118.0), 90.0, {
     team = 'bandits',
     health = 400,
+    scale = 1.5,
     skill = { BlockChance = 0.6, Weights = { heavy = 0.6 } },
 })
 
@@ -374,6 +380,7 @@ exports.avalon_combat:StopFighter(net)
 | `weapon` / `offhand` / `shield` | What it wields (default: the style's; `shield = false` = none) |
 | `team` | Team (default `'npc'`) |
 | `health` | Health |
+| `scale` | NPC size (`1` = normal, from `0.2` to `5`). Hitboxes, hit reach, animation movement and combat distances grow with it |
 | `skill` | Only the `AvalonCombat.Npc` values that change |
 
 !!! warning "A player is required"

@@ -68,6 +68,9 @@ ensure avalon_combat
 
 ## คำสั่งและปุ่ม
 
+!!! warning "ใช้ได้เฉพาะเมื่อเปิด debug"
+    คำสั่งแชททั้งหมดจะมีอยู่ก็ต่อเมื่อตั้ง `AvalonCombat.Debug = true` ใน `config/config.lua` เท่านั้น: ใช้สำหรับตั้งค่าและทดสอบสไตล์ อาวุธ และ NPC บนเซิร์ฟเวอร์จริงให้ตั้ง `Debug = false` และให้ผู้เล่นเข้าสู่การต่อสู้จากสคริปต์ของคุณด้วย export ฝั่งเซิร์ฟเวอร์ `SetStyle` ส่วนปุ่มต่างๆ ใช้ได้เสมอ
+
 ### โหมดต่อสู้
 
 | คำสั่ง | คำอธิบาย |
@@ -102,7 +105,7 @@ ensure avalon_combat
 | `/avalon_weapon_offset <x y z rx ry rz> [กระดูก]` | ปรับตำแหน่งอาวุธและพิมพ์บรรทัดที่ต้องคัดลอกไปใส่ใน config (มี `_offhand_offset`, `_shield_offset` ด้วย) |
 | `/avalon_sound <ชื่อ>` | เล่นเสียงจาก config |
 | `/avalon_sound_game <set> <ชื่อ> [bank]` | ทดลองเสียงใดก็ได้ของเกม |
-| `/avalon_npc <สไตล์> [team] [โมเดล]` | สร้าง NPC นักสู้ห่างไปข้างหน้า 4 เมตร |
+| `/avalon_npc <สไตล์> [team] [โมเดล] [scale]` | สร้าง NPC นักสู้ห่างไปข้างหน้า 4 เมตร |
 | `/avalon_npc_clear` | ลบ NPC ที่คุณสร้าง |
 | `/avalon_npc_info` | สถานะของ NPC นักสู้ในระยะ 30 เมตร |
 | `/avalon_dummy [โมเดล]` · `/avalon_dummy_clear` | หุ่นนิ่งสำหรับฝึกตี |
@@ -139,10 +142,14 @@ ensure avalon_combat
 | `config/shields.lua` | โล่ (หนึ่งรายการต่อสี) |
 | `config/styles/` | สไตล์ท้องถิ่น (ไม่บังคับ) และ `example.lua` ที่อธิบายทุกฟิลด์ |
 
+!!! info "ไฟล์ที่แก้ไขได้"
+    ไฟล์ใน `config/` (และ `config/styles/`) เปิดให้แก้ไข: ส่วนที่เหลือของรีซอร์สถูกป้องกันด้วย Cfx Escrow การปรับแต่งทั้งหมดทำผ่านไฟล์เหล่านี้และ [export](#exports)
+
 ### การตั้งค่าทั่วไป
 
 | ตัวเลือก | ค่าเริ่มต้น | คำอธิบาย |
 |--------|---------|-------------|
+| `Debug` | `false` | เปิดคำสั่งแชทและ `/avalon_combat_debug` (สำหรับทดสอบเท่านั้น) |
 | `TargetRange` | `4.0` | เมตร: ped ที่ไกลกว่านี้จะไม่ถูกตรวจ |
 | `LockRange` / `LockCone` | `3.0` / `45` | การโจมตีจะหันไปหา ped ที่ใกล้ที่สุดภายในระยะเมตรและองศาเหล่านี้ |
 | `LockOnRange` | `12.0` | เมตร: รัศมีการล็อกเป้าด้วย E |
@@ -277,8 +284,6 @@ AvalonCombat.Weapons.xur_katana = {
     shared_script 'avalon_combat.lua'
     ```
 
-    Avalon Explorer เวอร์ชัน build จะเขียนสองบรรทัดนี้ให้เองหากมีไฟล์อยู่
-
 === "ใน config/styles"
 
     ไฟล์ `config/styles/mystyle.lua` ภายใน `avalon_combat`:
@@ -345,7 +350,7 @@ pairs = {
 `att` / `vic` คือ clip ของผู้โจมตีและของเหยื่อ `x`, `y` และ `yaw` บอกตำแหน่งของเหยื่อเทียบกับผู้โจมตี (เมตร, องศา) `damageAt` คือเฟสที่ความเสียหายเกิดขึ้น ปรับในเกมด้วย `/avalon_pair_offset`
 
 !!! info "การเคลื่อนที่ของแอนิเมชัน"
-    clip ที่ขยับ ped จะเคลื่อนตาม *mover* ของมัน ซึ่งอ่านจาก `data/clip_movers.lua` clip ของแพ็กเกจใหม่ต้องมี mover ของตัวเอง สร้างด้วย Avalon Explorer หากไม่มี clip จะอยู่กับที่
+    clip ของแพ็กเกจ Avalon จะขยับ ped ตามการเคลื่อนไหวของมันเอง (ก้าว พุ่ง กระโดด) ส่วน clip ของแพ็กเกจจากผู้อื่นจะเล่นอยู่กับที่
 
 ---
 
@@ -361,6 +366,7 @@ NPC นักสู้คือ ped เครือข่ายที่ต่�
 local net = exports.avalon_combat:SpawnFighter('werewolf', vector3(-300.0, 790.0, 118.0), 90.0, {
     team = 'bandits',
     health = 400,
+    scale = 1.5,
     skill = { BlockChance = 0.6, Weights = { heavy = 0.6 } },
 })
 
@@ -374,6 +380,7 @@ exports.avalon_combat:StopFighter(net)
 | `weapon` / `offhand` / `shield` | สิ่งที่ถือ (ค่าเริ่มต้น: ของสไตล์; `shield = false` = ไม่ถือโล่) |
 | `team` | Team (ค่าเริ่มต้น `'npc'`) |
 | `health` | พลังชีวิต |
+| `scale` | ขนาดของ NPC (`1` = ปกติ ตั้งแต่ `0.2` ถึง `5`) hitbox ระยะโจมตี การเคลื่อนที่ของแอนิเมชัน และระยะการต่อสู้จะขยายตามไปด้วย |
 | `skill` | เฉพาะค่าของ `AvalonCombat.Npc` ที่ต้องการเปลี่ยน |
 
 !!! warning "ต้องมีผู้เล่น"

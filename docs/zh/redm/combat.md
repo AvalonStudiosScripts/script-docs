@@ -68,6 +68,9 @@ ensure avalon_combat
 
 ## 命令与按键
 
+!!! warning "仅在调试模式下可用"
+    所有聊天命令只有在 `config/config.lua` 中设置 `AvalonCombat.Debug = true` 时才存在：它们用于配置和测试风格、武器与 NPC。正式服务器请保持 `Debug = false`，并在你自己的脚本中通过服务端导出 `SetStyle` 让玩家进入战斗。按键始终可用。
+
 ### 战斗模式
 
 | 命令 | 说明 |
@@ -102,7 +105,7 @@ ensure avalon_combat
 | `/avalon_weapon_offset <x y z rx ry rz> [骨骼]` | 调整武器位置，并输出可复制到配置中的那一行（`_offhand_offset`、`_shield_offset` 同理） |
 | `/avalon_sound <名称>` | 播放配置中的一个音效 |
 | `/avalon_sound_game <set> <名称> [bank]` | 试听游戏中的任意音效 |
-| `/avalon_npc <风格> [team] [模型]` | 在前方 4 米处生成一个战斗 NPC |
+| `/avalon_npc <风格> [team] [模型] [scale]` | 在前方 4 米处生成一个战斗 NPC |
 | `/avalon_npc_clear` | 清除你创建的 NPC |
 | `/avalon_npc_info` | 30 米内战斗 NPC 的状态 |
 | `/avalon_dummy [模型]` · `/avalon_dummy_clear` | 固定不动的木桩，用于击打 |
@@ -139,10 +142,14 @@ ensure avalon_combat
 | `config/shields.lua` | 盾牌（每种颜色一项） |
 | `config/styles/` | 可选的本地风格，以及逐字段说明的 `example.lua` |
 
+!!! info "可修改的文件"
+    `config/`（以及 `config/styles/`）中的文件是开放的：资源的其余部分由 Cfx Escrow 保护。所有自定义都通过这些文件和[导出](#exports)完成。
+
 ### 常规设置
 
 | 选项 | 默认值 | 说明 |
 |------|--------|------|
+| `Debug` | `false` | 启用聊天命令和 `/avalon_combat_debug`（仅用于测试） |
 | `TargetRange` | `4.0` | 米：更远的 ped 不会被检测 |
 | `LockRange` / `LockCone` | `3.0` / `45` | 攻击会转向此米数和角度内最近的 ped |
 | `LockOnRange` | `12.0` | 米：按 E 锁定的范围 |
@@ -277,8 +284,6 @@ AvalonCombat.Weapons.xur_katana = {
     shared_script 'avalon_combat.lua'
     ```
 
-    如果该文件存在，Avalon Explorer 的构建会自动写入这两行。
-
 === "在 config/styles 中"
 
     在 `avalon_combat` 内创建文件 `config/styles/mystyle.lua`：
@@ -344,8 +349,8 @@ pairs = {
 
 `att` / `vic` 分别是攻击者和受害者的 clip。`x`、`y` 和 `yaw` 表示受害者相对于攻击者的位置（米、度）。`damageAt` 是伤害生效的阶段。可在游戏中用 `/avalon_pair_offset` 调整。
 
-!!! info "动画的位移"
-    会移动 ped 的 clip 遵循各自的 *mover*，由 `data/clip_movers.lua` 读取。新动画包的 clip 需要它们自己的 mover，可用 Avalon Explorer 生成；没有 mover 时，clip 会停留在原地。
+!!! info "动画位移"
+    Avalon 动画包的 clip 会按照自身的动作移动 ped（步伐、冲刺、跳跃）。第三方动画包的 clip 会在原地播放。
 
 ---
 
@@ -361,6 +366,7 @@ pairs = {
 local net = exports.avalon_combat:SpawnFighter('werewolf', vector3(-300.0, 790.0, 118.0), 90.0, {
     team = 'bandits',
     health = 400,
+    scale = 1.5,
     skill = { BlockChance = 0.6, Weights = { heavy = 0.6 } },
 })
 
@@ -374,6 +380,7 @@ exports.avalon_combat:StopFighter(net)
 | `weapon` / `offhand` / `shield` | 手持的物品（默认：风格自带的；`shield = false` = 不持盾） |
 | `team` | Team（默认 `'npc'`） |
 | `health` | 生命值 |
+| `scale` | NPC 的大小（`1` = 正常，范围 `0.2` 到 `5`）。命中框、攻击范围、动画位移和战斗距离都会随之放大 |
 | `skill` | 仅填写 `AvalonCombat.Npc` 中需要更改的值 |
 
 !!! warning "需要有玩家在线"

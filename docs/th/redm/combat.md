@@ -381,6 +381,56 @@ exports.avalon_combat:StopFighter(net)
 
 ---
 
+## ความก้าวหน้า (เลเวลและสกิล) {#progression}
+
+avalon_combat **ไม่มี**ระบบเลเวลหรือสกิล: ส่วนนั้นเป็นของเซิร์ฟเวอร์คุณเอง สคริปต์นี้ให้เพียงเครื่องมือสำหรับกำหนดว่าผู้เล่นหรือ NPC นักสู้แต่ละตัวใช้การโจมตีใดได้บ้างและแข็งแกร่งแค่ไหน ระบบของคุณเรียก export แล้ว avalon_combat จะนำไปใช้
+
+### ใช้การโจมตีใดได้บ้าง
+
+- ทุกการโจมตี**ใช้ได้**ตามค่าเริ่มต้น เว้นแต่รายการในสไตล์จะมี `locked = true`: แล้วจะเริ่มต้นแบบล็อกสำหรับทุกคน
+- `SetAttackEnabled(target, สไตล์, attackId, true | false)` ปลดล็อกหรือล็อกการโจมตีสำหรับนักสู้และสไตล์นั้น และมีผลเหนือ `locked` ใน config
+- `attackId` คือ `id` ของการโจมตี ถ้าไม่มีคือชื่อคลิป สำหรับการโจมตีคู่คือคีย์ใน `pairs` ส่วน `GetAttacks(สไตล์)` จะแสดงการโจมตีทั้งหมดของสไตล์พร้อม id, ชุดคอมโบ และ `locked`
+- ชุดคอมโบ (`light`, `heavy`, `special`) และ `moves` ของโหมด `'keys'` เป็นรายการแยกกัน มี id ต่างกัน: ถ้าเซิร์ฟเวอร์ใช้ทั้งสองโหมด ต้องปลดล็อกทั้งสองฝั่ง
+- การโจมตีที่ถูกล็อกจะถูกข้าม: ในคอมโบปุ่มจะไปยังการโจมตีถัดไปที่ใช้ได้ของชุดนั้น (ไม่มีเลย: ปุ่มไม่ทำอะไร) ในโหมด `'keys'` ท่านั้นจะไม่ถูกเลือก และ R จะไม่เริ่มการโจมตีคู่ NPC ใช้เฉพาะการโจมตีที่ใช้ได้ของตัวเอง
+- เซิร์ฟเวอร์จะทิ้งการโดนของการโจมตีที่ถูกล็อก: ไคลเอนต์ที่ถูกดัดแปลงก็ยังใช้ไม่ได้
+
+### แข็งแกร่งแค่ไหน
+
+| Export | ผล |
+|--------|----|
+| `SetAttackMultiplier(target, สไตล์, attackId, m)` | ตัวคูณความเสียหายของการโจมตีหนึ่ง |
+| `SetOutgoingMultiplier(target, m)` | ตัวคูณความเสียหายทั้งหมดของมัน |
+| `SetDefence(target, { percent, flat })` | การป้องกันของตัวเอง บวกเพิ่มจากการป้องกันของการกันหรือโล่ |
+| `SetMaxGuard(target, max)` | แต้มการกันสูงสุด (โหมด `'points'`) |
+| `SetInputMode(target, 'combo' \| 'keys')` | โหมดการกดของนักสู้ |
+| `SetStyle(src, สไตล์)` · `SetHeld(src, slot, key)` | สไตล์และอาวุธของผู้เล่น (เช่นจากคลาสหรือกระเป๋า) |
+
+ทุก `Set...` มี `Get...` คู่กันสำหรับอ่านค่าปัจจุบัน
+
+!!! warning "ไม่มีการบันทึกข้อมูล"
+    ความก้าวหน้าเก็บอยู่ในหน่วยความจำเท่านั้น: เมื่อผู้เล่นออก (หรือ NPC หยุด) จะกลับเป็นค่าใน config การบันทึกเป็นหน้าที่ของระบบคุณ ซึ่งต้องส่งค่ากลับมาใหม่ทุกครั้งที่เข้าเกม เช่นเมื่อโหลดตัวละครเสร็จ
+
+```lua
+-- server: ระบบเลเวลของคุณ
+local Unlocks = { -- เลเวลขั้นต่ำต่อการโจมตี แยกตามสไตล์
+    katana = { ['combo@a03@rm'] = 5, ['combo@a04@rm'] = 10, ['combo@d03@rm'] = 15 },
+}
+
+local function applyProgress(src, level)
+    for style, attacks in pairs(Unlocks) do
+        for attackId, minLevel in pairs(attacks) do
+            exports.avalon_combat:SetAttackEnabled(src, style, attackId, level >= minLevel)
+        end
+    end
+    exports.avalon_combat:SetOutgoingMultiplier(src, 1.0 + level * 0.02) -- +2% ความเสียหายต่อเลเวล
+end
+
+AddEventHandler('mylevels:loaded', applyProgress)  -- โหลดตัวละครแล้ว
+AddEventHandler('mylevels:levelUp', applyProgress) -- เลเวลใหม่
+```
+
+---
+
 ## Export ที่ใช้ได้ {#exports}
 
 `target` คือ ID เซิร์ฟเวอร์ของผู้เล่น หรือ `{ net = netId }` สำหรับ NPC นักสู้
@@ -434,13 +484,6 @@ exports.avalon_combat:AddHitHandler(function(hit)
     if hit.victim.kind == 'player' and HasSilverArmor(hit.victim.src) and hit.attacker.style == 'werewolf' then
         hit.final = hit.final * 0.5 -- เซิร์ฟเวอร์ปัดเศษหลังจาก handler ทำงานเสร็จ
         return hit
-    end
-end)
-
--- ปลดล็อกท่าโจมตีที่เลเวล 10
-AddEventHandler('levels:up', function(src, level)
-    if level == 10 then
-        exports.avalon_combat:SetAttackEnabled(src, 'katana', 'attack@combo3', true)
     end
 end)
 ```

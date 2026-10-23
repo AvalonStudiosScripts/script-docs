@@ -381,6 +381,56 @@ exports.avalon_combat:StopFighter(net)
 
 ---
 
+## 成长（等级与技能） {#progression}
+
+avalon_combat **没有**等级或技能系统：那是你服务器自己的系统。本脚本只提供工具，让你为每个玩家或战斗 NPC 决定可以使用哪些攻击、强度如何。你的系统调用导出，avalon_combat 负责执行。
+
+### 可以使用哪些攻击
+
+- 每个攻击默认**可用**，除非它在风格中的条目写了 `locked = true`：那样它对所有人一开始都是锁定的。
+- `SetAttackEnabled(target, 风格, attackId, true | false)` 为该战斗者和该风格解锁或锁定一个攻击，优先于配置中的 `locked`。
+- `attackId` 是攻击的 `id`，没有则为其动画片段名。配对攻击则是它在 `pairs` 中的键。`GetAttacks(风格)` 列出一个风格的所有攻击及其 id、连段和 `locked`。
+- 连招模式的连段（`light`、`heavy`、`special`）和 `'keys'` 模式的 `moves` 是不同的条目，id 也不同：如果服务器两种模式都用，两边都要解锁。
+- 被锁定的攻击会被跳过：连招中按键会跳到该连段的下一个可用攻击（没有可用的则按键无效）；`'keys'` 模式下不会选中该招式；R 不会发动配对攻击。NPC 只使用自己可用的攻击。
+- 服务器会丢弃被锁定攻击的命中：修改过的客户端也无法使用。
+
+### 强度如何
+
+| 导出 | 效果 |
+|------|------|
+| `SetAttackMultiplier(target, 风格, attackId, m)` | 单个攻击的伤害倍率 |
+| `SetOutgoingMultiplier(target, m)` | 其全部伤害的倍率 |
+| `SetDefence(target, { percent, flat })` | 自身防御，叠加在格挡或盾牌的防御上 |
+| `SetMaxGuard(target, max)` | 最大格挡点数（`'points'` 模式） |
+| `SetInputMode(target, 'combo' \| 'keys')` | 战斗者的输入模式 |
+| `SetStyle(src, 风格)` · `SetHeld(src, slot, key)` | 玩家的风格和武器（例如来自职业或背包） |
+
+每个 `Set...` 都有对应的 `Get...` 用于读取当前值。
+
+!!! warning "不会保存任何数据"
+    成长数据只保存在内存中：玩家退出（或 NPC 停止）后会恢复为配置中的值。保存它是你的系统的工作，并在每次进入时重新发送，例如在角色加载完成时。
+
+```lua
+-- server: 你的等级系统
+local Unlocks = { -- 每个风格中每个攻击的最低等级
+    katana = { ['combo@a03@rm'] = 5, ['combo@a04@rm'] = 10, ['combo@d03@rm'] = 15 },
+}
+
+local function applyProgress(src, level)
+    for style, attacks in pairs(Unlocks) do
+        for attackId, minLevel in pairs(attacks) do
+            exports.avalon_combat:SetAttackEnabled(src, style, attackId, level >= minLevel)
+        end
+    end
+    exports.avalon_combat:SetOutgoingMultiplier(src, 1.0 + level * 0.02) -- 每级 +2% 伤害
+end
+
+AddEventHandler('mylevels:loaded', applyProgress)  -- 角色已加载
+AddEventHandler('mylevels:levelUp', applyProgress) -- 升级
+```
+
+---
+
 ## 可用导出 {#exports}
 
 `target` 是玩家的服务端 ID，或对于战斗 NPC 为 `{ net = netId }`。
@@ -434,13 +484,6 @@ exports.avalon_combat:AddHitHandler(function(hit)
     if hit.victim.kind == 'player' and HasSilverArmor(hit.victim.src) and hit.attacker.style == 'werewolf' then
         hit.final = hit.final * 0.5 -- 在 handler 之后由服务端四舍五入
         return hit
-    end
-end)
-
--- 10 级时解锁一个攻击
-AddEventHandler('levels:up', function(src, level)
-    if level == 10 then
-        exports.avalon_combat:SetAttackEnabled(src, 'katana', 'attack@combo3', true)
     end
 end)
 ```

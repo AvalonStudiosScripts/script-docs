@@ -381,6 +381,56 @@ exports.avalon_combat:StopFighter(net)
 
 ---
 
+## Progresión (niveles y habilidades)
+
+avalon_combat **no tiene** un sistema de niveles o habilidades: eso es de tu servidor. El script solo da las herramientas para decidir, para cada jugador o NPC combatiente, qué ataques puede usar y lo fuerte que es. Tu sistema llama a los exports, avalon_combat los aplica.
+
+### Qué ataques puede usar
+
+- Cada ataque está **disponible**, salvo que su entrada en el estilo tenga `locked = true`: entonces empieza bloqueado para todos.
+- `SetAttackEnabled(target, estilo, attackId, true | false)` desbloquea o bloquea un ataque para ese combatiente y ese estilo. Prevalece sobre el `locked` del config.
+- `attackId` es el `id` del ataque, si no el nombre de su clip. Para un ataque emparejado es su clave en `pairs`. `GetAttacks(estilo)` lista todos los ataques de un estilo con id, cadena y `locked`.
+- Las cadenas del combo (`light`, `heavy`, `special`) y los `moves` del modo `'keys'` son entradas distintas, con id distintos: si tu servidor usa ambos modos, desbloquea ambos.
+- Un ataque bloqueado se salta: en el combo el botón pasa al siguiente disponible de la cadena (ninguno disponible: el botón no hace nada); en el modo `'keys'` el movimiento no se elige; R no ejecuta el ataque emparejado. Los NPC solo usan sus ataques disponibles.
+- El servidor descarta los golpes de un ataque bloqueado: un cliente modificado tampoco puede usarlo.
+
+### Lo fuerte que es
+
+| Export | Efecto |
+|--------|--------|
+| `SetAttackMultiplier(target, estilo, attackId, m)` | Multiplica el daño de un ataque |
+| `SetOutgoingMultiplier(target, m)` | Multiplica todo su daño |
+| `SetDefence(target, { percent, flat })` | Defensa propia, sumada a la de la guardia o el escudo |
+| `SetMaxGuard(target, max)` | Puntos de guardia máximos (modo `'points'`) |
+| `SetInputMode(target, 'combo' \| 'keys')` | Modo de entrada del combatiente |
+| `SetStyle(src, estilo)` · `SetHeld(src, slot, clave)` | Estilo y armas del jugador (por ejemplo desde su clase o inventario) |
+
+Cada `Set...` tiene su `Get...` para leer el valor actual.
+
+!!! warning "No se guarda nada"
+    La progresión vive en memoria: cuando el jugador sale (o un NPC se detiene) vuelve a los valores del config. Guardarla es tarea de tu sistema, que la vuelve a enviar en cada entrada, por ejemplo cuando se carga el personaje.
+
+```lua
+-- server: tu sistema de niveles
+local Unlocks = { -- nivel mínimo por ataque, por estilo
+    katana = { ['combo@a03@rm'] = 5, ['combo@a04@rm'] = 10, ['combo@d03@rm'] = 15 },
+}
+
+local function applyProgress(src, level)
+    for style, attacks in pairs(Unlocks) do
+        for attackId, minLevel in pairs(attacks) do
+            exports.avalon_combat:SetAttackEnabled(src, style, attackId, level >= minLevel)
+        end
+    end
+    exports.avalon_combat:SetOutgoingMultiplier(src, 1.0 + level * 0.02) -- +2% de daño por nivel
+end
+
+AddEventHandler('mylevels:loaded', applyProgress)  -- personaje cargado
+AddEventHandler('mylevels:levelUp', applyProgress) -- nuevo nivel
+```
+
+---
+
 ## Exportaciones Disponibles
 
 Un `target` es el ID de servidor de un jugador o `{ net = netId }` para un NPC combatiente.
@@ -434,13 +484,6 @@ exports.avalon_combat:AddHitHandler(function(hit)
     if hit.victim.kind == 'player' and HasSilverArmor(hit.victim.src) and hit.attacker.style == 'werewolf' then
         hit.final = hit.final * 0.5 -- redondeado por el servidor después de los handlers
         return hit
-    end
-end)
-
--- desbloquea un ataque en el nivel 10
-AddEventHandler('levels:up', function(src, level)
-    if level == 10 then
-        exports.avalon_combat:SetAttackEnabled(src, 'katana', 'attack@combo3', true)
     end
 end)
 ```

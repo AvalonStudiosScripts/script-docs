@@ -381,6 +381,56 @@ exports.avalon_combat:StopFighter(net)
 
 ---
 
+## Progression (levels and skills)
+
+avalon_combat **has no** level or skill system: that belongs to your server. The script only gives you the tools to decide, for each player or NPC fighter, which attacks it can use and how strong it is. Your system calls the exports, avalon_combat applies them.
+
+### Which attacks it can use
+
+- Every attack is **available** unless its entry in the style has `locked = true`: then it starts locked for everyone.
+- `SetAttackEnabled(target, style, attackId, true | false)` unlocks or locks an attack for that fighter and that style. It overrides the config's `locked`.
+- `attackId` is the attack's `id`, otherwise its clip name. For a paired attack it is its key in `pairs`. `GetAttacks(style)` lists every attack of a style with its id, chain and `locked`.
+- The combo chains (`light`, `heavy`, `special`) and the `moves` of the `'keys'` mode are separate entries with separate ids: if your server uses both modes, unlock both.
+- A locked attack is skipped: in the combo the button moves on to the next available attack of the chain (none available: the button does nothing); in the `'keys'` mode the move is never picked; R does not start the paired attack. NPCs only use their available attacks.
+- The server drops the hits of a locked attack: a modified client still cannot use it.
+
+### How strong it is
+
+| Export | Effect |
+|--------|--------|
+| `SetAttackMultiplier(target, style, attackId, m)` | Multiplies one attack's damage |
+| `SetOutgoingMultiplier(target, m)` | Multiplies all of its damage |
+| `SetDefence(target, { percent, flat })` | Its own defence, added to the guard's or the shield's |
+| `SetMaxGuard(target, max)` | Maximum guard points (`'points'` mode) |
+| `SetInputMode(target, 'combo' \| 'keys')` | The fighter's input mode |
+| `SetStyle(src, style)` · `SetHeld(src, slot, key)` | The player's style and weapons (for example from its class or inventory) |
+
+Every `Set...` has a matching `Get...` to read the current value.
+
+!!! warning "Nothing is saved"
+    Progression lives in memory: when the player leaves (or an NPC stops) it goes back to the config values. Saving it is your system's job, sending it again on every join, for example when the character is loaded.
+
+```lua
+-- server: your level system
+local Unlocks = { -- minimum level per attack, per style
+    katana = { ['combo@a03@rm'] = 5, ['combo@a04@rm'] = 10, ['combo@d03@rm'] = 15 },
+}
+
+local function applyProgress(src, level)
+    for style, attacks in pairs(Unlocks) do
+        for attackId, minLevel in pairs(attacks) do
+            exports.avalon_combat:SetAttackEnabled(src, style, attackId, level >= minLevel)
+        end
+    end
+    exports.avalon_combat:SetOutgoingMultiplier(src, 1.0 + level * 0.02) -- +2% damage per level
+end
+
+AddEventHandler('mylevels:loaded', applyProgress)  -- character loaded
+AddEventHandler('mylevels:levelUp', applyProgress) -- new level
+```
+
+---
+
 ## Available Exports
 
 A `target` is a player's server ID or `{ net = netId }` for an NPC fighter.
@@ -434,13 +484,6 @@ exports.avalon_combat:AddHitHandler(function(hit)
     if hit.victim.kind == 'player' and HasSilverArmor(hit.victim.src) and hit.attacker.style == 'werewolf' then
         hit.final = hit.final * 0.5 -- rounded by the server after the handlers
         return hit
-    end
-end)
-
--- unlock an attack at level 10
-AddEventHandler('levels:up', function(src, level)
-    if level == 10 then
-        exports.avalon_combat:SetAttackEnabled(src, 'katana', 'attack@combo3', true)
     end
 end)
 ```

@@ -151,6 +151,7 @@ Los archivos de configuración están en `config/`:
 | `Debug` | `false` | Activa los comandos de chat y `/avalon_combat_debug` (solo para pruebas) |
 | `TargetRange` | `4.0` | m: los peds más lejanos no se comprueban |
 | `LockRange` / `LockCone` | `3.0` / `45` | Un ataque se orienta hacia el ped más cercano dentro de estos metros y grados |
+| `AttackTowardsCamera` | `true` | Los ataques del jugador (y el emparejado con R) van hacia donde apunta la cámara: el personaje se gira hacia allí al empezar cada ataque. `false`: hacia donde mira el personaje |
 | `LockOnRange` | `12.0` | m: radio de la fijación con E |
 | `MinSweepSpeed` | `2.0` | m/s: un miembro más lento no golpea |
 | `SkipStart` | `0.10` | Parte inicial de cada ataque ignorada |
@@ -255,6 +256,31 @@ AvalonCombat.Weapons.xur_katana = {
 | `blade` | Cápsula de la hoja en el espacio del modelo: golpea en lugar de la mano |
 | `cast` | Solo bastones: el punto desde el que saldrán las magias |
 | `defence` | Solo escudos: `{ percent, flat }` en lugar de la de la guardia |
+
+### Armas desde el inventario
+
+El estilo y el arma están separados: cada estilo puede empuñar cualquier arma de la config, así que varios estilos pueden usar la misma arma. Desde tu script eliges el arma (por ejemplo desde el item usado) y el estilo (por ejemplo desde la clase), para jugadores y NPC:
+
+```lua
+-- servidor: el item elige el arma, la clase el estilo
+local ItemWeapons = { katana_item = 'xur_katana', machete_item = 'xur_machete2' }
+
+RegisterNetEvent('my_inventory:useWeapon', function(item)
+    local src = source
+    local weapon = ItemWeapons[item]
+    if not weapon then return end
+    -- estilos distintos con la misma arma
+    local style = MyClasses.IsMaster(src) and 'katana3' or 'katana'
+    exports.avalon_combat:SetStyle(src, style, { weapon = weapon, shield = false })
+end)
+
+-- solo el arma, el estilo se queda
+exports.avalon_combat:SetHeld(src, 'weapon', 'xur_machete2')
+
+-- un NPC: lo mismo con { net = netId }
+local net = exports.avalon_combat:SpawnFighter('katana', coords, 90.0, { weapon = 'xur_machete2' })
+exports.avalon_combat:SetStyle({ net = net }, 'katana4', { weapon = 'xur_machete2' })
+```
 
 ---
 
@@ -378,7 +404,7 @@ exports.avalon_combat:StopFighter(net)
 | `opts` | Descripción |
 |--------|-------------|
 | `model` | Modelo del ped (por defecto `AvalonCombat.Npc.Model`) |
-| `weapon` / `offhand` / `shield` | Qué empuña (por defecto: los del estilo; `shield = false` = ninguno) |
+| `weapon` / `offhand` / `shield` | Lo que empuña: claves de la config (por defecto: las del estilo; `false` = mano vacía). Una clave que no existe hace fallar la creación |
 | `team` | Team (por defecto `'npc'`) |
 | `health` | Vida |
 | `scale` | Tamaño del NPC (`1` = normal, de `0.2` a `5`). Con él crecen las hitbox, el alcance de los golpes, el movimiento de las animaciones y las distancias de combate |
@@ -411,7 +437,7 @@ avalon_combat **no tiene** un sistema de niveles o habilidades: eso es de tu ser
 | `SetDefence(target, { percent, flat })` | Defensa propia, sumada a la de la guardia o el escudo |
 | `SetMaxGuard(target, max)` | Puntos de guardia máximos (modo `'points'`) |
 | `SetInputMode(target, 'combo' \| 'keys')` | Modo de entrada del combatiente |
-| `SetStyle(src, estilo)` · `SetHeld(src, slot, clave)` | Estilo y armas del jugador (por ejemplo desde su clase o inventario) |
+| `SetStyle(target, estilo, armas)` · `SetHeld(target, slot, clave)` | Estilo y armas de jugadores y NPC (por ejemplo desde la clase o el inventario) |
 
 Cada `Set...` tiene su `Get...` para leer el valor actual.
 
@@ -447,10 +473,10 @@ Un `target` es el ID de servidor de un jugador o `{ net = netId }` para un NPC c
 
 | Export | Descripción |
 |--------|-------------|
-| `SetStyle(src, estilo \| nil)` | Pone al jugador en combate con ese estilo, o se lo quita |
-| `GetStyle(src)` | Estilo actual del jugador |
-| `SetHeld(src, slot, clave \| nil)` | Arma (`'weapon'`, `'offhand'`) o escudo (`'shield'`) en la mano |
-| `GetHeld(src)` | `{ slot = clave }` |
+| `SetStyle(target, estilo \| nil, armas)` | Pone al combatiente en combate con ese estilo. `armas`: `{ weapon, offhand, shield }`, cada una una clave de la config, `false` para la mano vacía, ausente para la del estilo. `nil` saca a un jugador del combate (un NPC se quita con `StopFighter`) |
+| `GetStyle(target)` | Estilo actual del combatiente |
+| `SetHeld(target, slot, clave \| nil)` | Arma (`'weapon'`, `'offhand'`) o escudo (`'shield'`) en la mano, manteniendo el estilo |
+| `GetHeld(target)` | `{ slot = clave }` |
 | `SpawnFighter(estilo, coords, heading, opts)` | Crea un NPC combatiente, devuelve el net id |
 | `StopFighter(net)` | Quita un NPC combatiente |
 | `AddHitHandler(fn)` / `RemoveHitHandler(id)` | Función llamada en cada golpe (ver abajo) |

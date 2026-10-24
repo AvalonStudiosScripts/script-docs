@@ -151,6 +151,7 @@ ensure avalon_combat
 | `Debug` | `false` | เปิดคำสั่งแชทและ `/avalon_combat_debug` (สำหรับทดสอบเท่านั้น) |
 | `TargetRange` | `4.0` | เมตร: ped ที่ไกลกว่านี้จะไม่ถูกตรวจ |
 | `LockRange` / `LockCone` | `3.0` / `45` | การโจมตีจะหันไปหา ped ที่ใกล้ที่สุดภายในระยะเมตรและองศาเหล่านี้ |
+| `AttackTowardsCamera` | `true` | การโจมตีของผู้เล่น (และท่าคู่ของ R) จะไปทางที่กล้องชี้: ตัวละครจะหันไปทางนั้นเมื่อเริ่มแต่ละท่า `false`: ไปทางที่ตัวละครหันอยู่ |
 | `LockOnRange` | `12.0` | เมตร: รัศมีการล็อกเป้าด้วย E |
 | `MinSweepSpeed` | `2.0` | เมตร/วินาที: แขนขาที่ช้ากว่านี้จะไม่ตีโดน |
 | `SkipStart` | `0.10` | ช่วงต้นของทุกการโจมตีที่ถูกข้าม |
@@ -255,6 +256,31 @@ AvalonCombat.Weapons.xur_katana = {
 | `blade` | แคปซูลของใบมีดในพื้นที่ของโมเดล: ใช้ตีแทนมือ |
 | `cast` | เฉพาะคทา: จุดที่เวทมนตร์จะพุ่งออกไป |
 | `defence` | เฉพาะโล่: `{ percent, flat }` แทนของการป้องกัน |
+
+### อาวุธจากกระเป๋า
+
+สไตล์และอาวุธแยกกัน: ทุกสไตล์ถืออาวุธใดก็ได้ใน config ดังนั้นหลายสไตล์จึงใช้อาวุธเดียวกันได้ จากสคริปต์ของคุณ เลือกอาวุธ (เช่น จากไอเทมที่ใช้) และสไตล์ (เช่น จากคลาส) ได้ทั้งผู้เล่นและ NPC:
+
+```lua
+-- เซิร์ฟเวอร์: ไอเทมเลือกอาวุธ คลาสเลือกสไตล์
+local ItemWeapons = { katana_item = 'xur_katana', machete_item = 'xur_machete2' }
+
+RegisterNetEvent('my_inventory:useWeapon', function(item)
+    local src = source
+    local weapon = ItemWeapons[item]
+    if not weapon then return end
+    -- สไตล์ต่างกันใช้อาวุธเดียวกัน
+    local style = MyClasses.IsMaster(src) and 'katana3' or 'katana'
+    exports.avalon_combat:SetStyle(src, style, { weapon = weapon, shield = false })
+end)
+
+-- เปลี่ยนแค่อาวุธ สไตล์คงเดิม
+exports.avalon_combat:SetHeld(src, 'weapon', 'xur_machete2')
+
+-- NPC: ทำแบบเดียวกันด้วย { net = netId }
+local net = exports.avalon_combat:SpawnFighter('katana', coords, 90.0, { weapon = 'xur_machete2' })
+exports.avalon_combat:SetStyle({ net = net }, 'katana4', { weapon = 'xur_machete2' })
+```
 
 ---
 
@@ -378,7 +404,7 @@ exports.avalon_combat:StopFighter(net)
 | `opts` | คำอธิบาย |
 |--------|-------------|
 | `model` | โมเดลของ ped (ค่าเริ่มต้น `AvalonCombat.Npc.Model`) |
-| `weapon` / `offhand` / `shield` | สิ่งที่ถือ (ค่าเริ่มต้น: ของสไตล์; `shield = false` = ไม่ถือโล่) |
+| `weapon` / `offhand` / `shield` | สิ่งที่ถือ: คีย์ใน config (ค่าเริ่มต้น: ของสไตล์; `false` = มือเปล่า) คีย์ที่ไม่มีอยู่จะทำให้การสร้างล้มเหลว |
 | `team` | Team (ค่าเริ่มต้น `'npc'`) |
 | `health` | พลังชีวิต |
 | `scale` | ขนาดของ NPC (`1` = ปกติ ตั้งแต่ `0.2` ถึง `5`) hitbox ระยะโจมตี การเคลื่อนที่ของแอนิเมชัน และระยะการต่อสู้จะขยายตามไปด้วย |
@@ -411,7 +437,7 @@ avalon_combat **ไม่มี**ระบบเลเวลหรือสก�
 | `SetDefence(target, { percent, flat })` | การป้องกันของตัวเอง บวกเพิ่มจากการป้องกันของการกันหรือโล่ |
 | `SetMaxGuard(target, max)` | แต้มการกันสูงสุด (โหมด `'points'`) |
 | `SetInputMode(target, 'combo' \| 'keys')` | โหมดการกดของนักสู้ |
-| `SetStyle(src, สไตล์)` · `SetHeld(src, slot, key)` | สไตล์และอาวุธของผู้เล่น (เช่นจากคลาสหรือกระเป๋า) |
+| `SetStyle(target, สไตล์, อาวุธ)` · `SetHeld(target, slot, คีย์)` | สไตล์และอาวุธของผู้เล่นและ NPC (เช่น จากคลาสหรือกระเป๋า) |
 
 ทุก `Set...` มี `Get...` คู่กันสำหรับอ่านค่าปัจจุบัน
 
@@ -447,10 +473,10 @@ AddEventHandler('mylevels:levelUp', applyProgress) -- เลเวลใหม�
 
 | Export | คำอธิบาย |
 |--------|-------------|
-| `SetStyle(src, สไตล์ \| nil)` | ให้ผู้เล่นเข้าสู่การต่อสู้ด้วยสไตล์นั้น หรือถอดออก |
-| `GetStyle(src)` | สไตล์ปัจจุบันของผู้เล่น |
-| `SetHeld(src, slot, คีย์ \| nil)` | อาวุธ (`'weapon'`, `'offhand'`) หรือโล่ (`'shield'`) ที่ถือในมือ |
-| `GetHeld(src)` | `{ slot = คีย์ }` |
+| `SetStyle(target, สไตล์ \| nil, อาวุธ)` | ให้ผู้ต่อสู้เข้าสู่การต่อสู้ด้วยสไตล์นั้น `อาวุธ`: `{ weapon, offhand, shield }` แต่ละอันเป็นคีย์ใน config, `false` คือมือเปล่า, ไม่ระบุคือใช้ของสไตล์ `nil` ให้ผู้เล่นออกจากการต่อสู้ (NPC ลบด้วย `StopFighter`) |
+| `GetStyle(target)` | สไตล์ปัจจุบันของผู้ต่อสู้ |
+| `SetHeld(target, slot, คีย์ \| nil)` | อาวุธ (`'weapon'`, `'offhand'`) หรือโล่ (`'shield'`) ในมือ โดยคงสไตล์ไว้ |
+| `GetHeld(target)` | `{ slot = คีย์ }` |
 | `SpawnFighter(สไตล์, coords, heading, opts)` | สร้าง NPC นักสู้ คืนค่า net id |
 | `StopFighter(net)` | ลบ NPC นักสู้ |
 | `AddHitHandler(fn)` / `RemoveHitHandler(id)` | ฟังก์ชันที่ถูกเรียกทุกการโจมตี (ดูด้านล่าง) |

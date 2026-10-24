@@ -151,6 +151,7 @@ ensure avalon_combat
 | `Debug` | `false` | 启用聊天命令和 `/avalon_combat_debug`（仅用于测试） |
 | `TargetRange` | `4.0` | 米：更远的 ped 不会被检测 |
 | `LockRange` / `LockCone` | `3.0` / `45` | 攻击会转向此米数和角度内最近的 ped |
+| `AttackTowardsCamera` | `true` | 玩家的攻击（以及 R 的配对攻击）朝镜头所指的方向：每次攻击开始时角色会转向那里。`false`：朝角色面向的方向 |
 | `LockOnRange` | `12.0` | 米：按 E 锁定的范围 |
 | `MinSweepSpeed` | `2.0` | 米/秒：低于此速度的肢体不会命中 |
 | `SkipStart` | `0.10` | 每次攻击开头被忽略的部分 |
@@ -255,6 +256,31 @@ AvalonCombat.Weapons.xur_katana = {
 | `blade` | 刀刃在模型空间中的胶囊体：由它代替手部进行命中 |
 | `cast` | 仅限法杖：法术将来的发射点 |
 | `defence` | 仅限盾牌：用 `{ percent, flat }` 取代防御动作的防御值 |
+
+### 来自背包的武器
+
+风格与武器是分开的：每种风格都可以手持配置中的任何武器，因此多种风格可以共用同一把武器。在你的脚本中为玩家和 NPC 选择武器（例如根据使用的物品）和风格（例如根据职业）：
+
+```lua
+-- 服务端：物品决定武器，职业决定风格
+local ItemWeapons = { katana_item = 'xur_katana', machete_item = 'xur_machete2' }
+
+RegisterNetEvent('my_inventory:useWeapon', function(item)
+    local src = source
+    local weapon = ItemWeapons[item]
+    if not weapon then return end
+    -- 不同风格使用同一把武器
+    local style = MyClasses.IsMaster(src) and 'katana3' or 'katana'
+    exports.avalon_combat:SetStyle(src, style, { weapon = weapon, shield = false })
+end)
+
+-- 只换武器，风格不变
+exports.avalon_combat:SetHeld(src, 'weapon', 'xur_machete2')
+
+-- NPC：用 { net = netId } 同样操作
+local net = exports.avalon_combat:SpawnFighter('katana', coords, 90.0, { weapon = 'xur_machete2' })
+exports.avalon_combat:SetStyle({ net = net }, 'katana4', { weapon = 'xur_machete2' })
+```
 
 ---
 
@@ -378,7 +404,7 @@ exports.avalon_combat:StopFighter(net)
 | `opts` | 说明 |
 |--------|------|
 | `model` | ped 的模型（默认 `AvalonCombat.Npc.Model`） |
-| `weapon` / `offhand` / `shield` | 手持的物品（默认：风格自带的；`shield = false` = 不持盾） |
+| `weapon` / `offhand` / `shield` | 手持的物品：配置中的键（默认：风格自带的；`false` = 空手）。不存在的键会导致生成失败 |
 | `team` | Team（默认 `'npc'`） |
 | `health` | 生命值 |
 | `scale` | NPC 的大小（`1` = 正常，范围 `0.2` 到 `5`）。命中框、攻击范围、动画位移和战斗距离都会随之放大 |
@@ -411,7 +437,7 @@ avalon_combat **没有**等级或技能系统：那是你服务器自己的系�
 | `SetDefence(target, { percent, flat })` | 自身防御，叠加在格挡或盾牌的防御上 |
 | `SetMaxGuard(target, max)` | 最大格挡点数（`'points'` 模式） |
 | `SetInputMode(target, 'combo' \| 'keys')` | 战斗者的输入模式 |
-| `SetStyle(src, 风格)` · `SetHeld(src, slot, key)` | 玩家的风格和武器（例如来自职业或背包） |
+| `SetStyle(target, 风格, 武器)` · `SetHeld(target, slot, 键)` | 玩家和 NPC 的风格与武器（例如来自职业或背包） |
 
 每个 `Set...` 都有对应的 `Get...` 用于读取当前值。
 
@@ -447,10 +473,10 @@ AddEventHandler('mylevels:levelUp', applyProgress) -- 升级
 
 | 导出函数 | 说明 |
 |----------|------|
-| `SetStyle(src, 风格 \| nil)` | 让玩家以该风格进入战斗，或使其退出 |
-| `GetStyle(src)` | 玩家当前的风格 |
-| `SetHeld(src, slot, 键 \| nil)` | 手持的武器（`'weapon'`、`'offhand'`）或盾牌（`'shield'`） |
-| `GetHeld(src)` | `{ slot = 键 }` |
+| `SetStyle(target, 风格 \| nil, 武器)` | 让战斗者以该风格进入战斗。`武器`：`{ weapon, offhand, shield }`，每项为配置中的键，`false` 表示空手，省略则使用风格自带的。`nil` 让玩家退出战斗（NPC 用 `StopFighter` 移除） |
+| `GetStyle(target)` | 战斗者当前的风格 |
+| `SetHeld(target, slot, 键 \| nil)` | 手持的武器（`'weapon'`、`'offhand'`）或盾牌（`'shield'`），风格保持不变 |
+| `GetHeld(target)` | `{ slot = 键 }` |
 | `SpawnFighter(风格, coords, heading, opts)` | 创建战斗 NPC，返回 net id |
 | `StopFighter(net)` | 移除战斗 NPC |
 | `AddHitHandler(fn)` / `RemoveHitHandler(id)` | 每次命中时调用的函数（见下文） |

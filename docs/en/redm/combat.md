@@ -151,6 +151,7 @@ The configuration files are in `config/`:
 | `Debug` | `false` | Enables the chat commands and `/avalon_combat_debug` (testing only) |
 | `TargetRange` | `4.0` | m: peds farther away are not checked |
 | `LockRange` / `LockCone` | `3.0` / `45` | An attack turns toward the nearest ped within these meters and degrees |
+| `AttackTowardsCamera` | `true` | The player's attacks (and R's pair) go where the camera points: the character turns there as each attack starts. `false`: where the character faces |
 | `LockOnRange` | `12.0` | m: lock-on radius with E |
 | `MinSweepSpeed` | `2.0` | m/s: a slower limb does not hit |
 | `SkipStart` | `0.10` | Initial part of every attack that is ignored |
@@ -255,6 +256,31 @@ AvalonCombat.Weapons.xur_katana = {
 | `blade` | Blade capsule in model space: it hits in place of the hand |
 | `cast` | Staffs only: the point spells will come from |
 | `defence` | Shields only: `{ percent, flat }` in place of the guard's |
+
+### Weapons from the inventory
+
+Style and weapon are separate: every style can wield any weapon in the config, so several styles can share the same weapon. From your script pick the weapon (for example from the item used) and the style (for example from the class), for players and NPCs:
+
+```lua
+-- server: the item picks the weapon, the class the style
+local ItemWeapons = { katana_item = 'xur_katana', machete_item = 'xur_machete2' }
+
+RegisterNetEvent('my_inventory:useWeapon', function(item)
+    local src = source
+    local weapon = ItemWeapons[item]
+    if not weapon then return end
+    -- different styles with the same weapon
+    local style = MyClasses.IsMaster(src) and 'katana3' or 'katana'
+    exports.avalon_combat:SetStyle(src, style, { weapon = weapon, shield = false })
+end)
+
+-- only the weapon, the style stays
+exports.avalon_combat:SetHeld(src, 'weapon', 'xur_machete2')
+
+-- an NPC: the same with { net = netId }
+local net = exports.avalon_combat:SpawnFighter('katana', coords, 90.0, { weapon = 'xur_machete2' })
+exports.avalon_combat:SetStyle({ net = net }, 'katana4', { weapon = 'xur_machete2' })
+```
 
 ---
 
@@ -378,7 +404,7 @@ exports.avalon_combat:StopFighter(net)
 | `opts` | Description |
 |--------|-------------|
 | `model` | Ped model (default `AvalonCombat.Npc.Model`) |
-| `weapon` / `offhand` / `shield` | What it wields (default: the style's; `shield = false` = none) |
+| `weapon` / `offhand` / `shield` | What it wields: config keys (default: the style's; `false` = empty hand). A key that does not exist makes the spawn fail |
 | `team` | Team (default `'npc'`) |
 | `health` | Health |
 | `scale` | NPC size (`1` = normal, from `0.2` to `5`). Hitboxes, hit reach, animation movement and combat distances grow with it |
@@ -411,7 +437,7 @@ avalon_combat **has no** level or skill system: that belongs to your server. The
 | `SetDefence(target, { percent, flat })` | Its own defence, added to the guard's or the shield's |
 | `SetMaxGuard(target, max)` | Maximum guard points (`'points'` mode) |
 | `SetInputMode(target, 'combo' \| 'keys')` | The fighter's input mode |
-| `SetStyle(src, style)` · `SetHeld(src, slot, key)` | The player's style and weapons (for example from its class or inventory) |
+| `SetStyle(target, style, weapons)` · `SetHeld(target, slot, key)` | Style and weapons of players and NPCs (for example from their class or inventory) |
 
 Every `Set...` has a matching `Get...` to read the current value.
 
@@ -447,10 +473,10 @@ A `target` is a player's server ID or `{ net = netId }` for an NPC fighter.
 
 | Export | Description |
 |--------|-------------|
-| `SetStyle(src, style \| nil)` | Put the player in combat with that style, or take them out |
-| `GetStyle(src)` | The player's current style |
-| `SetHeld(src, slot, key \| nil)` | Weapon (`'weapon'`, `'offhand'`) or shield (`'shield'`) in hand |
-| `GetHeld(src)` | `{ slot = key }` |
+| `SetStyle(target, style \| nil, weapons)` | Puts the fighter in combat with that style. `weapons`: `{ weapon, offhand, shield }`, each a config key, `false` for an empty hand, missing for the style's own. `nil` takes a player out of combat (an NPC is removed with `StopFighter`) |
+| `GetStyle(target)` | The fighter's current style |
+| `SetHeld(target, slot, key \| nil)` | Weapon (`'weapon'`, `'offhand'`) or shield (`'shield'`) in hand, keeping the style |
+| `GetHeld(target)` | `{ slot = key }` |
 | `SpawnFighter(style, coords, heading, opts)` | Create an NPC fighter, returns the net id |
 | `StopFighter(net)` | Remove an NPC fighter |
 | `AddHitHandler(fn)` / `RemoveHitHandler(id)` | Function called on every hit (see below) |

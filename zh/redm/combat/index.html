@@ -1,0 +1,2432 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentazione ufficiale degli script FiveM e RedM di AvalonStudios">
+      
+      
+        <meta name="author" content="AvalonStudiosScripts">
+      
+      
+        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/zh/redm/combat/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/script-docs/" hreflang="it">
+        
+          <link rel="alternate" href="/script-docs/en/" hreflang="en">
+        
+          <link rel="alternate" href="/script-docs/es/" hreflang="es">
+        
+          <link rel="alternate" href="/script-docs/pt/" hreflang="pt">
+        
+          <link rel="alternate" href="/script-docs/zh/" hreflang="zh">
+        
+          <link rel="alternate" href="/script-docs/th/" hreflang="th">
+        
+      
+      
+      <link rel="icon" href="../../../img/logo_transparent.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>avalon_combat - AvalonStudios Script Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#avalon_combat" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../../.." title="AvalonStudios Script Docs" class="md-header__button md-logo" aria-label="AvalonStudios Script Docs" data-md-component="logo">
+      
+  <img src="../../../img/logo_transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AvalonStudios Script Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              avalon_combat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Tema chiaro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Tema chiaro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Tema scuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tema scuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/script-docs/" hreflang="it" class="md-select__link">
+              🇮🇹 Italiano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/en/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/es/" hreflang="es" class="md-select__link">
+              🇪🇸 Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/pt/" hreflang="pt" class="md-select__link">
+              🇵🇹 Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/zh/" hreflang="zh" class="md-select__link">
+              🇨🇳 中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/th/" hreflang="th" class="md-select__link">
+              🇹🇭 ภาษาไทย
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AvalonStudiosScripts/script-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AvalonStudiosScripts/script-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../scripts/" class="md-tabs__link">
+          
+  
+  
+  Script FiveM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../redm/" class="md-tabs__link">
+          
+  
+  
+  Script RedM
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AvalonStudios Script Docs" class="md-nav__button md-logo" aria-label="AvalonStudios Script Docs" data-md-component="logo">
+      
+  <img src="../../../img/logo_transparent.png" alt="logo">
+
+    </a>
+    AvalonStudios Script Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AvalonStudiosScripts/script-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AvalonStudiosScripts/script-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script FiveM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Script FiveM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/coltivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_coltivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/dustman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_dustman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/electrician/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_electrician
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/lumberjack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_lumberjack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/mining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_mining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/mounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_mounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_party
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/robbery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_robbery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/trash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_trash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script RedM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Script RedM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redm/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_combat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        依赖项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        风格
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令与按键
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="命令与按键">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        战斗模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试与调整命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        伤害如何计算
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常规设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连招
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        防御与格挡
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        音效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        身体 hitbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        武器与盾牌
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="武器与盾牌">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        来自背包的武器
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建风格
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建风格">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        风格的字段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一次攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配对攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        战斗 NPC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成长（等级与技能）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="成长（等级与技能）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可以使用哪些攻击
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        强度如何
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可用导出
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可用导出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务端导出
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务端导出">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命中（hit）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端导出
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="avalon_combat">avalon_combat</h1>
+<p>RedM <strong>近战战斗系统</strong>。每种风格（狼人、吸血鬼、太刀、剑盾、拳击手、法师……）都使用 Avalon 动画包中的动画。命中由脚本计算：每一帧都会沿着动画跟踪手、脚和刀刃，并命中其经过的 ped。伤害始终经由服务端处理。</p>
+<p>包含：轻/重连招、配对攻击（两个 ped 同步动画）、格挡与反击、手持武器与盾牌、冲刺、闪避、扑跃以及生物的飞行、独立战斗的 NPC，以及用于对接等级、技能、生命条和法术的导出函数。</p>
+<p><strong>版本：</strong> beta | <strong>作者：</strong> Avalon | <strong>游戏：</strong> RedM | <strong>框架：</strong> standalone</p>
+<hr />
+<h2 id="_1">依赖项</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th style="text-align: center;">是否必须</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OneSync</td>
+<td style="text-align: center;">✅</td>
+<td>战斗 NPC 与格挡（state bag）</td>
+</tr>
+<tr>
+<td><code>avalon_weapons_rdr2</code></td>
+<td style="text-align: center;">❌</td>
+<td>可选：附带配置中使用的武器模型。你已有的武器同样可用（<a href="#weapons">武器与盾牌</a>）</td>
+</tr>
+<tr>
+<td><code>avalon_shields_tint</code></td>
+<td style="text-align: center;">❌</td>
+<td>可选：附带配置中使用的盾牌模型。你已有的盾牌同样可用</td>
+</tr>
+<tr>
+<td>动画包 <code>avalon_anims_*</code></td>
+<td style="text-align: center;">✅ 至少一个</td>
+<td>动画与风格（参见<a href="#styles">风格</a>）</td>
+</tr>
+</tbody>
+</table>
+<p>无需任何框架：脚本直接作用于 ped 和玩家。与背包、等级或生命条的对接通过<a href="#exports">导出函数</a>完成。</p>
+<hr />
+<h2 id="_2">安装</h2>
+<ol>
+<li>将 <code>avalon_combat/</code> 文件夹复制到 <code>resources/</code></li>
+<li>先启动动画包以及你的武器和盾牌模型所在的资源，然后再启动本资源：</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># ... 你的武器和盾牌所在的资源
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ensure avalon_anims_werewolf
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ensure avalon_anims_vampire
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>ensure avalon_anims_ka_02
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># ... 你使用的其他动画包
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ensure avalon_combat
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">动画包的启动顺序</p>
+<p>在 <code>avalon_combat</code> 之后启动（或重启）的动画包同样会被读取：其风格会在它启动后立即加入。</p>
+</div>
+<hr />
+<h2 id="styles">风格</h2>
+<p>风格来自<strong>动画包</strong>。每个动画包都带有一个 <code>avalon_combat.lua</code> 文件，其中包含自己的风格，并在其 <code>fxmanifest.lua</code> 中声明。<code>avalon_combat</code> 通过该动画包的 <code>CombatStyles</code> 导出函数自动收集这些风格。</p>
+<table>
+<thead>
+<tr>
+<th>风格</th>
+<th>动画包</th>
+<th>武器</th>
+<th>防御</th>
+<th>额外功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>werewolf</code></td>
+<td><code>avalon_anims_werewolf</code></td>
+<td>利爪</td>
+<td>游戏自带（空手）</td>
+<td>冲刺、闪避、扑跃、配对攻击</td>
+</tr>
+<tr>
+<td><code>vampire</code></td>
+<td><code>avalon_anims_vampire</code></td>
+<td>利爪</td>
+<td>自定义</td>
+<td>飞行、加速、配对攻击</td>
+</tr>
+<tr>
+<td><code>succube</code></td>
+<td><code>avalon_anims_succube</code></td>
+<td>利爪</td>
+<td>游戏自带（空手）</td>
+<td>飞行、加速、配对攻击</td>
+</tr>
+<tr>
+<td><code>katana</code> <code>katana1</code> <code>katana3</code> <code>katana4</code></td>
+<td><code>avalon_anims_ka_02</code> <code>_01</code> <code>_03</code> <code>_04</code></td>
+<td><code>xur_katana</code></td>
+<td>游戏自带（刀刃）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sword</code> <code>sword2</code> <code>sword3</code></td>
+<td><code>avalon_anims_sw_01</code> <code>_02</code> <code>_03</code></td>
+<td><code>xur_machete2</code></td>
+<td>游戏自带（刀刃）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sword_shield</code> <code>sword_shield2</code> <code>sword_shield3</code></td>
+<td><code>avalon_anims_sns_01</code> <code>_02</code> <code>_03</code></td>
+<td><code>swn2craft</code> + 盾牌</td>
+<td>自定义 / 自定义 / 游戏自带</td>
+<td></td>
+</tr>
+<tr>
+<td><code>twinsword</code></td>
+<td><code>avalon_anims_twinsword01</code></td>
+<td>双手各持 <code>xur_katana2</code></td>
+<td>游戏自带（刀刃）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hammer2h</code></td>
+<td><code>avalon_anims_hammer2h</code></td>
+<td><code>hammermoore</code></td>
+<td>游戏自带（刀刃）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>orientalmonk</code></td>
+<td><code>avalon_anims_orientalmonk</code></td>
+<td><code>giga</code></td>
+<td>游戏自带（刀刃）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pugilist</code></td>
+<td><code>avalon_anims_p_01</code></td>
+<td>空手</td>
+<td>游戏自带（空手）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>firemage</code> <code>mage</code> <code>witch</code> <code>wizard</code></td>
+<td><code>avalon_anims_firemage_01</code> <code>_mage_01</code> <code>_witch_01</code> <code>_wizard</code></td>
+<td>双手 / 法杖</td>
+<td>游戏自带（空手）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">法术</p>
+<p>法师风格目前以双手命中，射程更长（就像法术那样）。法杖仅作视觉效果：法术将来的发射点可通过客户端导出函数 <code>GetCastPoint()</code> 读取。</p>
+</div>
+<p>如需编写你自己的风格，参见<a href="#create-style">创建风格</a>。</p>
+<hr />
+<h2 id="_3">命令与按键</h2>
+<div class="admonition warning">
+<p class="admonition-title">仅在调试模式下可用</p>
+<p>所有聊天命令只有在 <code>config/config.lua</code> 中设置 <code>AvalonCombat.Debug = true</code> 时才存在：它们用于配置和测试风格、武器与 NPC。正式服务器请保持 <code>Debug = false</code>，并在你自己的脚本中通过服务端导出 <code>SetStyle</code> 让玩家进入战斗。按键始终可用。</p>
+</div>
+<h3 id="_4">战斗模式</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/avalon_combat &lt;风格&gt;</code></td>
+<td>以该风格进入战斗（不带参数则列出所有风格）</td>
+</tr>
+<tr>
+<td><code>/avalon_combat off</code></td>
+<td>退出战斗</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>鼠标左键</strong></td>
+<td>轻连招（攻击过程中再次按下即可打出下一击）</td>
+</tr>
+<tr>
+<td><strong>鼠标右键</strong></td>
+<td>重连招</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td>对面前的 ped 发动配对攻击（拥有配对攻击的风格），否则为特殊连招</td>
+</tr>
+<tr>
+<td><strong>CTRL</strong>（按住）</td>
+<td>防御</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>锁定镜头瞄准的 ped（头顶出现红色菱形）：攻击和配对攻击都会指向它。再按一次 E 解除锁定</td>
+</tr>
+<tr>
+<td><strong>Shift</strong></td>
+<td>冲刺（狼人）· 飞行（飞行风格，空中）</td>
+</tr>
+<tr>
+<td><strong>Alt</strong></td>
+<td>闪避（狼人）· 加速（飞行风格）</td>
+</tr>
+<tr>
+<td><strong>Shift + 空格</strong></td>
+<td>扑跃（狼人）· 起飞与降落（飞行风格）</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">谁会对攻击做出反应</p>
+<p>轻击和重击只造成伤害。特殊连招、配对攻击以及带有 <code>react = true</code> 的攻击还会让受害者踉跄或倒地。</p>
+</div>
+<h3 id="_5">测试与调整命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/avalon_attack &lt;id&gt;</code></td>
+<td>执行当前风格的一次攻击（id 或 clip 名称）</td>
+</tr>
+<tr>
+<td><code>/avalon_pair [名称]</code></td>
+<td>对面前的 ped 执行配对攻击</td>
+</tr>
+<tr>
+<td><code>/avalon_pair_offset &lt;名称&gt; &lt;x&gt; &lt;y&gt; &lt;yaw&gt;</code></td>
+<td>移动配对攻击中受害者的位置（仅限本客户端）</td>
+</tr>
+<tr>
+<td><code>/avalon_weapon &lt;名称\|off&gt;</code></td>
+<td>更换右手武器</td>
+</tr>
+<tr>
+<td><code>/avalon_offhand &lt;名称\|off&gt;</code></td>
+<td>更换左手武器</td>
+</tr>
+<tr>
+<td><code>/avalon_shield &lt;名称\|off&gt;</code></td>
+<td>更换盾牌</td>
+</tr>
+<tr>
+<td><code>/avalon_weapon_offset &lt;x y z rx ry rz&gt; [骨骼]</code></td>
+<td>调整武器位置，并输出可复制到配置中的那一行（<code>_offhand_offset</code>、<code>_shield_offset</code> 同理）</td>
+</tr>
+<tr>
+<td><code>/avalon_sound &lt;名称&gt;</code></td>
+<td>播放配置中的一个音效</td>
+</tr>
+<tr>
+<td><code>/avalon_sound_game &lt;set&gt; &lt;名称&gt; [bank]</code></td>
+<td>试听游戏中的任意音效</td>
+</tr>
+<tr>
+<td><code>/avalon_npc &lt;风格&gt; [team] [模型] [scale]</code></td>
+<td>在前方 4 米处生成一个战斗 NPC</td>
+</tr>
+<tr>
+<td><code>/avalon_npc_clear</code></td>
+<td>清除你创建的 NPC</td>
+</tr>
+<tr>
+<td><code>/avalon_npc_info</code></td>
+<td>30 米内战斗 NPC 的状态</td>
+</tr>
+<tr>
+<td><code>/avalon_dummy [模型]</code> · <code>/avalon_dummy_clear</code></td>
+<td>固定不动的木桩，用于击打</td>
+</tr>
+<tr>
+<td><code>/avalon_hitbox</code></td>
+<td>显示 hitbox：身体（绿色）、肢体（黄色）、刀刃（蓝色）、命中（红色）</td>
+</tr>
+<tr>
+<td><code>/avalon_combat_debug</code></td>
+<td>绘制手部移动轨迹并输出每一次命中</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">伤害如何计算</h2>
+<ol>
+<li>攻击者的客户端每一帧都会沿着动画检查肢体和刀刃。肢体速度低于 <code>MinSweepSpeed</code> 时不会命中（蓄力与收招阶段）。</li>
+<li>当肢体或刀刃接触到 ped 的 hitbox 时，客户端会通知服务端。</li>
+<li>服务端校验该次命中（距离、最大伤害、攻击是否已解锁），计算伤害与防御，并执行其他资源的 <em>hit handler</em>。</li>
+<li>
+<p>根据 <code>AvalonCombat.DamageMode</code>：</p>
+<ul>
+<li><code>'native'</code> — 伤害直接作用于 ped 的真实生命值</li>
+<li><code>'external'</code> — 不造成伤害：服务端触发 <code>avalon_combat:hit</code> 事件，交由你的系统处理（虚拟生命条、抗性）</li>
+</ul>
+<p>无论哪种模式，受害者都会做出反应。</p>
+</li>
+</ol>
+<p><strong>公式：</strong> 基础伤害（命中刀刃时为武器伤害，否则为风格的 <code>damage</code>）× 攻击的 <code>mult</code> × 成长倍率 × 输出倍率，四舍五入。然后再扣除防御的减伤。</p>
+<hr />
+<h2 id="_7">配置</h2>
+<p>配置文件位于 <code>config/</code>：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config/config.lua</code></td>
+<td>常规设置、连招、NPC、音效、伤害、防御、输入</td>
+</tr>
+<tr>
+<td><code>config/guard.lua</code></td>
+<td>可按名称使用的游戏自带防御（<code>'blade'</code>、<code>'unarmed'</code>）</td>
+</tr>
+<tr>
+<td><code>config/weapons.lua</code></td>
+<td>右手武器</td>
+</tr>
+<tr>
+<td><code>config/offhand.lua</code></td>
+<td>左手武器</td>
+</tr>
+<tr>
+<td><code>config/shields.lua</code></td>
+<td>盾牌（每种颜色一项）</td>
+</tr>
+<tr>
+<td><code>config/styles/</code></td>
+<td>可选的本地风格，以及逐字段说明的 <code>example.lua</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">可修改的文件</p>
+<p><code>config/</code>（以及 <code>config/styles/</code>）中的文件是开放的：资源的其余部分由 Cfx Escrow 保护。所有自定义都通过这些文件和<a href="#exports">导出</a>完成。</p>
+</div>
+<h3 id="_8">常规设置</h3>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Debug</code></td>
+<td><code>false</code></td>
+<td>启用聊天命令和 <code>/avalon_combat_debug</code>（仅用于测试）</td>
+</tr>
+<tr>
+<td><code>TargetRange</code></td>
+<td><code>4.0</code></td>
+<td>米：更远的 ped 不会被检测</td>
+</tr>
+<tr>
+<td><code>LockRange</code> / <code>LockCone</code></td>
+<td><code>3.0</code> / <code>45</code></td>
+<td>攻击会转向此米数和角度内最近的 ped</td>
+</tr>
+<tr>
+<td><code>AttackTowardsCamera</code></td>
+<td><code>true</code></td>
+<td>玩家的攻击（以及 R 的配对攻击）朝镜头所指的方向：每次攻击开始时角色会转向那里。<code>false</code>：朝角色面向的方向</td>
+</tr>
+<tr>
+<td><code>LockOnRange</code></td>
+<td><code>12.0</code></td>
+<td>米：按 E 锁定的范围</td>
+</tr>
+<tr>
+<td><code>MinSweepSpeed</code></td>
+<td><code>2.0</code></td>
+<td>米/秒：低于此速度的肢体不会命中</td>
+</tr>
+<tr>
+<td><code>SkipStart</code></td>
+<td><code>0.10</code></td>
+<td>每次攻击开头被忽略的部分</td>
+</tr>
+<tr>
+<td><code>Rehit</code></td>
+<td><code>0.45</code></td>
+<td>秒：同一次攻击再次命中同一目标前的间隔</td>
+</tr>
+<tr>
+<td><code>MaxHitDamage</code></td>
+<td><code>200</code></td>
+<td>服务端会拒绝超过此伤害的命中</td>
+</tr>
+<tr>
+<td><code>MaxHitDistance</code></td>
+<td><code>6.0</code></td>
+<td>服务端会拒绝距离超过此值的玩家命中</td>
+</tr>
+<tr>
+<td><code>PairRange</code></td>
+<td><code>3.5</code></td>
+<td>米：配对攻击的最大抓取距离</td>
+</tr>
+<tr>
+<td><code>HitboxScale</code> / <code>HitboxPad</code></td>
+<td><code>1.0</code> / <code>0.0</code></td>
+<td>放大刀刃的 hitbox（更容易命中）</td>
+</tr>
+<tr>
+<td><code>SoundVolume</code></td>
+<td><code>0.35</code></td>
+<td>音频文件的音量</td>
+</tr>
+<tr>
+<td><code>DamageMode</code></td>
+<td><code>'native'</code></td>
+<td><code>'native'</code> 或 <code>'external'</code>（见上文）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">连招</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">ComboWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.45</span><span class="w"> </span><span class="c1">-- 从攻击的这个阶段起，按键会将下一击加入队列</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">ComboCancel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w">  </span><span class="c1">-- 队列中的下一击开始的阶段（1.0 = 动画结束时）</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">ComboReset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="w">   </span><span class="c1">-- 秒：停顿超过此时间，连招从第一击重新开始</span>
+</span></code></pre></div>
+<h3 id="_10">输入模式</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">InputMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'combo'</span><span class="w"> </span><span class="c1">-- 'combo' | 'keys'</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">SimulWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w"> </span><span class="nv">SequenceWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="nv">DirAbove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>'combo'</code>：每个按键执行其连招链中的下一击（<code>light</code>、<code>heavy</code>、<code>special</code>）</li>
+<li><code>'keys'</code>：类似格斗游戏，按键执行风格的 <code>moves</code>。可以组合同时按下的按键（<code>'light+heavy'</code>）、方向（<code>'F+heavy'</code>：向前 + 重击）或序列（<code>{ 'light', 'light', 'heavy' }</code>）</li>
+</ul>
+<p>每位玩家都可以通过导出函数 <code>SetInputMode</code> 使用不同的模式。</p>
+<h3 id="_11">防御与格挡</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Defence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nv">Mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'always'</span><span class="p">,</span><span class="w">      </span><span class="c1">-- 'always' | 'timed' | 'stamina' | 'points'</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nv">ParryWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">   </span><span class="c1">-- 秒：在受击前这段时间内举起防御 = 格挡</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nv">StaminaCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w">   </span><span class="c1">-- 'stamina'：每次格挡扣除的耐力</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nv">Points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nv">PointsRegen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nv">PointsCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="c1">-- 'points'：防御点数</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nv">BreakTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">      </span><span class="c1">-- 秒：防御被破后无法防御的时间</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nv">Block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="nv">flat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">-- 防御的基础减伤</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th><code>Mode</code></th>
+<th>防御何时挡住攻击</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>always</code></td>
+<td>始终，伤害按防御值减免</td>
+</tr>
+<tr>
+<td><code>timed</code></td>
+<td>仅在举起防御后的 <code>ParryWindow</code> 内，否则攻击全额命中</td>
+</tr>
+<tr>
+<td><code>stamina</code></td>
+<td>始终，每次攻击消耗耐力；耐力耗尽则防御被破</td>
+</tr>
+<tr>
+<td><code>points</code></td>
+<td>始终，每次攻击消耗防御点数（导出函数 <code>GetGuard</code> / <code>SetGuard</code>）；归零则防御被破</td>
+</tr>
+</tbody>
+</table>
+<p><strong>格挡</strong>会抵消伤害并使攻击者踉跄。<strong>防御</strong> = <code>伤害 × (1 - percent) - flat</code>，不会低于零。手持盾牌时，盾牌自身的防御会取代防御动作的防御值；通过导出函数 <code>SetDefence</code> 设置的防御则会叠加。</p>
+<h3 id="_12">音效</h3>
+<p>每个音效在 <code>AvalonCombat.Sounds</code> 中都有一个名称。风格、攻击、武器和配对攻击都使用这些名称：可以是一个名称、一个随机抽取其一的列表，或按连招链区分的 <code>{ light = ..., heavy = ..., special = ... }</code>。</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nv">punch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">melee</span><span class="p">(</span><span class="s1">'punch'</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w">                 </span><span class="c1">-- sounds/ 中的文件（.wav .ogg .mp3）</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nv">my_roar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'roar.ogg'</span><span class="p">,</span><span class="w"> </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="nv">range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nv">beast_roar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'LSHNT_sounds'</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ROAR'</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">-- 游戏音效</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>内置的近战音效来自游戏本身，已提取到 <code>sounds/melee_*.wav</code>。</p>
+<div class="admonition tip">
+<p class="admonition-title">在恰当的时机播放音效</p>
+<p><code>soundAt</code> 让音效在动画的精确阶段播放：<code>0.35</code> = clip 的 35% 处。适用于攻击、配对攻击以及风格的移动动作（<code>soundAt = { leap = 0.27, dodge = 0.15 }</code>）。没有 <code>soundAt</code> 时，音效会在第一次快速挥动（攻击）时或立即播放。</p>
+</div>
+<h3 id="hitbox">身体 hitbox</h3>
+<p><code>AvalonCombat.BodyHitbox</code> 列出了每个 ped 被命中时使用的胶囊体（<code>{ 起始骨骼, 结束骨骼, 半径 }</code>）：头部、胸部、腹部、手臂和腿。缺少这些骨骼的动物会变成半径 0.4 米的球体。<code>/avalon_hitbox</code> 可在游戏中显示它们。</p>
+<hr />
+<h2 id="weapons">武器与盾牌</h2>
+<p>武器和盾牌使用你服务器自己的：<code>model</code> 可以是任何已 stream 的 prop 名称，只要其所在资源已启动。附带的配置列出了 <code>avalon_weapons_rdr2</code> 和 <code>avalon_shields_tint</code> 的模型：可以替换成你自己的，或继续添加。</p>
+<p><code>config/weapons.lua</code>、<code>config/offhand.lua</code> 和 <code>config/shields.lua</code> 中的每一项都是一个手持模型：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Weapons</span><span class="p">.</span><span class="py">xur_katana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'weapon_xur_katana'</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nv">bone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'SKEL_R_Hand'</span><span class="p">,</span><span class="w">                         </span><span class="c1">-- 附着的骨骼</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nv">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="mf">0.075</span><span class="p">,</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.03</span><span class="p">),</span><span class="w">         </span><span class="c1">-- 米</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nv">rot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">90.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">),</span><span class="w">               </span><span class="c1">-- 度</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nv">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">                                  </span><span class="c1">-- 每次刀刃命中，× 攻击的 mult</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">swing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'blade_swipe'</span><span class="p">,</span><span class="w"> </span><span class="nv">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'machete_slash'</span><span class="p">,</span><span class="w"> </span><span class="s1">'blade_flesh'</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nv">blade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.12</span><span class="p">),</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.05</span><span class="p">),</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">-- 刀刃的 hitbox</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model</code></td>
+<td>模型的 archetype：任何已 stream 的 prop</td>
+</tr>
+<tr>
+<td><code>tint</code></td>
+<td>可选：颜色索引（盾牌每种颜色一项）</td>
+</tr>
+<tr>
+<td><code>bone</code>、<code>offset</code>、<code>rot</code></td>
+<td>握持的位置。可在游戏中用 <code>/avalon_weapon_offset</code> 调整，它会输出可复制的那一行</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>每次刀刃命中的伤害</td>
+</tr>
+<tr>
+<td><code>sounds</code></td>
+<td>刀刃的 <code>swing</code> 与 <code>hit</code></td>
+</tr>
+<tr>
+<td><code>blade</code></td>
+<td>刀刃在模型空间中的胶囊体：由它代替手部进行命中</td>
+</tr>
+<tr>
+<td><code>cast</code></td>
+<td>仅限法杖：法术将来的发射点</td>
+</tr>
+<tr>
+<td><code>defence</code></td>
+<td>仅限盾牌：用 <code>{ percent, flat }</code> 取代防御动作的防御值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">来自背包的武器</h3>
+<p>风格与武器是分开的：每种风格都可以手持配置中的任何武器，因此多种风格可以共用同一把武器。在你的脚本中为玩家和 NPC 选择武器（例如根据使用的物品）和风格（例如根据职业）：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- 服务端：物品决定武器，职业决定风格</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ItemWeapons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">katana_item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_katana'</span><span class="p">,</span><span class="w"> </span><span class="nv">machete_item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'my_inventory:useWeapon'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ItemWeapons</span><span class="p">[</span><span class="nv">item</span><span class="p">]</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="c1">-- 不同风格使用同一把武器</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MyClasses</span><span class="p">.</span><span class="nf">IsMaster</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="s1">'katana3'</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'katana'</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetStyle</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">style</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">weapon</span><span class="p">,</span><span class="w"> </span><span class="nv">shield</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">-- 只换武器，风格不变</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetHeld</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'weapon'</span><span class="p">,</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="p">)</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1">-- NPC：用 { net = netId } 同样操作</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="kd">local</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SpawnFighter</span><span class="p">(</span><span class="s1">'katana'</span><span class="p">,</span><span class="w"> </span><span class="nv">coords</span><span class="p">,</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetStyle</span><span class="p">({</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s1">'katana4'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="w"> </span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h2 id="create-style">创建风格</h2>
+<p>风格可以写在两个位置：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">在动画包中</label><label for="__tabbed_1_2">在 config/styles 中</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Avalon 动画包采用的方式。在动画包的 <code>fxmanifest.lua</code> 旁边放置 <code>avalon_combat.lua</code>：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">Styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nv">Styles</span><span class="p">.</span><span class="py">mystyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nv">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'avalon@anims@mystyle'</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="c1">-- ...</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nv">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'blade'</span><span class="p">,</span><span class="w">   </span><span class="c1">-- 动画包以字符串形式指定游戏自带的防御</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nf">exports</span><span class="p">(</span><span class="s1">'CombatStyles'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="nv">Styles</span><span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<p>并在动画包的 <code>fxmanifest.lua</code> 中加入：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">avalon_combat_styles</span><span class="w"> </span><span class="s1">'yes'</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">shared_script</span><span class="w"> </span><span class="s1">'avalon_combat.lua'</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>在 <code>avalon_combat</code> 内创建文件 <code>config/styles/mystyle.lua</code>：</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Styles</span><span class="p">.</span><span class="py">mystyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nv">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'avalon@anims@mystyle'</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="c1">-- ...</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>写在这里的风格<strong>优先于</strong>同名的动画包风格：若要修改动画包中的某个风格，请将其复制到这里。</p>
+</div>
+</div>
+</div>
+<p><code>config/styles/example.lua</code> 包含一个完整的风格，并逐字段加了注释。</p>
+<h3 id="_14">风格的字段</h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dict</code></td>
+<td>动画字典（<code>.ycd</code>）</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>身体一次攻击的伤害（拳、脚、利爪）</td>
+</tr>
+<tr>
+<td><code>idle</code></td>
+<td>站立时循环播放的动画</td>
+</tr>
+<tr>
+<td><code>weapon</code> / <code>offhand</code> / <code>shield</code></td>
+<td>手持的物品（<code>Weapons</code>、<code>Offhand</code>、<code>Shields</code> 的键）</td>
+</tr>
+<tr>
+<td><code>hands</code></td>
+<td>用于命中的肢体：<code>{ 起始骨骼, 结束骨骼, 射程 }</code></td>
+</tr>
+<tr>
+<td><code>reach</code> / <code>radius</code></td>
+<td>超出末端骨骼的射程，以及肢体的粗细（米）</td>
+</tr>
+<tr>
+<td><code>light</code> / <code>heavy</code> / <code>special</code></td>
+<td>连招链：攻击列表</td>
+</tr>
+<tr>
+<td><code>moves</code></td>
+<td><code>'keys'</code> 模式的招式</td>
+</tr>
+<tr>
+<td><code>sounds</code></td>
+<td><code>swing</code>、<code>hit</code>、<code>knockdown</code>、<code>block</code>、<code>leap</code>、<code>dodge</code>、<code>boost</code>、<code>float</code></td>
+</tr>
+<tr>
+<td><code>soundAt</code></td>
+<td>移动动作音效播放的阶段</td>
+</tr>
+<tr>
+<td><code>block</code></td>
+<td>防御：带有自有 clip 的 <code>{ start, loop, stop, hit }</code>，或 <code>'blade'</code> / <code>'unarmed'</code>。没有 <code>block</code> 的风格无法格挡</td>
+</tr>
+<tr>
+<td><code>stagger</code> / <code>knockdown</code></td>
+<td>受击反应的 clip</td>
+</tr>
+<tr>
+<td><code>move</code></td>
+<td>特殊移动：<code>kind = 'runner'</code>（冲刺、闪避、扑跃）或 <code>kind = 'flyer'</code>（飞行、加速）</td>
+</tr>
+<tr>
+<td><code>pairs</code></td>
+<td>配对攻击</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">一次攻击</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">light</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'attack@slash1'</span><span class="p">,</span><span class="w"> </span><span class="nv">mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'attack@slash2'</span><span class="p">,</span><span class="w"> </span><span class="nv">mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25</span><span class="p">,</span><span class="w"> </span><span class="nv">knockdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">soundAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.35</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">},</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clip</code></td>
+<td>动画</td>
+</tr>
+<tr>
+<td><code>mult</code></td>
+<td>伤害倍率</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>受害者倒地</td>
+</tr>
+<tr>
+<td><code>react</code></td>
+<td>即使不是特殊攻击，受害者也会做出反应</td>
+</tr>
+<tr>
+<td><code>sound</code> / <code>soundAt</code></td>
+<td>攻击自己的音效及其播放的阶段</td>
+</tr>
+<tr>
+<td><code>keepTurn</code></td>
+<td>ped 保持动画结束时的朝向</td>
+</tr>
+<tr>
+<td><code>locked</code></td>
+<td>在成长系统解锁之前被锁定（<code>SetAttackEnabled</code>）</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>供导出函数使用的攻击名称（默认：clip）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">配对攻击</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">pairs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nv">bite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">att</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'bite@att'</span><span class="p">,</span><span class="w"> </span><span class="nv">vic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'bite@vic'</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.8</span><span class="p">,</span><span class="w"> </span><span class="nv">yaw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">196</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">             </span><span class="nv">mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="nv">damageAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.45</span><span class="p">,</span><span class="w"> </span><span class="nv">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'beast_roar'</span><span class="p">,</span><span class="w"> </span><span class="nv">soundAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">},</span>
+</span></code></pre></div>
+<p><code>att</code> / <code>vic</code> 分别是攻击者和受害者的 clip。<code>x</code>、<code>y</code> 和 <code>yaw</code> 表示受害者相对于攻击者的位置（米、度）。<code>damageAt</code> 是伤害生效的阶段。可在游戏中用 <code>/avalon_pair_offset</code> 调整。</p>
+<div class="admonition info">
+<p class="admonition-title">动画位移</p>
+<p>Avalon 动画包的 clip 会按照自身的动作移动 ped（步伐、冲刺、跳跃）。第三方动画包的 clip 会在原地播放。</p>
+</div>
+<hr />
+<h2 id="npc">战斗 NPC</h2>
+<p>战斗 NPC 是一个网络 ped，会以某种风格独立战斗：寻找目标、靠近、连招攻击、格挡、闪避、跳跃或飞行。</p>
+<ul>
+<li><strong>Team：</strong> 玩家的 team 是 <code>'player'</code>。NPC 会攻击玩家（除非它的 team 是 <code>'player'</code>）和其他 team 的 NPC，绝不会攻击普通 ped。</li>
+<li><strong>技能：</strong> <code>config/config.lua</code> 中的 <code>AvalonCombat.Npc</code> 包含默认值（仇恨范围、攻击距离、格挡概率、闪避、配对攻击……）。每个 NPC 可通过 <code>opts.skill</code> 修改其中一部分。</li>
+</ul>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">-- server</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SpawnFighter</span><span class="p">(</span><span class="s1">'werewolf'</span><span class="p">,</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">300.0</span><span class="p">,</span><span class="w"> </span><span class="mf">790.0</span><span class="p">,</span><span class="w"> </span><span class="mf">118.0</span><span class="p">),</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nv">team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'bandits'</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nv">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nv">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nv">skill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">BlockChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="nv">Weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">heavy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">})</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1">-- 稍后</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">StopFighter</span><span class="p">(</span><span class="nv">net</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th><code>opts</code></th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model</code></td>
+<td>ped 的模型（默认 <code>AvalonCombat.Npc.Model</code>）</td>
+</tr>
+<tr>
+<td><code>weapon</code> / <code>offhand</code> / <code>shield</code></td>
+<td>手持的物品：配置中的键（默认：风格自带的；<code>false</code> = 空手）。不存在的键会导致生成失败</td>
+</tr>
+<tr>
+<td><code>team</code></td>
+<td>Team（默认 <code>'npc'</code>）</td>
+</tr>
+<tr>
+<td><code>health</code></td>
+<td>生命值</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>NPC 的大小（<code>1</code> = 正常，范围 <code>0.2</code> 到 <code>5</code>）。命中框、攻击范围、动画位移和战斗距离都会随之放大</td>
+</tr>
+<tr>
+<td><code>skill</code></td>
+<td>仅填写 <code>AvalonCombat.Npc</code> 中需要更改的值</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">需要有玩家在线</p>
+<p><code>SpawnFighter</code> 会在离该坐标最近的玩家的客户端上创建 ped：服务器没有玩家时返回 <code>nil</code>。</p>
+</div>
+<hr />
+<h2 id="progression">成长（等级与技能）</h2>
+<p>avalon_combat <strong>没有</strong>等级或技能系统：那是你服务器自己的系统。本脚本只提供工具，让你为每个玩家或战斗 NPC 决定可以使用哪些攻击、强度如何。你的系统调用导出，avalon_combat 负责执行。</p>
+<h3 id="_17">可以使用哪些攻击</h3>
+<ul>
+<li>每个攻击默认<strong>可用</strong>，除非它在风格中的条目写了 <code>locked = true</code>：那样它对所有人一开始都是锁定的。</li>
+<li><code>SetAttackEnabled(target, 风格, attackId, true | false)</code> 为该战斗者和该风格解锁或锁定一个攻击，优先于配置中的 <code>locked</code>。</li>
+<li><code>attackId</code> 是攻击的 <code>id</code>，没有则为其动画片段名。配对攻击则是它在 <code>pairs</code> 中的键。<code>GetAttacks(风格)</code> 列出一个风格的所有攻击及其 id、连段和 <code>locked</code>。</li>
+<li>连招模式的连段（<code>light</code>、<code>heavy</code>、<code>special</code>）和 <code>'keys'</code> 模式的 <code>moves</code> 是不同的条目，id 也不同：如果服务器两种模式都用，两边都要解锁。</li>
+<li>被锁定的攻击会被跳过：连招中按键会跳到该连段的下一个可用攻击（没有可用的则按键无效）；<code>'keys'</code> 模式下不会选中该招式；R 不会发动配对攻击。NPC 只使用自己可用的攻击。</li>
+<li>服务器会丢弃被锁定攻击的命中：修改过的客户端也无法使用。</li>
+</ul>
+<h3 id="_18">强度如何</h3>
+<table>
+<thead>
+<tr>
+<th>导出</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SetAttackMultiplier(target, 风格, attackId, m)</code></td>
+<td>单个攻击的伤害倍率</td>
+</tr>
+<tr>
+<td><code>SetOutgoingMultiplier(target, m)</code></td>
+<td>其全部伤害的倍率</td>
+</tr>
+<tr>
+<td><code>SetDefence(target, { percent, flat })</code></td>
+<td>自身防御，叠加在格挡或盾牌的防御上</td>
+</tr>
+<tr>
+<td><code>SetMaxGuard(target, max)</code></td>
+<td>最大格挡点数（<code>'points'</code> 模式）</td>
+</tr>
+<tr>
+<td><code>SetInputMode(target, 'combo' \| 'keys')</code></td>
+<td>战斗者的输入模式</td>
+</tr>
+<tr>
+<td><code>SetStyle(target, 风格, 武器)</code> · <code>SetHeld(target, slot, 键)</code></td>
+<td>玩家和 NPC 的风格与武器（例如来自职业或背包）</td>
+</tr>
+</tbody>
+</table>
+<p>每个 <code>Set...</code> 都有对应的 <code>Get...</code> 用于读取当前值。</p>
+<div class="admonition warning">
+<p class="admonition-title">不会保存任何数据</p>
+<p>成长数据只保存在内存中：玩家退出（或 NPC 停止）后会恢复为配置中的值。保存它是你的系统的工作，并在每次进入时重新发送，例如在角色加载完成时。</p>
+</div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">-- server: 你的等级系统</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">Unlocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">-- 每个风格中每个攻击的最低等级</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nv">katana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="s1">'combo@a03@rm'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">'combo@a04@rm'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">'combo@d03@rm'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">applyProgress</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">style</span><span class="p">,</span><span class="w"> </span><span class="nv">attacks</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">Unlocks</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span><span class="kr">for</span><span class="w"> </span><span class="nv">attackId</span><span class="p">,</span><span class="w"> </span><span class="nv">minLevel</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">attacks</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">            </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetAttackEnabled</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">style</span><span class="p">,</span><span class="w"> </span><span class="nv">attackId</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">minLevel</span><span class="p">)</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="kr">end</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetOutgoingMultiplier</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.02</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 每级 +2% 伤害</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="kr">end</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'mylevels:loaded'</span><span class="p">,</span><span class="w"> </span><span class="nv">applyProgress</span><span class="p">)</span><span class="w">  </span><span class="c1">-- 角色已加载</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'mylevels:levelUp'</span><span class="p">,</span><span class="w"> </span><span class="nv">applyProgress</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 升级</span>
+</span></code></pre></div>
+<hr />
+<h2 id="exports">可用导出</h2>
+<p><code>target</code> 是玩家的服务端 ID，或对于战斗 NPC 为 <code>{ net = netId }</code>。</p>
+<h3 id="_19">服务端导出</h3>
+<table>
+<thead>
+<tr>
+<th>导出函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SetStyle(target, 风格 \| nil, 武器)</code></td>
+<td>让战斗者以该风格进入战斗。<code>武器</code>：<code>{ weapon, offhand, shield }</code>，每项为配置中的键，<code>false</code> 表示空手，省略则使用风格自带的。<code>nil</code> 让玩家退出战斗（NPC 用 <code>StopFighter</code> 移除）</td>
+</tr>
+<tr>
+<td><code>GetStyle(target)</code></td>
+<td>战斗者当前的风格</td>
+</tr>
+<tr>
+<td><code>SetHeld(target, slot, 键 \| nil)</code></td>
+<td>手持的武器（<code>'weapon'</code>、<code>'offhand'</code>）或盾牌（<code>'shield'</code>），风格保持不变</td>
+</tr>
+<tr>
+<td><code>GetHeld(target)</code></td>
+<td><code>{ slot = 键 }</code></td>
+</tr>
+<tr>
+<td><code>SpawnFighter(风格, coords, heading, opts)</code></td>
+<td>创建战斗 NPC，返回 net id</td>
+</tr>
+<tr>
+<td><code>StopFighter(net)</code></td>
+<td>移除战斗 NPC</td>
+</tr>
+<tr>
+<td><code>AddHitHandler(fn)</code> / <code>RemoveHitHandler(id)</code></td>
+<td>每次命中时调用的函数（见下文）</td>
+</tr>
+<tr>
+<td><code>GetDamageMode()</code></td>
+<td><code>'native'</code> 或 <code>'external'</code></td>
+</tr>
+<tr>
+<td><code>React(target, 反应)</code></td>
+<td>让目标执行 <code>'stagger'</code>、<code>'knockdown'</code> 或 <code>'death'</code></td>
+</tr>
+<tr>
+<td><code>SetAttackEnabled(target, 风格, attackId, on)</code> / <code>IsAttackEnabled(...)</code></td>
+<td>为该战斗者解锁或锁定一个攻击</td>
+</tr>
+<tr>
+<td><code>SetAttackMultiplier(target, 风格, attackId, m)</code> / <code>GetAttackMultiplier(...)</code></td>
+<td>某个攻击的倍率</td>
+</tr>
+<tr>
+<td><code>SetOutgoingMultiplier(target, m)</code> / <code>GetOutgoingMultiplier(target)</code></td>
+<td>其全部伤害的倍率</td>
+</tr>
+<tr>
+<td><code>SetDefence(target, { percent, flat })</code> / <code>GetDefence(target)</code></td>
+<td>自身的防御，与防御动作的防御值叠加</td>
+</tr>
+<tr>
+<td><code>GetGuard</code> / <code>SetGuard</code> / <code>GetMaxGuard</code> / <code>SetMaxGuard</code></td>
+<td>防御点数（<code>'points'</code> 模式）</td>
+</tr>
+<tr>
+<td><code>SetInputMode(target, 'combo' \| 'keys' \| nil)</code> / <code>GetInputMode(target)</code></td>
+<td>战斗者的输入模式</td>
+</tr>
+<tr>
+<td><code>GetStyles()</code></td>
+<td>所有已加载的风格</td>
+</tr>
+<tr>
+<td><code>GetAttacks(风格)</code></td>
+<td><code>{ { id, chain, clip, mult, locked, input } }</code></td>
+</tr>
+<tr>
+<td><code>GetWeapon(键)</code> / <code>GetShield(键)</code></td>
+<td>配置中的条目</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hit">命中（<code>hit</code>）</h4>
+<p>hit handler 和 <code>avalon_combat:hit</code> 事件接收的表如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td><code>'native'</code> 或 <code>'external'</code></td>
+</tr>
+<tr>
+<td><code>attacker</code></td>
+<td><code>{ kind = 'player' \| 'fighter', src, net, style, team }</code></td>
+</tr>
+<tr>
+<td><code>victim</code></td>
+<td><code>{ kind = 'player' \| 'fighter' \| 'ped', src, net, style }</code></td>
+</tr>
+<tr>
+<td><code>attack</code></td>
+<td><code>{ id, chain, clip, mult, knockdown, react }</code>（<code>chain</code>：<code>light</code>、<code>heavy</code>、<code>special</code>、<code>moves</code>、<code>pair</code>）</td>
+</tr>
+<tr>
+<td><code>weapon</code></td>
+<td>命中刀刃时为 <code>{ slot, key, data }</code>，否则为 <code>nil</code></td>
+</tr>
+<tr>
+<td><code>base</code></td>
+<td>武器或风格的伤害</td>
+</tr>
+<tr>
+<td><code>attackMult</code>, <code>progressMult</code>, <code>outgoingMult</code></td>
+<td>三个倍率</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>防御之前的伤害</td>
+</tr>
+<tr>
+<td><code>guard</code></td>
+<td><code>{ blocked, parried, broken, percent, flat, cost }</code></td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td>防御之后的伤害（<code>'native'</code> 模式下实际应用的伤害）</td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td>从攻击者指向受害者的 <code>{ x, y }</code></td>
+</tr>
+</tbody>
+</table>
+<p>handler 在防御计算之后执行。handler 返回修改后的命中表，返回 <code>nil</code> 表示保持不变，返回 <code>false</code> 表示取消。资源停止时，其 handler 会被自动移除。</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- server: 抗性与等级</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">AddHitHandler</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">hit</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">kind</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'player'</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nf">HasSilverArmor</span><span class="p">(</span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">src</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">attacker</span><span class="p">.</span><span class="py">style</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'werewolf'</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">        </span><span class="nv">hit</span><span class="p">.</span><span class="py">final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">final</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="c1">-- 在 handler 之后由服务端四舍五入</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="nv">hit</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">-- server: DamageMode = 'external'，生命值由你的系统管理</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'avalon_combat:hit'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">hit</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">kind</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s1">'player'</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MyHealth</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">src</span><span class="p">,</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">final</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">hp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">React</span><span class="p">(</span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'death'</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>服务端事件</strong>（<code>AddEventHandler</code>，接收命中表）：<code>avalon_combat:hit</code>（<code>'external'</code> 模式）、<code>avalon_combat:blocked</code>、<code>avalon_combat:parried</code>、<code>avalon_combat:guardBroken</code>。</p>
+<hr />
+<h3 id="_20">客户端导出</h3>
+<table>
+<thead>
+<tr>
+<th>导出函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GetStyle()</code></td>
+<td>当前风格或 <code>nil</code></td>
+</tr>
+<tr>
+<td><code>IsBlocking()</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td><code>IsAttacking()</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td><code>GetGuard()</code></td>
+<td><code>{ v, max }</code> 防御点数（<code>'points'</code> 模式）</td>
+</tr>
+<tr>
+<td><code>GetStamina()</code></td>
+<td>游戏的耐力，即 <code>'stamina'</code> 模式所读取的值</td>
+</tr>
+<tr>
+<td><code>SetCombatEnabled(on)</code></td>
+<td><code>false</code> 会把操作交还给游戏（菜单、过场动画），直到再次设为 <code>true</code></td>
+</tr>
+<tr>
+<td><code>GetCastPoint()</code></td>
+<td>法杖法术发射点的 <code>vector3</code>，或 <code>nil</code></td>
+</tr>
+<tr>
+<td><code>GetInputMode()</code></td>
+<td><code>'combo'</code> 或 <code>'keys'</code></td>
+</tr>
+<tr>
+<td><code>MakeFighter(ped, 风格, opts)</code> / <code>StopFighter(ped)</code></td>
+<td>将 ped 变为战斗者，或使其停止</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本地事件</strong> <code>avalon_combat:onHurt</code> <code>(ped, info, attacker)</code>：由本客户端管理的 ped 每次受击时触发，可用于 HUD。</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">-- client: 生命条与伤害数字</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'avalon_combat:onHurt'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">ped</span><span class="p">,</span><span class="w"> </span><span class="nv">info</span><span class="p">,</span><span class="w"> </span><span class="nv">attacker</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">ped</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nf">PlayerPedId</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">info</span><span class="p">.</span><span class="py">parried</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="nf">ShowText</span><span class="p">(</span><span class="s1">'格挡！'</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">info</span><span class="p">.</span><span class="py">blocked</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="nf">ShowText</span><span class="p">((</span><span class="s1">'-%d（已防御）'</span><span class="p">):</span><span class="nf">format</span><span class="p">(</span><span class="nv">info</span><span class="p">.</span><span class="py">damage</span><span class="p">))</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="kr">else</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">        </span><span class="nf">ShowText</span><span class="p">((</span><span class="s1">'-%d'</span><span class="p">):</span><span class="nf">format</span><span class="p">(</span><span class="nv">info</span><span class="p">.</span><span class="py">damage</span><span class="p">))</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">-- client: 菜单打开时不进行战斗</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetCombatEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AvalonStudiosScripts" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

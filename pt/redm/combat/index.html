@@ -1,0 +1,2432 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentazione ufficiale degli script FiveM e RedM di AvalonStudios">
+      
+      
+        <meta name="author" content="AvalonStudiosScripts">
+      
+      
+        <link rel="canonical" href="https://AvalonStudiosScripts.github.io/script-docs/pt/redm/combat/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/script-docs/" hreflang="it">
+        
+          <link rel="alternate" href="/script-docs/en/" hreflang="en">
+        
+          <link rel="alternate" href="/script-docs/es/" hreflang="es">
+        
+          <link rel="alternate" href="/script-docs/pt/" hreflang="pt">
+        
+          <link rel="alternate" href="/script-docs/zh/" hreflang="zh">
+        
+          <link rel="alternate" href="/script-docs/th/" hreflang="th">
+        
+      
+      
+      <link rel="icon" href="../../../img/logo_transparent.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>avalon_combat - AvalonStudios Script Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#avalon_combat" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../../.." title="AvalonStudios Script Docs" class="md-header__button md-logo" aria-label="AvalonStudios Script Docs" data-md-component="logo">
+      
+  <img src="../../../img/logo_transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AvalonStudios Script Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              avalon_combat
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Tema chiaro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Tema chiaro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="black"  aria-label="Tema scuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tema scuro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleziona la lingua">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/script-docs/" hreflang="it" class="md-select__link">
+              🇮🇹 Italiano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/en/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/es/" hreflang="es" class="md-select__link">
+              🇪🇸 Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/pt/" hreflang="pt" class="md-select__link">
+              🇵🇹 Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/zh/" hreflang="zh" class="md-select__link">
+              🇨🇳 中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/script-docs/th/" hreflang="th" class="md-select__link">
+              🇹🇭 ภาษาไทย
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AvalonStudiosScripts/script-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AvalonStudiosScripts/script-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../scripts/" class="md-tabs__link">
+          
+  
+  
+  Script FiveM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../redm/" class="md-tabs__link">
+          
+  
+  
+  Script RedM
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AvalonStudios Script Docs" class="md-nav__button md-logo" aria-label="AvalonStudios Script Docs" data-md-component="logo">
+      
+  <img src="../../../img/logo_transparent.png" alt="logo">
+
+    </a>
+    AvalonStudios Script Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AvalonStudiosScripts/script-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AvalonStudiosScripts/script-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script FiveM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Script FiveM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/coltivation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_coltivation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/dustman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_dustman
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/electrician/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_electrician
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/lumberjack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_lumberjack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/mining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_mining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/mounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_mounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_party
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/robbery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_robbery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scripts/trash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_trash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script RedM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Script RedM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panoramica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redm/combat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    avalon_combat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependências
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estilos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-e-teclas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos e teclas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos e teclas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-combate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modo de combate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-teste-e-ajuste" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos de teste e ajuste
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona-o-dano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como funciona o dano
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definições gerais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modo-de-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modo de input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guarda-e-defesa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guarda e defesa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitbox-do-corpo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hitbox do corpo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#armas-e-escudos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Armas e escudos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Armas e escudos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#armas-a-partir-do-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Armas a partir do inventário
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criar-um-estilo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Criar um Estilo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Criar um Estilo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos-de-um-estilo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos de um estilo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#um-ataque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Um ataque
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ataque-emparelhado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ataque emparelhado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#npcs-lutadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NPCs lutadores
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressao-niveis-e-habilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progressão (níveis e habilidades)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progressão (níveis e habilidades)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quais-ataques-pode-usar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quais ataques pode usar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quao-forte-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quão forte é
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exports-disponiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exports Disponíveis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exports Disponíveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exports-server-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exports Server-Side
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exports Server-Side">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-golpe-hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O golpe (hit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exports-client-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exports Client-Side
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="avalon_combat">avalon_combat</h1>
+<p>Sistema de <strong>combate corpo a corpo</strong> para RedM. Cada estilo (lobisomem, vampiro, katana, espada e escudo, pugilista, magos...) usa as animações dos pacotes Avalon. Os golpes são calculados pelo script: a cada frame segue mãos, pés e lâminas ao longo da animação e atinge os peds que atravessam. O dano passa sempre pelo servidor.</p>
+<p>Inclui: combos leves e pesados, ataques emparelhados (dois peds animados em conjunto), defesa e contra-ataque, armas e escudos empunhados, corrida, esquiva, salto e voo para as criaturas, NPCs que lutam sozinhos e exports para ligar níveis, habilidades, barras de vida e magias.</p>
+<p><strong>Versão:</strong> beta | <strong>Autor:</strong> Avalon | <strong>Jogo:</strong> RedM | <strong>Framework:</strong> standalone</p>
+<hr />
+<h2 id="dependencias">Dependências</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th style="text-align: center;">Obrigatória</th>
+<th>Para que serve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OneSync</td>
+<td style="text-align: center;">✅</td>
+<td>NPCs lutadores e defesa (state bag)</td>
+</tr>
+<tr>
+<td><code>avalon_weapons_rdr2</code></td>
+<td style="text-align: center;">❌</td>
+<td>Opcional: os modelos de armas da config incluída. Servem também as armas que já tens (<a href="#armas-e-escudos">Armas e escudos</a>)</td>
+</tr>
+<tr>
+<td><code>avalon_shields_tint</code></td>
+<td style="text-align: center;">❌</td>
+<td>Opcional: os modelos de escudos da config incluída. Servem também os escudos que já tens</td>
+</tr>
+<tr>
+<td>Pacotes de animação <code>avalon_anims_*</code></td>
+<td style="text-align: center;">✅ pelo menos um</td>
+<td>As animações e os estilos (vê <a href="#estilos">Estilos</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>Nenhuma framework necessária: o script trabalha sobre peds e jogadores. A ligação com inventários, níveis ou barras de vida faz-se com os <a href="#exports-disponiveis">exports</a>.</p>
+<hr />
+<h2 id="instalacao">Instalação</h2>
+<ol>
+<li>Copia a pasta <code>avalon_combat/</code> para <code>resources/</code></li>
+<li>Inicia os pacotes de animação e os resources dos teus modelos de armas e escudos, depois o resource:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># ... os resources das tuas armas e escudos
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ensure avalon_anims_werewolf
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ensure avalon_anims_vampire
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>ensure avalon_anims_ka_02
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a># ... os outros pacotes que usas
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ensure avalon_combat
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Ordem dos pacotes</p>
+<p>Um pacote iniciado depois do <code>avalon_combat</code> (ou reiniciado) é lido na mesma: os seus estilos são adicionados assim que arranca.</p>
+</div>
+<hr />
+<h2 id="estilos">Estilos</h2>
+<p>Os estilos vêm dos <strong>pacotes de animação</strong>. Cada pacote traz um ficheiro <code>avalon_combat.lua</code> com os seus estilos e declara-o no seu <code>fxmanifest.lua</code>. O <code>avalon_combat</code> recolhe-os sozinho através do export <code>CombatStyles</code> do pacote.</p>
+<table>
+<thead>
+<tr>
+<th>Estilo</th>
+<th>Pacote</th>
+<th>Arma</th>
+<th>Guarda</th>
+<th>Extra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>werewolf</code></td>
+<td><code>avalon_anims_werewolf</code></td>
+<td>garras</td>
+<td>do jogo (mãos nuas)</td>
+<td>corrida, esquiva, salto, ataques emparelhados</td>
+</tr>
+<tr>
+<td><code>vampire</code></td>
+<td><code>avalon_anims_vampire</code></td>
+<td>garras</td>
+<td>própria</td>
+<td>voo, boost, ataques emparelhados</td>
+</tr>
+<tr>
+<td><code>succube</code></td>
+<td><code>avalon_anims_succube</code></td>
+<td>garras</td>
+<td>do jogo (mãos nuas)</td>
+<td>voo, boost, ataques emparelhados</td>
+</tr>
+<tr>
+<td><code>katana</code> <code>katana1</code> <code>katana3</code> <code>katana4</code></td>
+<td><code>avalon_anims_ka_02</code> <code>_01</code> <code>_03</code> <code>_04</code></td>
+<td><code>xur_katana</code></td>
+<td>do jogo (lâmina)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sword</code> <code>sword2</code> <code>sword3</code></td>
+<td><code>avalon_anims_sw_01</code> <code>_02</code> <code>_03</code></td>
+<td><code>xur_machete2</code></td>
+<td>do jogo (lâmina)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sword_shield</code> <code>sword_shield2</code> <code>sword_shield3</code></td>
+<td><code>avalon_anims_sns_01</code> <code>_02</code> <code>_03</code></td>
+<td><code>swn2craft</code> + escudo</td>
+<td>própria / própria / do jogo</td>
+<td></td>
+</tr>
+<tr>
+<td><code>twinsword</code></td>
+<td><code>avalon_anims_twinsword01</code></td>
+<td><code>xur_katana2</code> em ambas as mãos</td>
+<td>do jogo (lâmina)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hammer2h</code></td>
+<td><code>avalon_anims_hammer2h</code></td>
+<td><code>hammermoore</code></td>
+<td>do jogo (lâmina)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>orientalmonk</code></td>
+<td><code>avalon_anims_orientalmonk</code></td>
+<td><code>giga</code></td>
+<td>do jogo (lâmina)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pugilist</code></td>
+<td><code>avalon_anims_p_01</code></td>
+<td>mãos nuas</td>
+<td>do jogo (mãos nuas)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>firemage</code> <code>mage</code> <code>witch</code> <code>wizard</code></td>
+<td><code>avalon_anims_firemage_01</code> <code>_mage_01</code> <code>_witch_01</code> <code>_wizard</code></td>
+<td>mãos / cajado</td>
+<td>do jogo (mãos nuas)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Magias</p>
+<p>Os estilos de mago por agora atingem com as mãos, com um alcance maior (como faria o feitiço). Os cajados são apenas visuais: o ponto de onde partirão as magias lê-se com o export client <code>GetCastPoint()</code>.</p>
+</div>
+<p>Para escreveres um estilo teu vê <a href="#criar-um-estilo">Criar um Estilo</a>.</p>
+<hr />
+<h2 id="comandos-e-teclas">Comandos e teclas</h2>
+<div class="admonition warning">
+<p class="admonition-title">Só com o debug ativo</p>
+<p>Todos os comandos de chat existem só com <code>AvalonCombat.Debug = true</code> em <code>config/config.lua</code>: servem para configurar e testar estilos, armas e NPCs. Num servidor em produção deixe <code>Debug = false</code> e coloque os jogadores em combate a partir do seu script com o export de servidor <code>SetStyle</code>. As teclas funcionam sempre.</p>
+</div>
+<h3 id="modo-de-combate">Modo de combate</h3>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/avalon_combat &lt;estilo&gt;</code></td>
+<td>Entra em combate com esse estilo (sem argumento lista os estilos)</td>
+</tr>
+<tr>
+<td><code>/avalon_combat off</code></td>
+<td>Sai do combate</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Tecla</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clique esquerdo</strong></td>
+<td>Combo leve (carrega de novo durante o ataque para o golpe seguinte)</td>
+</tr>
+<tr>
+<td><strong>Clique direito</strong></td>
+<td>Combo pesado</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td>Ataque emparelhado no ped à frente (os estilos que o têm) ou combo especial</td>
+</tr>
+<tr>
+<td><strong>CTRL</strong> (mantido)</td>
+<td>Guarda</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>Fixa o ped apontado pela câmara (losango vermelho sobre a cabeça): ataques e ataques emparelhados vão para ele. E de novo liberta-o</td>
+</tr>
+<tr>
+<td><strong>Shift</strong></td>
+<td>Corrida (lobisomem) · voo (estilos voadores, no ar)</td>
+</tr>
+<tr>
+<td><strong>Alt</strong></td>
+<td>Esquiva (lobisomem) · boost (estilos voadores)</td>
+</tr>
+<tr>
+<td><strong>Shift + Espaço</strong></td>
+<td>Salto (lobisomem) · descolagem e aterragem (estilos voadores)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Quem reage aos golpes</p>
+<p>Os golpes leves e pesados causam apenas dano. O combo especial, os ataques emparelhados e os ataques com <code>react = true</code> fazem também a vítima cambalear ou cair.</p>
+</div>
+<h3 id="comandos-de-teste-e-ajuste">Comandos de teste e ajuste</h3>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/avalon_attack &lt;id&gt;</code></td>
+<td>Executa um ataque do estilo atual (id ou nome da clip)</td>
+</tr>
+<tr>
+<td><code>/avalon_pair [nome]</code></td>
+<td>Executa um ataque emparelhado no ped à frente</td>
+</tr>
+<tr>
+<td><code>/avalon_pair_offset &lt;nome&gt; &lt;x&gt; &lt;y&gt; &lt;yaw&gt;</code></td>
+<td>Move a vítima de um ataque emparelhado (apenas neste client)</td>
+</tr>
+<tr>
+<td><code>/avalon_weapon &lt;nome\|off&gt;</code></td>
+<td>Muda a arma na mão direita</td>
+</tr>
+<tr>
+<td><code>/avalon_offhand &lt;nome\|off&gt;</code></td>
+<td>Muda a arma na mão esquerda</td>
+</tr>
+<tr>
+<td><code>/avalon_shield &lt;nome\|off&gt;</code></td>
+<td>Muda o escudo</td>
+</tr>
+<tr>
+<td><code>/avalon_weapon_offset &lt;x y z rx ry rz&gt; [osso]</code></td>
+<td>Ajusta a posição da arma e imprime a linha para copiar para o config (também <code>_offhand_offset</code>, <code>_shield_offset</code>)</td>
+</tr>
+<tr>
+<td><code>/avalon_sound &lt;nome&gt;</code></td>
+<td>Toca um som do config</td>
+</tr>
+<tr>
+<td><code>/avalon_sound_game &lt;set&gt; &lt;nome&gt; [bank]</code></td>
+<td>Experimenta um som qualquer do jogo</td>
+</tr>
+<tr>
+<td><code>/avalon_npc &lt;estilo&gt; [team] [modelo] [escala]</code></td>
+<td>Cria um NPC lutador 4 m à frente</td>
+</tr>
+<tr>
+<td><code>/avalon_npc_clear</code></td>
+<td>Apaga os NPCs criados por ti</td>
+</tr>
+<tr>
+<td><code>/avalon_npc_info</code></td>
+<td>Estado dos NPCs lutadores num raio de 30 m</td>
+</tr>
+<tr>
+<td><code>/avalon_dummy [modelo]</code> · <code>/avalon_dummy_clear</code></td>
+<td>Manequins parados para atingir</td>
+</tr>
+<tr>
+<td><code>/avalon_hitbox</code></td>
+<td>Mostra as hitboxes: corpos (verde), membros (amarelo), lâminas (azul-claro), golpes (vermelho)</td>
+</tr>
+<tr>
+<td><code>/avalon_combat_debug</code></td>
+<td>Desenha os movimentos das mãos e imprime cada golpe</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="como-funciona-o-dano">Como funciona o dano</h2>
+<ol>
+<li>O client de quem ataca verifica a cada frame membros e lâminas ao longo da animação. Um membro mais lento do que <code>MinSweepSpeed</code> não atinge (carregamento e retorno do golpe).</li>
+<li>Quando um membro ou uma lâmina toca a hitbox de um ped, o client comunica-o ao servidor.</li>
+<li>O servidor verifica o golpe (distância, dano máximo, ataque desbloqueado), calcula dano e guarda e executa os <em>hit handlers</em> dos outros resources.</li>
+<li>
+<p>Consoante <code>AvalonCombat.DamageMode</code>:</p>
+<ul>
+<li><code>'native'</code> — o dano vai para a vida verdadeira do ped</li>
+<li><code>'external'</code> — sem dano: o servidor emite o evento <code>avalon_combat:hit</code> para o teu sistema (barras de vida falsas, resistências)</li>
+</ul>
+<p>A vítima executa na mesma a reação.</p>
+</li>
+</ol>
+<p><strong>Fórmula:</strong> dano base (o da arma se atinge a lâmina, caso contrário o <code>damage</code> do estilo) × <code>mult</code> do ataque × multiplicador de progressão × multiplicador de saída, arredondado. Depois subtrai-se a defesa da guarda.</p>
+<hr />
+<h2 id="configuracao">Configuração</h2>
+<p>Os ficheiros de configuração estão em <code>config/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config/config.lua</code></td>
+<td>Definições gerais, combos, NPCs, sons, dano, defesa, input</td>
+</tr>
+<tr>
+<td><code>config/guard.lua</code></td>
+<td>As guardas do jogo utilizáveis por nome (<code>'blade'</code>, <code>'unarmed'</code>)</td>
+</tr>
+<tr>
+<td><code>config/weapons.lua</code></td>
+<td>Armas da mão direita</td>
+</tr>
+<tr>
+<td><code>config/offhand.lua</code></td>
+<td>Armas da mão esquerda</td>
+</tr>
+<tr>
+<td><code>config/shields.lua</code></td>
+<td>Escudos (uma entrada por cor)</td>
+</tr>
+<tr>
+<td><code>config/styles/</code></td>
+<td>Estilos locais opcionais e <code>example.lua</code> com todos os campos explicados</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Ficheiros editáveis</p>
+<p>Os ficheiros de <code>config/</code> (e <code>config/styles/</code>) estão abertos: o resto do recurso está protegido com Cfx Escrow. Tudo se personaliza a partir daí e com os <a href="#exports-disponiveis">exports</a>.</p>
+</div>
+<h3 id="definicoes-gerais">Definições gerais</h3>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Default</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Debug</code></td>
+<td><code>false</code></td>
+<td>Ativa os comandos de chat e <code>/avalon_combat_debug</code> (só para testes)</td>
+</tr>
+<tr>
+<td><code>TargetRange</code></td>
+<td><code>4.0</code></td>
+<td>m: os peds mais distantes não são verificados</td>
+</tr>
+<tr>
+<td><code>LockRange</code> / <code>LockCone</code></td>
+<td><code>3.0</code> / <code>45</code></td>
+<td>Um ataque vira-se para o ped mais próximo dentro destes metros e graus</td>
+</tr>
+<tr>
+<td><code>AttackTowardsCamera</code></td>
+<td><code>true</code></td>
+<td>Os ataques do jogador (e o emparelhado com R) vão para onde a câmara aponta: a personagem vira-se para lá no início de cada ataque. <code>false</code>: para onde a personagem olha</td>
+</tr>
+<tr>
+<td><code>LockOnRange</code></td>
+<td><code>12.0</code></td>
+<td>m: raio da fixação com E</td>
+</tr>
+<tr>
+<td><code>MinSweepSpeed</code></td>
+<td><code>2.0</code></td>
+<td>m/s: um membro mais lento não atinge</td>
+</tr>
+<tr>
+<td><code>SkipStart</code></td>
+<td><code>0.10</code></td>
+<td>Parte inicial de cada ataque ignorada</td>
+</tr>
+<tr>
+<td><code>Rehit</code></td>
+<td><code>0.45</code></td>
+<td>s antes de o mesmo ataque poder voltar a atingir o mesmo alvo</td>
+</tr>
+<tr>
+<td><code>MaxHitDamage</code></td>
+<td><code>200</code></td>
+<td>O servidor recusa golpes acima deste dano</td>
+</tr>
+<tr>
+<td><code>MaxHitDistance</code></td>
+<td><code>6.0</code></td>
+<td>O servidor recusa golpes em jogadores mais distantes do que isto</td>
+</tr>
+<tr>
+<td><code>PairRange</code></td>
+<td><code>3.5</code></td>
+<td>m: distância máxima de agarre de um ataque emparelhado</td>
+</tr>
+<tr>
+<td><code>HitboxScale</code> / <code>HitboxPad</code></td>
+<td><code>1.0</code> / <code>0.0</code></td>
+<td>Aumenta as hitboxes das lâminas (para atingir mais facilmente)</td>
+</tr>
+<tr>
+<td><code>SoundVolume</code></td>
+<td><code>0.35</code></td>
+<td>Volume dos ficheiros de áudio</td>
+</tr>
+<tr>
+<td><code>DamageMode</code></td>
+<td><code>'native'</code></td>
+<td><code>'native'</code> ou <code>'external'</code> (vê acima)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="combo">Combo</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">ComboWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.45</span><span class="w"> </span><span class="c1">-- a partir desta fase do ataque, uma pressão põe em fila o golpe seguinte</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">ComboCancel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w">  </span><span class="c1">-- fase em que parte o golpe em fila (1.0 = no fim da animação)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">ComboReset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="w">   </span><span class="c1">-- s: depois desta pausa o combo recomeça do primeiro golpe</span>
+</span></code></pre></div>
+<h3 id="modo-de-input">Modo de input</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">InputMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'combo'</span><span class="w"> </span><span class="c1">-- 'combo' | 'keys'</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">SimulWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w"> </span><span class="nv">SequenceWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="nv">DirAbove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>'combo'</code>: cada tecla executa o golpe seguinte da sua cadeia (<code>light</code>, <code>heavy</code>, <code>special</code>)</li>
+<li><code>'keys'</code>: como num jogo de luta, as teclas executam as <code>moves</code> do estilo. Combinam-se teclas premidas em conjunto (<code>'light+heavy'</code>), uma direção (<code>'F+heavy'</code>: frente + pesado) ou sequências (<code>{ 'light', 'light', 'heavy' }</code>)</li>
+</ul>
+<p>Cada jogador pode ter um diferente com o export <code>SetInputMode</code>.</p>
+<h3 id="guarda-e-defesa">Guarda e defesa</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Defence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nv">Mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'always'</span><span class="p">,</span><span class="w">      </span><span class="c1">-- 'always' | 'timed' | 'stamina' | 'points'</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nv">ParryWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">   </span><span class="c1">-- s: guarda levantada dentro deste tempo do golpe = defesa perfeita</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nv">StaminaCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">15.0</span><span class="p">,</span><span class="w">   </span><span class="c1">-- 'stamina': stamina retirada por golpe defendido</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nv">Points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nv">PointsRegen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nv">PointsCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="c1">-- 'points': pontos de guarda</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nv">BreakTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w">      </span><span class="c1">-- s sem guarda depois de se quebrar</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nv">Block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="nv">flat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">-- defesa base da guarda</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th><code>Mode</code></th>
+<th>Quando a guarda trava um golpe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>always</code></td>
+<td>Sempre, dano reduzido pela defesa</td>
+</tr>
+<tr>
+<td><code>timed</code></td>
+<td>Só dentro de <code>ParryWindow</code> desde que é levantada, caso contrário o golpe entra inteiro</td>
+</tr>
+<tr>
+<td><code>stamina</code></td>
+<td>Sempre, cada golpe custa stamina; acabada a stamina a guarda quebra-se</td>
+</tr>
+<tr>
+<td><code>points</code></td>
+<td>Sempre, cada golpe custa pontos de guarda (exports <code>GetGuard</code> / <code>SetGuard</code>); a zero quebra-se</td>
+</tr>
+</tbody>
+</table>
+<p>Uma <strong>defesa perfeita</strong> (parry) anula o dano e faz cambalear quem ataca. <strong>Defesa</strong> = <code>dano × (1 - percent) - flat</code>, nunca abaixo de zero. Um escudo empunhado substitui a defesa da guarda pela sua; a dada com o export <code>SetDefence</code> soma-se.</p>
+<h3 id="sons">Sons</h3>
+<p>Cada som tem um nome em <code>AvalonCombat.Sounds</code>. Estilos, ataques, armas e ataques emparelhados usam esses nomes: um nome, uma lista da qual escolher um ao acaso, ou <code>{ light = ..., heavy = ..., special = ... }</code> por cadeia.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nv">punch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">melee</span><span class="p">(</span><span class="s1">'punch'</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="p">},</span><span class="w">                 </span><span class="c1">-- ficheiro em sounds/ (.wav .ogg .mp3)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nv">my_roar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'roar.ogg'</span><span class="p">,</span><span class="w"> </span><span class="nv">volume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="nv">range</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nv">beast_roar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'LSHNT_sounds'</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'ROAR'</span><span class="w"> </span><span class="p">},</span><span class="w">  </span><span class="c1">-- som do jogo</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Os sons corpo a corpo incluídos são os do jogo, extraídos para <code>sounds/melee_*.wav</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Som no momento certo</p>
+<p><code>soundAt</code> faz o som começar numa fase precisa da animação: <code>0.35</code> = aos 35% da clip. Vale para os ataques, para os ataques emparelhados e para os movimentos do estilo (<code>soundAt = { leap = 0.27, dodge = 0.15 }</code>). Sem <code>soundAt</code> o som começa no primeiro movimento rápido (ataques) ou imediatamente.</p>
+</div>
+<h3 id="hitbox-do-corpo">Hitbox do corpo</h3>
+<p><code>AvalonCombat.BodyHitbox</code> lista as cápsulas sobre as quais se atinge cada ped (<code>{ osso de, osso até, raio }</code>): cabeça, tórax, abdómen, braços e pernas. Um animal sem esses ossos torna-se uma esfera de 0.4 m. <code>/avalon_hitbox</code> mostra-as no jogo.</p>
+<hr />
+<h2 id="armas-e-escudos">Armas e escudos</h2>
+<p>As armas e os escudos são os do teu servidor: <code>model</code> é o nome de qualquer prop em stream, desde que o seu resource esteja iniciado. A config incluída lista os modelos de <code>avalon_weapons_rdr2</code> e <code>avalon_shields_tint</code>: substitui-os pelos teus ou acrescenta outros.</p>
+<p>Cada entrada de <code>config/weapons.lua</code>, <code>config/offhand.lua</code> e <code>config/shields.lua</code> é um modelo empunhado:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Weapons</span><span class="p">.</span><span class="py">xur_katana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nv">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'weapon_xur_katana'</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nv">bone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'SKEL_R_Hand'</span><span class="p">,</span><span class="w">                         </span><span class="c1">-- osso ao qual está presa</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nv">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="mf">0.075</span><span class="p">,</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">0.03</span><span class="p">),</span><span class="w">         </span><span class="c1">-- m</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nv">rot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">90.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">),</span><span class="w">               </span><span class="c1">-- graus</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nv">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">                                  </span><span class="c1">-- por golpe de lâmina, × mult do ataque</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nv">sounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">swing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'blade_swipe'</span><span class="p">,</span><span class="w"> </span><span class="nv">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'machete_slash'</span><span class="p">,</span><span class="w"> </span><span class="s1">'blade_flesh'</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nv">blade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.12</span><span class="p">),</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.05</span><span class="p">),</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.08</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">-- hitbox da lâmina</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model</code></td>
+<td>Arquétipo do modelo: qualquer prop em stream</td>
+</tr>
+<tr>
+<td><code>tint</code></td>
+<td>Opcional: índice da cor (os escudos têm uma entrada por cor)</td>
+</tr>
+<tr>
+<td><code>bone</code>, <code>offset</code>, <code>rot</code></td>
+<td>Onde fica na mão. Ajusta-se no jogo com <code>/avalon_weapon_offset</code>, que imprime a linha para copiar</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>Dano por golpe de lâmina</td>
+</tr>
+<tr>
+<td><code>sounds</code></td>
+<td><code>swing</code> e <code>hit</code> da lâmina</td>
+</tr>
+<tr>
+<td><code>blade</code></td>
+<td>Cápsula da lâmina no espaço do modelo: atinge no lugar da mão</td>
+</tr>
+<tr>
+<td><code>cast</code></td>
+<td>Apenas cajados: o ponto de onde partirão as magias</td>
+</tr>
+<tr>
+<td><code>defence</code></td>
+<td>Apenas escudos: <code>{ percent, flat }</code> no lugar da da guarda</td>
+</tr>
+</tbody>
+</table>
+<h3 id="armas-a-partir-do-inventario">Armas a partir do inventário</h3>
+<p>O estilo e a arma são separados: cada estilo pode empunhar qualquer arma da config, por isso vários estilos podem usar a mesma arma. A partir do teu script escolhes a arma (por exemplo a partir do item usado) e o estilo (por exemplo a partir da classe), para jogadores e NPCs:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- servidor: o item escolhe a arma, a classe o estilo</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ItemWeapons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">katana_item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_katana'</span><span class="p">,</span><span class="w"> </span><span class="nv">machete_item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nf">RegisterNetEvent</span><span class="p">(</span><span class="s1">'my_inventory:useWeapon'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">source</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ItemWeapons</span><span class="p">[</span><span class="nv">item</span><span class="p">]</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="c1">-- estilos diferentes com a mesma arma</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MyClasses</span><span class="p">.</span><span class="nf">IsMaster</span><span class="p">(</span><span class="nv">src</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="s1">'katana3'</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'katana'</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetStyle</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">style</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">weapon</span><span class="p">,</span><span class="w"> </span><span class="nv">shield</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1">-- só a arma, o estilo fica</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetHeld</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'weapon'</span><span class="p">,</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="p">)</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1">-- um NPC: o mesmo com { net = netId }</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="kd">local</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SpawnFighter</span><span class="p">(</span><span class="s1">'katana'</span><span class="p">,</span><span class="w"> </span><span class="nv">coords</span><span class="p">,</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="w"> </span><span class="p">})</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetStyle</span><span class="p">({</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="s1">'katana4'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'xur_machete2'</span><span class="w"> </span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h2 id="criar-um-estilo">Criar um Estilo</h2>
+<p>Um estilo pode ser escrito em dois sítios:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">No pacote de animação</label><label for="__tabbed_1_2">Em config/styles</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>O modo usado pelos pacotes Avalon. Ao lado do <code>fxmanifest.lua</code> do pacote coloca <code>avalon_combat.lua</code>:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">Styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nv">Styles</span><span class="p">.</span><span class="py">mystyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nv">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'avalon@anims@mystyle'</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="c1">-- ...</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nv">block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'blade'</span><span class="p">,</span><span class="w">   </span><span class="c1">-- um pacote nomeia a guarda do jogo como string</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nf">exports</span><span class="p">(</span><span class="s1">'CombatStyles'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="nv">Styles</span><span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<p>e no <code>fxmanifest.lua</code> do pacote:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">avalon_combat_styles</span><span class="w"> </span><span class="s1">'yes'</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">shared_script</span><span class="w"> </span><span class="s1">'avalon_combat.lua'</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Um ficheiro <code>config/styles/mystyle.lua</code> dentro do <code>avalon_combat</code>:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">AvalonCombat</span><span class="p">.</span><span class="py">Styles</span><span class="p">.</span><span class="py">mystyle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nv">dict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'avalon@anims@mystyle'</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="c1">-- ...</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Um estilo escrito aqui <strong>prevalece</strong> sobre o de um pacote com o mesmo nome: para modificar um estilo de um pacote, copia-o para aqui.</p>
+</div>
+</div>
+</div>
+<p><code>config/styles/example.lua</code> contém um estilo completo, comentado campo a campo.</p>
+<h3 id="campos-de-um-estilo">Campos de um estilo</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dict</code></td>
+<td>Dicionário das animações (<code>.ycd</code>)</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>Dano de um golpe do corpo (socos, pontapés, garras)</td>
+</tr>
+<tr>
+<td><code>idle</code></td>
+<td>Animação em loop parado</td>
+</tr>
+<tr>
+<td><code>weapon</code> / <code>offhand</code> / <code>shield</code></td>
+<td>O que empunha (chaves de <code>Weapons</code>, <code>Offhand</code>, <code>Shields</code>)</td>
+</tr>
+<tr>
+<td><code>hands</code></td>
+<td>Os membros que atingem: <code>{ osso de, osso até, alcance }</code></td>
+</tr>
+<tr>
+<td><code>reach</code> / <code>radius</code></td>
+<td>Alcance para além do último osso e espessura dos membros (m)</td>
+</tr>
+<tr>
+<td><code>light</code> / <code>heavy</code> / <code>special</code></td>
+<td>As cadeias do combo: listas de ataques</td>
+</tr>
+<tr>
+<td><code>moves</code></td>
+<td>Os movimentos do modo <code>'keys'</code></td>
+</tr>
+<tr>
+<td><code>sounds</code></td>
+<td><code>swing</code>, <code>hit</code>, <code>knockdown</code>, <code>block</code>, <code>leap</code>, <code>dodge</code>, <code>boost</code>, <code>float</code></td>
+</tr>
+<tr>
+<td><code>soundAt</code></td>
+<td>Fase em que partem os sons dos movimentos</td>
+</tr>
+<tr>
+<td><code>block</code></td>
+<td>Guarda: <code>{ start, loop, stop, hit }</code> com clips próprias, ou <code>'blade'</code> / <code>'unarmed'</code>. Sem <code>block</code> o estilo não defende</td>
+</tr>
+<tr>
+<td><code>stagger</code> / <code>knockdown</code></td>
+<td>Clips de reação aos golpes</td>
+</tr>
+<tr>
+<td><code>move</code></td>
+<td>Movimento especial: <code>kind = 'runner'</code> (corrida, esquiva, salto) ou <code>kind = 'flyer'</code> (voo, boost)</td>
+</tr>
+<tr>
+<td><code>pairs</code></td>
+<td>Ataques emparelhados</td>
+</tr>
+</tbody>
+</table>
+<h3 id="um-ataque">Um ataque</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">light</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'attack@slash1'</span><span class="p">,</span><span class="w"> </span><span class="nv">mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nv">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'attack@slash2'</span><span class="p">,</span><span class="w"> </span><span class="nv">mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.25</span><span class="p">,</span><span class="w"> </span><span class="nv">knockdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nv">soundAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.35</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">},</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clip</code></td>
+<td>A animação</td>
+</tr>
+<tr>
+<td><code>mult</code></td>
+<td>Multiplicador do dano</td>
+</tr>
+<tr>
+<td><code>knockdown</code></td>
+<td>A vítima cai</td>
+</tr>
+<tr>
+<td><code>react</code></td>
+<td>A vítima reage mesmo que não seja um ataque especial</td>
+</tr>
+<tr>
+<td><code>sound</code> / <code>soundAt</code></td>
+<td>Som próprio do ataque e fase em que começa</td>
+</tr>
+<tr>
+<td><code>keepTurn</code></td>
+<td>O ped fica virado como a animação o deixa</td>
+</tr>
+<tr>
+<td><code>locked</code></td>
+<td>Bloqueado até a progressão o desbloquear (<code>SetAttackEnabled</code>)</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Nome do ataque para os exports (default: a clip)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ataque-emparelhado">Ataque emparelhado</h3>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">pairs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nv">bite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">att</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'bite@att'</span><span class="p">,</span><span class="w"> </span><span class="nv">vic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'bite@vic'</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.8</span><span class="p">,</span><span class="w"> </span><span class="nv">yaw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">196</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">             </span><span class="nv">mult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="nv">damageAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.45</span><span class="p">,</span><span class="w"> </span><span class="nv">sound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'beast_roar'</span><span class="p">,</span><span class="w"> </span><span class="nv">soundAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">},</span>
+</span></code></pre></div>
+<p><code>att</code> / <code>vic</code> são as clips de quem ataca e da vítima. <code>x</code>, <code>y</code> e <code>yaw</code> indicam onde fica a vítima em relação a quem ataca (m, graus). <code>damageAt</code> é a fase em que chega o dano. Ajusta-se no jogo com <code>/avalon_pair_offset</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Movimento das animações</p>
+<p>As clips dos pacotes Avalon deslocam o ped segundo o seu próprio movimento (passos, sprints, saltos). As clips de pacotes de terceiros são reproduzidas no sítio.</p>
+</div>
+<hr />
+<h2 id="npcs-lutadores">NPCs lutadores</h2>
+<p>Um NPC lutador é um ped de rede que luta sozinho com um estilo: procura um alvo, aproxima-se, ataca em combo, defende-se, esquiva-se, salta ou voa.</p>
+<ul>
+<li><strong>Team:</strong> os jogadores são <code>'player'</code>. Um NPC ataca os jogadores (a menos que o seu team seja <code>'player'</code>) e os NPCs de outros teams, nunca os peds normais.</li>
+<li><strong>Habilidades:</strong> <code>AvalonCombat.Npc</code> em <code>config/config.lua</code> contém os valores por defeito (raio de agressão, distância de ataque, probabilidade de defesa, esquiva, ataque emparelhado...). Cada NPC pode alterar alguns com <code>opts.skill</code>.</li>
+</ul>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">-- server</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">net</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SpawnFighter</span><span class="p">(</span><span class="s1">'werewolf'</span><span class="p">,</span><span class="w"> </span><span class="nf">vector3</span><span class="p">(</span><span class="o">-</span><span class="mf">300.0</span><span class="p">,</span><span class="w"> </span><span class="mf">790.0</span><span class="p">,</span><span class="w"> </span><span class="mf">118.0</span><span class="p">),</span><span class="w"> </span><span class="mf">90.0</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nv">team</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'bandits'</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nv">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nv">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nv">skill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">BlockChance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="nv">Weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">heavy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">})</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1">-- mais tarde</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">StopFighter</span><span class="p">(</span><span class="nv">net</span><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th><code>opts</code></th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>model</code></td>
+<td>Modelo do ped (default <code>AvalonCombat.Npc.Model</code>)</td>
+</tr>
+<tr>
+<td><code>weapon</code> / <code>offhand</code> / <code>shield</code></td>
+<td>O que empunha: chaves da config (default: as do estilo; <code>false</code> = mão vazia). Uma chave que não existe faz falhar a criação</td>
+</tr>
+<tr>
+<td><code>team</code></td>
+<td>Team (default <code>'npc'</code>)</td>
+</tr>
+<tr>
+<td><code>health</code></td>
+<td>Vida</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>Tamanho do NPC (<code>1</code> = normal, de <code>0.2</code> a <code>5</code>). Com ele crescem as hitboxes, o alcance dos golpes, o movimento das animações e as distâncias de combate</td>
+</tr>
+<tr>
+<td><code>skill</code></td>
+<td>Apenas os valores de <code>AvalonCombat.Npc</code> que mudam</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">É preciso um jogador</p>
+<p><code>SpawnFighter</code> cria o ped no client do jogador mais próximo das coordenadas: com o servidor vazio devolve <code>nil</code>.</p>
+</div>
+<hr />
+<h2 id="progressao-niveis-e-habilidades">Progressão (níveis e habilidades)</h2>
+<p>O avalon_combat <strong>não tem</strong> um sistema de níveis ou habilidades: isso é do seu servidor. O script só dá as ferramentas para decidir, para cada jogador ou NPC lutador, quais ataques ele pode usar e quão forte ele é. O seu sistema chama os exports, o avalon_combat os aplica.</p>
+<h3 id="quais-ataques-pode-usar">Quais ataques pode usar</h3>
+<ul>
+<li>Todo ataque está <strong>disponível</strong>, a menos que a sua entrada no estilo tenha <code>locked = true</code>: então começa bloqueado para todos.</li>
+<li><code>SetAttackEnabled(target, estilo, attackId, true | false)</code> desbloqueia ou bloqueia um ataque para aquele lutador e aquele estilo. Prevalece sobre o <code>locked</code> do config.</li>
+<li><code>attackId</code> é o <code>id</code> do ataque, senão o nome do seu clip. Para um ataque em par é a sua chave em <code>pairs</code>. <code>GetAttacks(estilo)</code> lista todos os ataques de um estilo com id, cadeia e <code>locked</code>.</li>
+<li>As cadeias do combo (<code>light</code>, <code>heavy</code>, <code>special</code>) e os <code>moves</code> do modo <code>'keys'</code> são entradas diferentes, com ids diferentes: se o seu servidor usa os dois modos, desbloqueie os dois.</li>
+<li>Um ataque bloqueado é pulado: no combo o botão passa para o próximo disponível da cadeia (nenhum disponível: o botão não faz nada); no modo <code>'keys'</code> o movimento não é escolhido; R não executa o ataque em par. Os NPCs só usam os seus ataques disponíveis.</li>
+<li>O servidor descarta os golpes de um ataque bloqueado: um cliente modificado também não consegue usá-lo.</li>
+</ul>
+<h3 id="quao-forte-e">Quão forte é</h3>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>Efeito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SetAttackMultiplier(target, estilo, attackId, m)</code></td>
+<td>Multiplica o dano de um ataque</td>
+</tr>
+<tr>
+<td><code>SetOutgoingMultiplier(target, m)</code></td>
+<td>Multiplica todo o seu dano</td>
+</tr>
+<tr>
+<td><code>SetDefence(target, { percent, flat })</code></td>
+<td>Defesa própria, somada à da guarda ou do escudo</td>
+</tr>
+<tr>
+<td><code>SetMaxGuard(target, max)</code></td>
+<td>Pontos de guarda máximos (modo <code>'points'</code>)</td>
+</tr>
+<tr>
+<td><code>SetInputMode(target, 'combo' \| 'keys')</code></td>
+<td>Modo de entrada do lutador</td>
+</tr>
+<tr>
+<td><code>SetStyle(target, estilo, armas)</code> · <code>SetHeld(target, slot, chave)</code></td>
+<td>Estilo e armas de jogadores e NPCs (por exemplo a partir da classe ou do inventário)</td>
+</tr>
+</tbody>
+</table>
+<p>Cada <code>Set...</code> tem o seu <code>Get...</code> para ler o valor atual.</p>
+<div class="admonition warning">
+<p class="admonition-title">Nada é salvo</p>
+<p>A progressão fica na memória: quando o jogador sai (ou um NPC para) ela volta aos valores do config. Salvá-la é tarefa do seu sistema, que a envia de novo a cada entrada, por exemplo quando o personagem é carregado.</p>
+</div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">-- server: o seu sistema de níveis</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">Unlocks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">-- nível mínimo por ataque, por estilo</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nv">katana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="s1">'combo@a03@rm'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">'combo@a04@rm'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">'combo@d03@rm'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">applyProgress</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">style</span><span class="p">,</span><span class="w"> </span><span class="nv">attacks</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">Unlocks</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span><span class="kr">for</span><span class="w"> </span><span class="nv">attackId</span><span class="p">,</span><span class="w"> </span><span class="nv">minLevel</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">attacks</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">            </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetAttackEnabled</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="nv">style</span><span class="p">,</span><span class="w"> </span><span class="nv">attackId</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">minLevel</span><span class="p">)</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="kr">end</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetOutgoingMultiplier</span><span class="p">(</span><span class="nv">src</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.02</span><span class="p">)</span><span class="w"> </span><span class="c1">-- +2% de dano por nível</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="kr">end</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'mylevels:loaded'</span><span class="p">,</span><span class="w"> </span><span class="nv">applyProgress</span><span class="p">)</span><span class="w">  </span><span class="c1">-- personagem carregado</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'mylevels:levelUp'</span><span class="p">,</span><span class="w"> </span><span class="nv">applyProgress</span><span class="p">)</span><span class="w"> </span><span class="c1">-- novo nível</span>
+</span></code></pre></div>
+<hr />
+<h2 id="exports-disponiveis">Exports Disponíveis</h2>
+<p>Um <code>target</code> é o ID de servidor de um jogador ou <code>{ net = netId }</code> para um NPC lutador.</p>
+<h3 id="exports-server-side">Exports Server-Side</h3>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SetStyle(target, estilo \| nil, armas)</code></td>
+<td>Coloca o combatente em combate com esse estilo. <code>armas</code>: <code>{ weapon, offhand, shield }</code>, cada uma uma chave da config, <code>false</code> para a mão vazia, ausente para a do estilo. <code>nil</code> tira um jogador do combate (um NPC tira-se com <code>StopFighter</code>)</td>
+</tr>
+<tr>
+<td><code>GetStyle(target)</code></td>
+<td>Estilo atual do combatente</td>
+</tr>
+<tr>
+<td><code>SetHeld(target, slot, chave \| nil)</code></td>
+<td>Arma (<code>'weapon'</code>, <code>'offhand'</code>) ou escudo (<code>'shield'</code>) na mão, mantendo o estilo</td>
+</tr>
+<tr>
+<td><code>GetHeld(target)</code></td>
+<td><code>{ slot = chave }</code></td>
+</tr>
+<tr>
+<td><code>SpawnFighter(estilo, coords, heading, opts)</code></td>
+<td>Cria um NPC lutador, devolve o net id</td>
+</tr>
+<tr>
+<td><code>StopFighter(net)</code></td>
+<td>Remove um NPC lutador</td>
+</tr>
+<tr>
+<td><code>AddHitHandler(fn)</code> / <code>RemoveHitHandler(id)</code></td>
+<td>Função chamada a cada golpe (vê abaixo)</td>
+</tr>
+<tr>
+<td><code>GetDamageMode()</code></td>
+<td><code>'native'</code> ou <code>'external'</code></td>
+</tr>
+<tr>
+<td><code>React(target, o_quê)</code></td>
+<td>Faz o alvo executar <code>'stagger'</code>, <code>'knockdown'</code> ou <code>'death'</code></td>
+</tr>
+<tr>
+<td><code>SetAttackEnabled(target, estilo, attackId, on)</code> / <code>IsAttackEnabled(...)</code></td>
+<td>Desbloqueia ou bloqueia um ataque para esse lutador</td>
+</tr>
+<tr>
+<td><code>SetAttackMultiplier(target, estilo, attackId, m)</code> / <code>GetAttackMultiplier(...)</code></td>
+<td>Multiplicador de um ataque</td>
+</tr>
+<tr>
+<td><code>SetOutgoingMultiplier(target, m)</code> / <code>GetOutgoingMultiplier(target)</code></td>
+<td>Multiplicador sobre todo o seu dano</td>
+</tr>
+<tr>
+<td><code>SetDefence(target, { percent, flat })</code> / <code>GetDefence(target)</code></td>
+<td>Defesa própria, somada à da guarda</td>
+</tr>
+<tr>
+<td><code>GetGuard</code> / <code>SetGuard</code> / <code>GetMaxGuard</code> / <code>SetMaxGuard</code></td>
+<td>Pontos de guarda (modo <code>'points'</code>)</td>
+</tr>
+<tr>
+<td><code>SetInputMode(target, 'combo' \| 'keys' \| nil)</code> / <code>GetInputMode(target)</code></td>
+<td>Modo de input do lutador</td>
+</tr>
+<tr>
+<td><code>GetStyles()</code></td>
+<td>Todos os estilos carregados</td>
+</tr>
+<tr>
+<td><code>GetAttacks(estilo)</code></td>
+<td><code>{ { id, chain, clip, mult, locked, input } }</code></td>
+</tr>
+<tr>
+<td><code>GetWeapon(chave)</code> / <code>GetShield(chave)</code></td>
+<td>Entrada do config</td>
+</tr>
+</tbody>
+</table>
+<h4 id="o-golpe-hit">O golpe (<code>hit</code>)</h4>
+<p>Os hit handlers e o evento <code>avalon_combat:hit</code> recebem esta tabela:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mode</code></td>
+<td><code>'native'</code> ou <code>'external'</code></td>
+</tr>
+<tr>
+<td><code>attacker</code></td>
+<td><code>{ kind = 'player' \| 'fighter', src, net, style, team }</code></td>
+</tr>
+<tr>
+<td><code>victim</code></td>
+<td><code>{ kind = 'player' \| 'fighter' \| 'ped', src, net, style }</code></td>
+</tr>
+<tr>
+<td><code>attack</code></td>
+<td><code>{ id, chain, clip, mult, knockdown, react }</code> (<code>chain</code>: <code>light</code>, <code>heavy</code>, <code>special</code>, <code>moves</code>, <code>pair</code>)</td>
+</tr>
+<tr>
+<td><code>weapon</code></td>
+<td><code>{ slot, key, data }</code> se atingiu uma lâmina, caso contrário <code>nil</code></td>
+</tr>
+<tr>
+<td><code>base</code></td>
+<td>Dano da arma ou do estilo</td>
+</tr>
+<tr>
+<td><code>attackMult</code>, <code>progressMult</code>, <code>outgoingMult</code></td>
+<td>Os três multiplicadores</td>
+</tr>
+<tr>
+<td><code>damage</code></td>
+<td>Dano antes da guarda</td>
+</tr>
+<tr>
+<td><code>guard</code></td>
+<td><code>{ blocked, parried, broken, percent, flat, cost }</code></td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td>Dano depois da guarda (o aplicado em <code>'native'</code>)</td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td><code>{ x, y }</code> de quem ataca para a vítima</td>
+</tr>
+</tbody>
+</table>
+<p>Os handlers correm depois do cálculo da guarda. Um handler devolve o golpe modificado, <code>nil</code> para o deixar como está ou <code>false</code> para o anular. Os handlers de um resource que pára são removidos automaticamente.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- server: resistências e níveis</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">AddHitHandler</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">hit</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">kind</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'player'</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nf">HasSilverArmor</span><span class="p">(</span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">src</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">attacker</span><span class="p">.</span><span class="py">style</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'werewolf'</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">        </span><span class="nv">hit</span><span class="p">.</span><span class="py">final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">final</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="c1">-- arredondado pelo servidor depois dos handlers</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="nv">hit</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">-- server: DamageMode = 'external', vida gerida pelo teu sistema</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'avalon_combat:hit'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">hit</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">kind</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="s1">'player'</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">MyHealth</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">src</span><span class="p">,</span><span class="w"> </span><span class="nv">hit</span><span class="p">.</span><span class="py">final</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">hp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">React</span><span class="p">(</span><span class="nv">hit</span><span class="p">.</span><span class="py">victim</span><span class="p">.</span><span class="py">src</span><span class="p">,</span><span class="w"> </span><span class="s1">'death'</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Eventos server</strong> (<code>AddEventHandler</code>, recebem o golpe): <code>avalon_combat:hit</code> (modo <code>'external'</code>), <code>avalon_combat:blocked</code>, <code>avalon_combat:parried</code>, <code>avalon_combat:guardBroken</code>.</p>
+<hr />
+<h3 id="exports-client-side">Exports Client-Side</h3>
+<table>
+<thead>
+<tr>
+<th>Export</th>
+<th>Devolve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GetStyle()</code></td>
+<td>Estilo atual ou <code>nil</code></td>
+</tr>
+<tr>
+<td><code>IsBlocking()</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td><code>IsAttacking()</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td><code>GetGuard()</code></td>
+<td><code>{ v, max }</code> pontos de guarda (modo <code>'points'</code>)</td>
+</tr>
+<tr>
+<td><code>GetStamina()</code></td>
+<td>Stamina do jogo, tal como a lê o modo <code>'stamina'</code></td>
+</tr>
+<tr>
+<td><code>SetCombatEnabled(on)</code></td>
+<td><code>false</code> deixa os comandos ao jogo (menu, cutscene) até voltar a <code>true</code></td>
+</tr>
+<tr>
+<td><code>GetCastPoint()</code></td>
+<td><code>vector3</code> de onde partem as magias do cajado, ou <code>nil</code></td>
+</tr>
+<tr>
+<td><code>GetInputMode()</code></td>
+<td><code>'combo'</code> ou <code>'keys'</code></td>
+</tr>
+<tr>
+<td><code>MakeFighter(ped, estilo, opts)</code> / <code>StopFighter(ped)</code></td>
+<td>Transforma um ped em lutador, ou pára-o</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Evento local</strong> <code>avalon_combat:onHurt</code> <code>(ped, info, attacker)</code>: a cada golpe recebido por um ped gerido por este client, para um HUD.</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">-- client: barra de vida e números de dano</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nf">AddEventHandler</span><span class="p">(</span><span class="s1">'avalon_combat:onHurt'</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">ped</span><span class="p">,</span><span class="w"> </span><span class="nv">info</span><span class="p">,</span><span class="w"> </span><span class="nv">attacker</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">ped</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nf">PlayerPedId</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">info</span><span class="p">.</span><span class="py">parried</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="nf">ShowText</span><span class="p">(</span><span class="s1">'DEFESA PERFEITA!'</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="kr">elseif</span><span class="w"> </span><span class="nv">info</span><span class="p">.</span><span class="py">blocked</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">        </span><span class="nf">ShowText</span><span class="p">((</span><span class="s1">'-%d (defendido)'</span><span class="p">):</span><span class="nf">format</span><span class="p">(</span><span class="nv">info</span><span class="p">.</span><span class="py">damage</span><span class="p">))</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="kr">else</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">        </span><span class="nf">ShowText</span><span class="p">((</span><span class="s1">'-%d'</span><span class="p">):</span><span class="nf">format</span><span class="p">(</span><span class="nv">info</span><span class="p">.</span><span class="py">damage</span><span class="p">))</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">-- client: sem combate enquanto o menu está aberto</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="nv">exports</span><span class="p">.</span><span class="py">avalon_combat</span><span class="p">:</span><span class="nf">SetCombatEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AvalonStudiosScripts" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
